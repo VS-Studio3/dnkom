@@ -7,10 +7,12 @@ body {
 	color: #909090;
 }
 @font-face {
-    font-family: PT-Sans; /* имя шрифта для CSS правил */
-    src: local("PT-Sans"), /* проверяем наличие шрифта в ОС пользователя */
-    url(../fonts/PTS55F.woff); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+    font-family: "PT Sans";
+    src: url("../fonts/PTS55F.eot?") format("eot"), url("../fonts/PTS55F.woff") format("woff"), url("../fonts/PTS55F.ttf") format("truetype"), url("../fonts/PTS55F.svg#PTSans-Regular") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
+
 a {
 	color: #22b24c;
 	outline: none;
