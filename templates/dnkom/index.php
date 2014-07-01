@@ -112,8 +112,6 @@ $task = $_GET['task'];
     </div><!-- #middle-->
 </div><!-- #wrapper -->
 
-
-
 <div class="width_100_monitor">
     <div class="container for_search">
         <jdoc:include type="modules" name="search_module" style="xhtml"/>
@@ -128,6 +126,11 @@ $task = $_GET['task'];
 </div>
     <div class="container">
         <jdoc:include type="component" />
+
+        <?php if ($option == 'com_content' && $view == 'article') : ?>
+            <jdoc:include type="modules" name="link-news" style="xhtml"/>
+        <?php endif; ?>
+
         <?php if ($this->countModules( 'left_block_pacient' )) : ?>
             <div class="left_block">
                 <jdoc:include type="modules" name="left_block_pacient" style="xhtml"/>
@@ -144,6 +147,15 @@ $task = $_GET['task'];
         <?php endif; ?>
         <div style="clear: both"></div>
     </div>
+
+    <!--Правый блок по ссылке знаменитости -->
+    <?php if ($this->countModules( 'right_menu' )) : ?>
+        <div id="right_menu">
+            <jdoc:include type="modules" name="right_menu" style="xhtml"/>
+            <jdoc:include type="modules" name="banners" style="xhtml"/>
+        </div>
+    <?php endif; ?>
+    <!--END-->
 <?php if ($this->countModules( 'slider_module' )) : ?>
     <div class="back_news">
         <div class="container ">

@@ -32,6 +32,36 @@ if (!empty($this->item->pagination) AND $this->item->pagination && !$this->item-
 }
  ?>
 
+<?php if ($canEdit ||  $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
+        <ul class="actions">
+            <?php if (!$this->print) : ?>
+                <?php if ($params->get('show_print_icon')) : ?>
+                    <li class="print-icon">
+                        <?php echo JHtml::_('icon.print_popup',  $this->item, $params); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if ($params->get('show_email_icon')) : ?>
+                    <li class="email-icon">
+                        <?php echo JHtml::_('icon.email',  $this->item, $params); ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if ($canEdit) : ?>
+                    <li class="edit-icon">
+                        <?php echo JHtml::_('icon.edit', $this->item, $params); ?>
+                    </li>
+                <?php endif; ?>
+
+            <?php else : ?>
+                <li>
+                    <?php echo JHtml::_('icon.print_screen',  $this->item, $params); ?>
+                </li>
+            <?php endif; ?>
+
+        </ul>
+    <?php endif; ?>
+
 <?php if ($params->get('show_title')) : ?>
 	<h1 class="heading-style">
 	<?php if ($params->get('link_titles') && !empty($this->item->readmore_link)) : ?>
@@ -41,36 +71,6 @@ if (!empty($this->item->pagination) AND $this->item->pagination && !$this->item-
 		<?php echo $this->escape($this->item->title); ?>
 	<?php endif; ?>
 	</h1>
-<?php endif; ?>
-
-<?php if ($canEdit ||  $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-	<ul class="actions">
-	<?php if (!$this->print) : ?>
-		<?php if ($params->get('show_print_icon')) : ?>
-			<li class="print-icon">
-			<?php echo JHtml::_('icon.print_popup',  $this->item, $params); ?>
-			</li>
-		<?php endif; ?>
-
-		<?php if ($params->get('show_email_icon')) : ?>
-			<li class="email-icon">
-			<?php echo JHtml::_('icon.email',  $this->item, $params); ?>
-			</li>
-		<?php endif; ?>
-
-		<?php if ($canEdit) : ?>
-			<li class="edit-icon">
-			<?php echo JHtml::_('icon.edit', $this->item, $params); ?>
-			</li>
-		<?php endif; ?>
-
-	<?php else : ?>
-		<li>
-		<?php echo JHtml::_('icon.print_screen',  $this->item, $params); ?>
-		</li>
-	<?php endif; ?>
-
-	</ul>
 <?php endif; ?>
 
 <?php  if (!$params->get('show_intro')) :
@@ -85,7 +85,6 @@ endif; ?>
 
 <?php if ($useDefList) : ?>
 	<dl class="article-info">
-	<dt class="article-info-term"><?php  echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?></dt>
 <?php endif; ?>
 <?php if ($params->get('show_parent_category') && $this->item->parent_slug != '1:root') : ?>
 	<dd class="parent-category-name">

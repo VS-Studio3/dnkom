@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<renderer>
+	<positions layout="teaser">
+		<position name="title">Title</position>
+        <position name="name">Name</position>
+		<position name="image">Image</position>
+		<position name="job">Job</position>
+		<position name="text">Text</position>
+	</positions>
+
+    <positions layout="full">
+        <position name="title">Title</position>
+        <position name="name">Name</position>
+        <position name="image">Image</position>
+        <position name="job">Job</position>
+        <position name="text">Text</position>
+    </positions>
+</renderer>

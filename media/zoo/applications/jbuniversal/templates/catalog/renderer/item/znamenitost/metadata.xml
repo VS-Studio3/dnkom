@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout name="teaser" type="related">
+		<name>Teaser</name>
+		<description>Teaser layout</description>
+	</layout>
+
+    <layout name="full" type="related">
+        <name>Full</name>
+        <description>Full layout</description>
+    </layout>
+</metadata>
