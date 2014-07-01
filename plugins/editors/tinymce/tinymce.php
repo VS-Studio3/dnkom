@@ -177,7 +177,7 @@ class plgEditorTinymce extends JPlugin
 			$forcenewline = "force_br_newlines : false, force_p_newlines : true, forced_root_block : 'p',";
 		}
 
-		$invalid_elements	= $this->params->def('invalid_elements', 'script,applet,iframe');
+		$invalid_elements = $this->params->def('invalid_elements', 'script,applet,iframe');
 		$extended_elements	= $this->params->def('extended_elements', '');
 
 		// theme_advanced_* settings
