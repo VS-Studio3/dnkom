@@ -134,6 +134,7 @@ $task = $_GET['task'];
             <jdoc:include type="modules" name="link-news" style="xhtml"/>
         <?php endif; ?>
 
+
         <?php if ($this->countModules( 'left_block_pacient' )) : ?>
             <div class="left_block">
                 <jdoc:include type="modules" name="left_block_pacient" style="xhtml"/>
