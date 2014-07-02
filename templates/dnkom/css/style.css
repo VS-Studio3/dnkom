@@ -1001,7 +1001,178 @@ fieldset{
 #contact_form{
     display:none;
 }
-
+#right_menu .menu{
+    padding: 0px;
+    margin: 0px;
+}
+#right_menu .menu li{
+    list-style-type: none;
+    width: 215px;
+    margin-bottom: 35px;
+    height: 30px;
+}
+#right_menu .menu li a:after{
+    position: absolute;
+    left: 6px;
+    content: "";
+    background: url("../images/books.png");
+    height: 21px;
+    width: 24px;
+    top: 18px;
+}
+#right_menu .menu li:first-child a:after{
+    background: url("../images/question.png");
+}
+#right_menu .menu li:last-child a:after{
+    background: url("../images/address.png");
+    width: 15px;
+    left: 10px;
+}
+#right_menu .menu li a{
+    font-size: 18px;
+    position: relative;
+    font-family: PT Sans, sans-serif;
+    color: #535353;
+    text-decoration: none;
+    padding: 12px 41px;
+    height: 100%;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    line-height: 16px;
+    background: url("../images/back_btn_right.png");
+}
+#novosti .container .menu {
+    padding: 0px;
+    margin: 0px;
+}
+#novosti .container .menu li{
+    list-style-type: none;
+}
+#novosti .container .menu li a{
+    font-size: 14px;
+    font-family: PT Sans, sans-serif;
+    color: #ce1f23;
+    padding-left: 20px;
+    line-height: 14px;
+}
+#home_page .container{
+    width: 1000px!important;
+    clear: both!important;
+    float: none!important;
+}
+#for_all_pages{
+    width: 1000px;
+    margin: 0 auto;
+    clear: both;
+}
+#for_all_pages .container{
+    width: 730px;
+    float: left;
+}
+#for_all_pages #right_menu{
+    float: right;
+}
+.both{
+    clear: both;
+}
+.alias-znamenitosti h1{
+    font-size: 24px;
+    color: #b20f00;
+    font-weight: bold;
+}
+.jbzoo-item-znamenitost .star_first{
+    float: left;
+}
+.jbzoo-item-znamenitost .star_second{
+    overflow: hidden;
+    padding-top: 40px;
+}
+.jbzoo-item-znamenitost{
+    border-bottom: 1px dotted #c7c7c7;
+}
+.jbzoo-item-znamenitost:last-child{
+    border-bottom: none;
+}
+.jbzoo-item-znamenitost .star_second .title,
+.jbzoo-item-znamenitost .star_second .title a{
+    font-size: 20px;
+    color: #5b5b5b;
+    font-family: PT Sans, sans-serif;
+    font-weight: bold;
+}
+.jbzoo-item-znamenitost .star_second .title,
+.jbzoo-item-znamenitost .star_second .title a:hover{
+    color: #b20f00;
+    text-decoration: underline;
+}
+.jbzoo-item-znamenitost .star_second .text p{
+    font-size: 14px;
+    color: #676767;
+    font-family: PT Sans, sans-serif;
+    font-weight: normal;
+    line-height: 18px;
+}
+.jbzoo-item-znamenitost .star_first .job:first-child{
+    font-size: 20px;
+}
+.jbzoo-item-znamenitost .star_first .image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.jbzoo-item-znamenitost .star_first .image{
+    width: 220px;
+    height: 260px;
+    overflow: hidden;
+    margin: 10px 10px 10px 0px;
+}
+.jbzoo-item-znamenitost .star_first .job{
+    font-size: 14px;
+    color: #3e3e3e;
+    font-family: PT Sans, sans-serif;
+    font-weight: bold;
+}
+.jbzoo-item-full{
+    border-bottom: none!important;
+}
+.jbzoo-item-full .job:first-of-type{
+    font-size: 20px;
+}
+.jbzoo-item-full .job{
+    font-size: 14px;
+    color: #3e3e3e;
+    font-family: PT Sans, sans-serif;
+    font-weight: bold;
+}
+.jbzoo-item-full .title{
+    font-size: 24px;
+    color: #b20f00;
+    font-family: PT Sans, sans-serif;
+    font-weight: bold;
+}
+.jbzoo-item-full .image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.jbzoo-item-full .image{
+    width: 220px;
+    height: 260px;
+    float: left;
+    overflow: hidden;
+    margin: 10px 20px 20px 0px;
+}
+.jbzoo-item-full .text p{
+    font-size: 14px;
+    color: #676767;
+    font-family: PT Sans, sans-serif;
+    font-weight: normal;
+    line-height: 18px;
+}
 /**БЛОГ НОВОСТЕЙ**/
 #novosti .article-info-term , #novosti .counter, .pagination-start, .pagination-end{
     display:none;

@@ -124,6 +124,9 @@ $task = $_GET['task'];
         <div class="submenu_container"></div>
     </div>
 </div>
+<div id="for_all_pages">
+
+
     <div class="container">
         <jdoc:include type="component" />
 
@@ -156,6 +159,8 @@ $task = $_GET['task'];
         </div>
     <?php endif; ?>
     <!--END-->
+</div>
+<div class="both"></div>
 <?php if ($this->countModules( 'slider_module' )) : ?>
     <div class="back_news">
         <div class="container ">
