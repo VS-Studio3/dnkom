@@ -18,14 +18,14 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
     <h2><span class="item-title"><?php echo $this->renderPosition('title'); ?></span></h2>
 
     <div class="grafik_priema">
-        <div>
-            <span>График приема биоматериала</span>
-            <span>пн-пт</span>
-            <span>сб-вс</span>
+        <div class="specials">
+            <span class="grafic">График приема биоматериала</span>
+            <span class="monday">пн-пт</span>
+            <span class="sunday">сб-вс</span>
         </div>
-        <span><?php echo $this->renderPosition('srok_vipolneniya'); ?></span>
-        <span><?php echo $this->renderPosition('grafik_pn_pt'); ?></span>
-        <span><?php echo $this->renderPosition('grafik_sb-vs'); ?></span>
+        <span class="grafic"><?php echo $this->renderPosition('srok_vipolneniya'); ?></span>
+        <span class="monday"><?php echo $this->renderPosition('grafik_pn_pt'); ?></span>
+        <span class="sunday"><?php echo $this->renderPosition('grafik_sb-vs'); ?></span>
     </div>
 <div class="text-center">
     <?php if($this->renderPosition('uzi')): ?>
