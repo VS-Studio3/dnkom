@@ -23,6 +23,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
             <span class="monday">пн-пт</span>
             <span class="sunday">сб-вс</span>
         </div>
+        
         <span class="grafic"><?php echo $this->renderPosition('srok_vipolneniya'); ?></span>
         <span class="monday"><?php echo $this->renderPosition('grafik_pn_pt'); ?></span>
         <span class="sunday"><?php echo $this->renderPosition('grafik_sb-vs'); ?></span>
