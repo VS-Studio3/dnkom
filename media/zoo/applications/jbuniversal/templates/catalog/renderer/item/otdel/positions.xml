@@ -2,11 +2,20 @@
 <renderer>
 
     <positions layout="full">
-        <position name="items">Items</position>
-        <position name="billing">Billing information</position>
-        <position name="shipping">Shipping information</position>
-        <position name="payment">Payment information</position>
-        <position name="other">Other information</position>
+        <position name="title">Заголовок</position>
+        <position name="address">address</position>
+        <position name="grafik-mocha-kal-pn-pt">График взятия биоматериала  кровь/моча/кал (пн-пт)</position>
+        <position name="grafik-mocha-kal-sb-vs">График взятия биоматериала кровь/моча/кал (сб-вс)</position>
+        <position name="grafik-mazki-pn-pt">График взятия биоматериала мазки (пн-пт)</position>
+        <position name="grafik-mazki-sb-vs">График взятия биоматериала мазки (сб-вс)</position>
+        <position name="vydacha-pn-pt">Выдача результатов (пн-пт)</position>
+        <position name="vydacha-sb-vs">Выдача результатов (сб-вс)</position>
+        <position name="photo-otdel">Фото отдела</position>
+        <position name="descr">Описание</position>
+        <position name="how-to-go">Как пройти</position>
+        <position name="schema">Схема</position>
+        <position name="ymaps">Карты ymaps</position>
+        <position name="right_menu">Правое меню</position>
     </positions>
 
     <positions layout="subcategory_item">
