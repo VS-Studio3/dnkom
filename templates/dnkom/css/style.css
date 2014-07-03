@@ -1073,6 +1073,125 @@ fieldset{
     margin: 0 auto;
     clear: both;
 }
+#main #for_all_pages .container,
+#adress_and_uslugi #for_all_pages .container{
+    width: 1000px;
+    margin: 0 auto;
+    clear: both;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item{
+    display: inline-block;
+    width: 434px;
+    border: 1px solid #dedede;
+    border-top: 2px solid #c70002;
+    border-radius: 5px;
+    padding: 20px;
+    margin-right: 10px;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .grafik_priema{
+    background-color: #eeeeee;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .show_map{
+    display: block;
+    text-align: center;
+    color: #262626;
+    border-bottom: #262626 1px dashed;
+    text-decoration: none;
+    width: 115px;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+.text-center{
+    text-align: center;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel div span{
+    font-size: 16px;
+    line-height: 16px;
+    color: #5e5e5e;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .uzi a,
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .ekg a,
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .ginekolog a{
+    font-size: 16px;
+    color: #171717;
+    line-height: 20px;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .for_uzi{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../images/price_two.png") 0px 0px no-repeat;
+    top: 3px;
+    position: relative;
+    margin-right: 5px;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .for_ekg{
+    display: inline-block;
+    width: 23px;
+    height: 17px;
+    background: url("../images/price_two.png") 0px -35px no-repeat;
+    top: 3px;
+    position: relative;
+    margin-right: 5px;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .for_ginekolog{
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    background: url("../images/price_two.png") 0px -73px no-repeat;
+    top: 3px;
+    position: relative;
+    margin-right: 5px;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .uzi,
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .ekg,
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .ginekolog{
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 20px;
+    color: #171717;
+    line-height: 20px;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .show_map:hover{
+    color: #b20f00;
+    border-bottom: #b20f00 1px dashed;
+    cursor: pointer;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel h2{
+    margin-bottom: 10px;
+}
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .item-title a{
+    font-size: 20px;
+    color: #262626;
+    line-height: 14px;
+    font-weight: normal;
+}
+#adress_and_uslugi .title{
+    font-size: 24px;
+    color: #b20f00;
+    margin-bottom: 0px;
+}
+#adress_and_uslugi .subcategory-title{
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 24px;
+    color: #171717;
+    font-weight: normal;
+}
+#adress_and_uslugi .show_all_territories{
+    text-align: center;
+}
+#adress_and_uslugi .show_all_territories button{
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: normal;
+    padding: 2px 10px;
+    background-color: #b20f00;
+    border: none;
+    border-radius: 5px;
+}
 #for_all_pages .container{
     width: 730px;
     float: left;

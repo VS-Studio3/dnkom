@@ -19,25 +19,29 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 
     <div class="grafik_priema">
         <div>
-            <span>График приема биоматериала</span><span>пн-пт</span><span>сб-вс</span>
+            <span>График приема биоматериала</span>
+            <span>пн-пт</span>
+            <span>сб-вс</span>
         </div>
         <span><?php echo $this->renderPosition('srok_vipolneniya'); ?></span>
         <span><?php echo $this->renderPosition('grafik_pn_pt'); ?></span>
         <span><?php echo $this->renderPosition('grafik_sb-vs'); ?></span>
     </div>
-
+<div class="text-center">
     <?php if($this->renderPosition('uzi')): ?>
-        <div class="uzi"></div>
+        <div class="uzi"><a href="#"><span class="for_uzi"></span>УЗИ</a></div>
     <?php endif; ?>
 
     <?php if($this->renderPosition('ekg')): ?>
-        <div class="ekg"></div>
+        <div class="ekg"><a href="#"><span class="for_ekg"></span>ЭКГ</a></div>
     <?php endif; ?>
 
     <?php if($this->renderPosition('ginekolog')): ?>
-        <div class="ginekolog"></div>
+        <div class="ginekolog"><a href="#"><span class="for_ginekolog"></span>Прием гинеколога</a></div>
     <?php endif; ?>
+</div>
 
+    <div class="clear clr"></div>
     <?php
         $script = htmlspecialchars($this->renderPosition('yandex'));
         $coordsPosition = strpos($script, '{center: [');
