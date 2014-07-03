@@ -1084,9 +1084,9 @@ fieldset{
     border-radius: 5px;
     padding: 10px 20px;
     margin: 0px 20px 25px 0px;
-    -webkit-box-shadow: 0px 0px 2px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 0px 2px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 0px 2px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 1px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 1px 0px rgba(50, 50, 50, 0.75);
 }
 .subcategory-items{
     margin-right: -20px;
@@ -1125,8 +1125,12 @@ fieldset{
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel span p{
     margin-bottom: 0px;
 }
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .specials .grafic{
+    font-size: 16px;
+}
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .grafic{
     width: 238px;
+    font-size: 12px;
 }
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel  .monday{
     width: 90px;
