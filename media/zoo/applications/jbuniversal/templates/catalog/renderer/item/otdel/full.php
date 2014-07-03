@@ -31,42 +31,42 @@ defined('_JEXEC') or die('Restricted access');
     	<ul>
     		<li class="row1">
     			<table>
-    				<tr>
-    					<td>График взятия биоматериала</td>
-    					<td>пн-пт</td>
-    					<td>сб-вс</td>
+    				<tr class="first_tr">
+    					<td class="first_td">График взятия биоматериала</td>
+    					<td class="second_td">пн-пт</td>
+    					<td class="third_td">сб-вс</td>
     				</tr>
     			</table>
     		</li>
     		<li class="row2">
-    			<table>
-    				<tr>
-    					<td>кровь/ моча/ кал</td>
-    					<td><?php echo $this->renderPosition('grafik-mocha-kal-pn-pt'); ?></td>
-    					<td><?php echo $this->renderPosition('grafik-mazki-pn-pt'); ?></td>
+    			<table class="second_table">
+    				<tr class="second_tr_first">
+    					<td  class="first_td">кровь/ моча/ кал</td>
+    					<td class="second_td"><?php echo $this->renderPosition('grafik-mocha-kal-pn-pt'); ?></td>
+    					<td class="third_td"><?php echo $this->renderPosition('grafik-mazki-pn-pt'); ?></td>
     				</tr>
-    				<tr>
-    					<td>мазки</td>
-    					<td><?php echo $this->renderPosition('grafik-mocha-kal-sb-vs'); ?></td>
-    					<td><?php echo $this->renderPosition('grafik-mazki-sb-vs'); ?></td>
+    				<tr class="second_tr">
+    					<td  class="first_td">мазки</td>
+    					<td class="second_td"><?php echo $this->renderPosition('grafik-mocha-kal-sb-vs'); ?></td>
+    					<td class="third_td"> <?php echo $this->renderPosition('grafik-mazki-sb-vs'); ?></td>
     				</tr>
     			</table>
     		</li>
     		<li class="row3">
     			<table>
-    				<tr>
-    					<td>ВЫДАЧА РЕЗУЛЬТАТОВ</td>
-    					<td><?php echo $this->renderPosition('vydacha-pn-pt'); ?></td>
-    					<td><?php echo $this->renderPosition('vydacha-sb-vs'); ?></td>
+    				<tr class="third_tr">
+    					<td  class="first_td">ВЫДАЧА РЕЗУЛЬТАТОВ</td>
+    					<td class="second_td"><?php echo $this->renderPosition('vydacha-pn-pt'); ?></td>
+    					<td class="third_td"><?php echo $this->renderPosition('vydacha-sb-vs'); ?></td>
     				</tr>
     			</table>
     		</li>
     	</ul>
     </div>
 
-<ul class="tab-links">
-	<li><a href="#yamap-tab">Яндекс карта</a></li>
-	<li><a href="#schema-tab">Схема проезда</a></li>
+<ul class="tab-links btn_two">
+	<li class="yandex"><a href="#yamap-tab">Яндекс карта</a></li>
+	<li class="proezd"><a href="#schema-tab">Схема проезда</a></li>
 </ul>
 <div class="tabs-container">
 	<div id="yamap-tab"><?php echo $this->renderPosition('ymaps'); ?></div>
