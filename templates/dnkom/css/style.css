@@ -197,9 +197,6 @@ fieldset{
 .menu_container .menu > li ul{
     display: none;
 }
-.submenu_container{
-
-}
 .menu_container .menu > li{
     border-top: 3px solid #b20f00;
     height: 47px;
