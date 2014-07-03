@@ -1200,7 +1200,7 @@ fieldset{
     cursor: pointer;
 }
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel h2{
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .item-title a{
     font-size: 20px;
@@ -1224,7 +1224,7 @@ fieldset{
 
 #adress_and_uslugi .show_all_territories{
     text-align: center;
-    margin: 15px 0px;
+    margin: 10px 0px 16px;
 }
 #adress_and_uslugi .show_all_territories button{
     font-size: 18px;
@@ -1233,7 +1233,7 @@ fieldset{
     -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.75);
-    padding: 2px 10px;
+    padding: 4px 10px;
     background-color: #b20f00;
     border-radius: 5px;
     border: 1px solid;
