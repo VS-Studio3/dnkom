@@ -1084,9 +1084,9 @@ fieldset{
     border-radius: 5px;
     padding: 10px 20px;
     margin: 0px 20px 25px 0px;
-    -webkit-box-shadow: 0px 0px 2px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 0px 2px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 0px 2px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 1px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 1px 0px rgba(50, 50, 50, 0.75);
 }
 .subcategory-items{
     margin-right: -20px;
@@ -1115,7 +1115,7 @@ fieldset{
     color: #262626;
     border-bottom: #262626 1px dashed;
     text-decoration: none;
-    width: 115px;
+    width: 120px;
     margin: 0px auto;
     margin-top: 10px;
 }
@@ -1125,8 +1125,12 @@ fieldset{
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel span p{
     margin-bottom: 0px;
 }
+#adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .specials .grafic{
+    font-size: 16px;
+}
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .grafic{
     width: 238px;
+    font-size: 12px;
 }
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel  .monday{
     width: 90px;
@@ -1196,7 +1200,7 @@ fieldset{
     cursor: pointer;
 }
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel h2{
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .item-title a{
     font-size: 20px;
@@ -1220,7 +1224,7 @@ fieldset{
 
 #adress_and_uslugi .show_all_territories{
     text-align: center;
-    margin: 15px 0px;
+    margin: 10px 0px 16px;
 }
 #adress_and_uslugi .show_all_territories button{
     font-size: 18px;
@@ -1229,7 +1233,7 @@ fieldset{
     -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.75);
-    padding: 2px 10px;
+    padding: 4px 10px;
     background-color: #b20f00;
     border-radius: 5px;
     border: 1px solid;
