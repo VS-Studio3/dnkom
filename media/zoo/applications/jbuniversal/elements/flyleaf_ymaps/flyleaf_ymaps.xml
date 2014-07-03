@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<element type="maps" group="Web Service">
+<name>flyleaf_ymaps</name>
+<author>Flyleaf</author>
+<creationDate>june 2012</creationDate>
+<copyright>Copyright (C) flyleaf.su</copyright>
+<authorEmail>worstinme@ya.ru</authorEmail>
+<authorUrl>http://flyleaf.su</authorUrl>
+<version>1.0.2</version>
+<description>Yandex Maps</description>
+	<params>
+		<param name="name" type="text" default="Яндекс.Карты" label="Name" description="Имя элемента в редакторе" />
+		<param name="description" type="text" default="flyleaf_ymaps" label="Description" description="Описание элемента в редакторе" />
+	</params>
+	<params group="render">
+	<param name="layout" type="zoolayout" default="" label="Layout" description="OVERRIDE_DEFAULT_OUTPUT" constraint="googlemaps" />
+	<param name="showlabel" type="radio" default="0" label="Show Label" description="Show/Hide element label">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</param>
+	<param name="showcontrol" type="radio" default="0" label="Show Control" description="Показывать элементы управления?">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</param>
+	<param name="map_type" type="list" default="0" label="Map type on load" description="Тип карты" >
+			<option value="map">Схема</option>
+			<option value="satellite">Спутник</option>
+			<option value="hybrid">Гибрид</option>
+			<option value="publicMap">Народная карта</option>
+	</param>
+	<param name="width_default" type="text" default="100%" label="Width" description="Ширина блока карты по умолчанию" />	
+	<param name="height_default" type="text" default="300px" label="Height" description="Высота блока карты по умолчанию" />	
+	<param name="zoom_default" type="text" default="12" label="Zoom level" description="Уровень приближения карты по умолчанию" />
+		
+</params>
+</element>

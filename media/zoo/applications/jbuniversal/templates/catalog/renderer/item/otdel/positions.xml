@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<renderer>
+
+    <positions layout="full">
+        <position name="items">Items</position>
+        <position name="billing">Billing information</position>
+        <position name="shipping">Shipping information</position>
+        <position name="payment">Payment information</position>
+        <position name="other">Other information</position>
+    </positions>
+
+    <positions layout="subcategory_item">
+        <position name="title">Заголовок</position>
+        <position name="srok_vipolneniya">Срок выполнения исследований</position>
+        <position name="grafik_pn_pt">График приема (пн-пт)</position>
+        <position name="grafik_sb-vs">График приема (сб-вс)</position>
+        <position name="yandex">Адрес Яндекс-карты отдела</position>
+        <position name="ginekolog">Прием гинеколога</position>
+        <position name="ekg">ЭКГ</position>
+        <position name="uzi">УЗИ</position>
+    </positions>
+
+</renderer>

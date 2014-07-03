@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+
+    <layout name="full">
+        <name>Full</name>
+        <description>Full</description>
+    </layout>
+
+    <layout name="subcategory_item">
+        <name>Subcategory Item</name>
+        <description>Subcategory Item</description>
+    </layout>
+
+</metadata>

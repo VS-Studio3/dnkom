@@ -209,8 +209,8 @@ fieldset{
     background-image: url("../images/menu_separatotr_img.jpg");
     background-repeat: no-repeat;
     background-position: center right;
-    padding-right: 11px;
-    padding-left: 11px;
+    padding-right: 6px;
+    padding-left: 6px;
     vertical-align: top;
 }
 .menu_container .menu > li > a, .menu_container .menu > li > span{
@@ -1004,5 +1004,5 @@ fieldset{
 
 /**БЛОГ НОВОСТЕЙ**/
 #novosti .article-info-term , #novosti .counter, .pagination-start, .pagination-end{
-    display:none;
+    display:none !important;
 }
