@@ -27,62 +27,18 @@ $task = $_GET['task'];
 <!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/fancyBox/source/jquery.fancybox.css" type="text/css" media="screen" />
-<jdoc:include type="head" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<jdoc:include type="head" />
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/owl-carousel/owl.theme.css" />
+    <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/owl-carousel/owl.carousel.js"></script>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/jquery.fancybox.css" type="text/css" />
-
-    <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/fancyBox/source/jquery.fancybox.pack.js"></script>
-    <script src="<?php echo $this->baseurl ?>/templates/dnkom/js/scripts.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $j = jQuery.noConflict();
-        $j(function(){
-            $j('.calls a').click(function(){
-                $j(this).fancybox({
-                    width: 300,
-                    height: 350,
-                    autoSize : false,
-                    fitToView : false,
-                    maxWidth : '100%'
-                });
-            });
-            /**SLIDER**/
-            if($j('.nivo-directionNav') != null){
-                var sliderShow = function(){
-                    $j('.nivo-directionNav').show();
-                }
-                sliderShow();
-                $j('.nivo-slider-wrapper').hover(function(){
-                    sliderShow();
-                });
-            }
-
-            /**MAIN MENU**/
-            $j('#top_menu .menu > li:last-child').css({'background' : 'none', 'background-color' : 'white',
-                'border-top-right-radius' : '5px', 'border-bottom-right-radius' : '5px'});
-            $j('.menu > li > span').click(function(){
-                $j('.submenu_container').html($j(this).next('ul').clone());
-                $j('.menu > li').removeClass('active_menu_link');
-                $j(this).parent().addClass('active_menu_link');
-                return false;
-            });
-
-            function msieversion() {
-                var ua = window.navigator.userAgent;
-                var msie = ua.indexOf("MSIE ");
-                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) return true;
-                else return false;
-            }
-
-            if(msieversion()) {
-                $j('.menu_container .menu > li').css({'padding-right' : '6px', 'padding-left' : '5px'});
-            }
-        });
-    </script>
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/fancyBox/source/jquery.fancybox.pack.js"></script>
 </head>
 <body  id="<?php echo $pageclass ? htmlspecialchars($pageclass) : 'default'; ?>" class="<?php echo $option.' '.$task. ' '. $view ; ?>">
 <img src="<?php echo $this->baseurl
@@ -225,5 +181,51 @@ $task = $_GET['task'];
 		<jdoc:include type="modules" name="order-product-form" style="xhtml"/>
 	</div>
 </div>
+
+<script src="<?php echo $this->baseurl ?>/templates/dnkom/js/scripts.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    jQuery(function(){
+            jQuery('.calls a').fancybox({
+                width: 300,
+                height: 350,
+                autoSize : false,
+                fitToView : false,
+                maxWidth : '100%'
+            });
+
+        /**SLIDER**/
+        if(jQuery('.nivo-directionNav') != null){
+            var sliderShow = function(){
+                jQuery('.nivo-directionNav').show();
+            }
+            sliderShow();
+            jQuery('.nivo-slider-wrapper').hover(function(){
+                sliderShow();
+            });
+        }
+
+        /**MAIN MENU**/
+        jQuery('#top_menu .menu > li:last-child').css({'background' : 'none', 'background-color' : 'white',
+            'border-top-right-radius' : '5px', 'border-bottom-right-radius' : '5px'});
+        jQuery('.menu > li > span').click(function(){
+            jQuery('.submenu_container').html(jQuery(this).next('ul').clone());
+            jQuery('.menu > li').removeClass('active_menu_link');
+            jQuery(this).parent().addClass('active_menu_link');
+            return false;
+        });
+
+        function msieversion() {
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) return true;
+            else return false;
+        }
+
+        if(msieversion()) {
+            jQuery('.menu_container .menu > li').css({'padding-right' : '6px', 'padding-left' : '5px'});
+        }
+    });
+</script>
 </body>
 </html>

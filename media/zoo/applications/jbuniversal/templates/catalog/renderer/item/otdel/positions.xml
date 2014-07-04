@@ -20,6 +20,7 @@
 
     <positions layout="subcategory_item">
         <position name="title">Заголовок</position>
+        <position name="address">address</position>
         <position name="srok_vipolneniya">Срок выполнения исследований</position>
         <position name="grafik_pn_pt">График приема (пн-пт)</position>
         <position name="grafik_sb-vs">График приема (сб-вс)</position>

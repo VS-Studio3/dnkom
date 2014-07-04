@@ -15,7 +15,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 
 <div class="otdel">
 
-    <h2><span class="item-title"><?php echo $this->renderPosition('title'); ?></span></h2>
+    <h2><a class="address" href="<?php echo $this->app->route->item($this->_item); ?>"><?php echo $this->renderPosition('address'); ?></a></h2>
 
     <div class="grafik_priema">
         <div class="specials">
@@ -74,7 +74,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
             }
         );
     </script>
-    <a class="show_map" title="<?php echo $currentTitle; ?>">Показать на карте</a>
+    <a class="show_map" data-cords-one=<?php echo $firstNumber; ?> data-cords-two=<?php echo $secondNumber; ?> data-text="<?php echo $currentTitle; ?>">Показать на карте</a>
 
 </div>
 

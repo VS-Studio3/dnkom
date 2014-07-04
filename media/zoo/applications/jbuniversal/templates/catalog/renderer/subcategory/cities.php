@@ -125,22 +125,26 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
 
         ymaps.ready(initYMap);
 
-        $j = jQuery.noConflict();
-        $j(function () {
 
-            $j('.show_all_territories button').click(function () {
-                $j('#map').html('');
+        jQuery(function () {
+
+            jQuery('.show_all_territories button').click(function () {
+                jQuery('#map').html('');
                 window.temporaryCoordsObject = [];
                 window.temporaryCoordsObject = window.coordsObjects.slice();
                 ymaps.ready(initYMap);
+                jQuery('.map_caption').html('Все отделения на карте');
             });
 
-            $j('a.show_map').click(function () {
-                $j('#map').html('');
-                var textString = $j(this).attr('title');
+            jQuery('a.show_map').click(function () {
+                jQuery('#map').html('');
+                var firstNumber = jQuery(this).attr('data-cords-one');
+                var secondNumber = jQuery(this).attr('data-cords-two');
+                var text = jQuery(this).attr('data-text');
+
                 var index = null;
                 for (var i = 0; i < window.coordsObjects.length; i++) {
-                    if (window.coordsObjects[i].text == textString) {
+                    if (window.coordsObjects[i].text == text && window.coordsObjects[i].coords[0] == firstNumber && window.coordsObjects[i].coords[1] == secondNumber) {
                         index = i;
                         break;
                     }
@@ -148,10 +152,13 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
                 window.temporaryCoordsObject = [];
                 window.temporaryCoordsObject.push(window.coordsObjects[index]);
                 ymaps.ready(initYMap);
+                //console.log($j(this).parent().html())
+                jQuery('.map_caption').html('Отделение на ' + jQuery(this).parent().find('h2').find('a.address').text());
             });
         });
 
     </script>
+    <div class="map_caption">Все отделения на карте</div>
     <div id="map" style="width:100%;height:430px;"></div>
 <?php if ($vars['params']->get('template.subcategory_teaser_text', 1) && strlen($text) > 0) : ?>
     <div class="subcategory-description"><?php echo $text; ?></div>
