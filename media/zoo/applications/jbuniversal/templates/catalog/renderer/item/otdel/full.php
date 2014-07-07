@@ -35,19 +35,26 @@ defined('_JEXEC') or die('Restricted access');
 
         jQuery('.how-to-go img').each(function(){
             jQuery(this).before('<div class="btn unactive">' + jQuery(this).attr('title') + '</div>');
-            jQuery(this).hide();
+            jQuery(this).wrap('<div>');
         });
+
+        jQuery('.how-to-go img').each(function(){
+            jQuery(this).parent().slideUp();
+        });
+
+        jQuery('.how-to-go .btn + div').css('padding-left', jQuery('.container').offset().left.toString() + 'px');
 
         jQuery('.how-to-go .btn').click(function(){
             if(jQuery(this).hasClass('active')){
                 jQuery(this).removeClass('active').addClass('unactive');
-                jQuery(this).next('img').slideUp(500);
+                jQuery(this).next().slideUp(500);
             }else{
                 jQuery(this).removeClass('unactive').addClass('active');
-                jQuery(this).next('img').slideDown(500);
+                jQuery(this).next().slideDown(500);
             }
         });
 
+        jQuery('.how-to-go').appendTo(jQuery('.container.only_text'));
     });
 </script>
 
