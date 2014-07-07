@@ -99,7 +99,7 @@ fieldset{
     -moz-box-shadow: 1px 0px 3px inset rgba(50, 50, 50, 0.75);
     -webkit-box-shadow: inset rgba(50, 50, 50, 0.74902) 1px 0px 3px;
     box-shadow: inset rgba(50, 50, 50, 0.74902) 1px 0px 3px;
-    height: 190px;
+    min-height: 115px;
     margin-bottom: 20px;
 }
 .container{
@@ -182,7 +182,7 @@ fieldset{
 }
 /**MENU**/
 .menu_container{
-    width:1010px;
+    width:1000px;
     margin: 0 auto;
 }
 .menu_container .menu, .submenu_container ul{
@@ -206,8 +206,8 @@ fieldset{
     background-image: url("../images/menu_separatotr_img.jpg");
     background-repeat: no-repeat;
     background-position: center right;
-    padding-right: 6px;
-    padding-left: 6px;
+    padding-right: 11px;
+    padding-left: 10px;
     vertical-align: top;
 }
 .menu_container .menu > li > a, .menu_container .menu > li > span{
@@ -223,6 +223,62 @@ fieldset{
 .menu_container .menu > li:first-child{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    padding-left: 13px;
+}
+#adress_and_uslugi #owl-example{
+    display: block;
+    width: 645px;
+    margin-bottom: 40px;
+}
+#adress_and_uslugi #owl-example .owl-controls.clickable{
+    position: absolute;
+    top: 50%;
+    margin: 0px;
+    width: 100%;
+    margin-top: -18px;
+}
+#adress_and_uslugi #for_all_pages .container #jbzoo .jbzoo-item.jbzoo-item-otdel.jbzoo-item-full.jbzoo-item-2 p{
+    width: 726px;
+    text-align: justify;
+    margin: 15px 0px;
+}
+#adress_and_uslugi #owl-example .owl-page span:hover{
+    background: url("../images/price_slider.png") no-repeat 0px -109px;
+}
+#adress_and_uslugi #owl-example .owl-page span{
+    background: url("../images/price_slider.png") no-repeat 0px -72px;
+    width: 28px;
+    opacity: 1;
+    height: 26px;
+}
+#adress_and_uslugi #owl-example .owl-page:first-child span:hover{
+    background: url("../images/price_slider.png") no-repeat 0px -35px;
+}
+#adress_and_uslugi #owl-example .owl-page:first-child span{
+    background: url("../images/price_slider.png") no-repeat 0px 0px;
+    width: 28px;
+    height: 26px;
+}
+#adress_and_uslugi #owl-example .owl-page:first-child{
+    left: 5px;
+}
+#adress_and_uslugi #owl-example .owl-page{
+    right: -95px;
+    position: absolute;
+    left: auto;
+}
+#adress_and_uslugi #owl-example .owl-wrapper-outer{
+    margin: 0px 50px;
+}
+#adress_and_uslugi #owl-example .owl-wrapper-outer .owl-item{
+    width: 194px!important;
+    margin-right: 25px;
+}
+#adress_and_uslugi #owl-example .owl-wrapper-outer .owl-item img{
+    max-width: 194px!important;
+    border-radius: 5px;
+    width: 100%;
+    height: 135px!important;
 }
 .last_menu_link{
     background: none;
@@ -1076,8 +1132,132 @@ fieldset{
     margin: 0 auto;
     clear: both;
 }
+.line{
+    position: absolute;
+    top: 30px;
+    height: 1px;
+    width: 681px;
+}
+
+#adress_and_uslugi #right_menu ul{
+    padding: 0px;
+    margin: 0px;
+}
+#adress_and_uslugi #right_menu ul li{
+    list-style-type: none;
+    width: 215px;
+    margin-bottom: 32px;
+    height: 30px;
+}
+#adress_and_uslugi #right_menu ul li a:hover:after{
+    background: url("../images/price_right_two.png") no-repeat 0px -35px;
+}
+#adress_and_uslugi #right_menu ul li a:after{
+    position: absolute;
+    left: 6px;
+    content: "";
+    background: url("../images/price_right_two.png") no-repeat 0px 0px;
+    height: 27px;
+    width: 25px;
+    top: 12px;
+}
+#adress_and_uslugi #right_menu p a:after{
+    background: url("../images/price_right_two.png") no-repeat 0px -243px;
+    height: 19px;
+    width: 15px;
+    content: "";
+    left: 10px;
+    position: absolute;
+}
+#adress_and_uslugi .tabs-container{
+    width: 726px!important;
+}
+#adress_and_uslugi .tabs-container .ymaps-map.ymaps-i-ua_js_yes{
+    width: auto!important;
+}
+.how-to-go{
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    line-height: 16px;
+    color: #5b5b5b;
+}
+.how-to-go .btn{
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    line-height: 38px;
+    font-weight: bold;
+}
+.how-to-go .btn:hover{
+    cursor: pointer;
+}
+.how-to-go .btn.unactive:after{
+    background: url("../images/price_up_down.png") no-repeat 0px 0px;
+    height: 26px;
+    width: 26px;
+    content: "";
+    left: 0px;
+    top: 7px;
+    position: absolute;
+}
+.how-to-go .btn.active:after{
+    background: url("../images/price_up_down.png") no-repeat 0px -34px;
+    height: 26px;
+    width: 26px;
+    content: "";
+    left: 0px;
+    top: 7px;
+    position: absolute;
+}
+#adress_and_uslugi #right_menu p{
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 0px;
+    width: auto!important;
+    top: 18px;
+}
+#adress_and_uslugi #right_menu p a{
+    font-size: 16px;
+    font-family: PT Sans, sans-serif;
+    color: #171717;
+    line-height: 20px;
+}
+#adress_and_uslugi #right_menu ul li:first-child a:after{
+    background: url("../images/price_right_two.png") no-repeat 0px -80px;
+}
+#adress_and_uslugi #right_menu ul li:first-child a:hover:after{
+    background: url("../images/price_right_two.png") no-repeat 0px -114px;
+}
+#adress_and_uslugi #right_menu ul li:last-child a:hover:after{
+    background: url("../images/price_right_two.png") no-repeat 0px -197px;
+}
+#adress_and_uslugi #right_menu ul li:last-child a:after{
+    background: url("../images/price_right_two.png") no-repeat 0px -159px;
+}
+#adress_and_uslugi #right_menu ul li a:hover{
+    color: #b20f00;
+}
+#adress_and_uslugi #right_menu ul li a{
+    font-size: 17px;
+    position: relative;
+    font-family: PT Sans, sans-serif;
+    color: #535353;
+    text-decoration: none;
+    padding: 10px 5px 10px 35px;
+    height: 100%;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    line-height: 16px;
+    background: url("../images/back_btn_right.png");
+}
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item{
-    display: inline-flex;
+    display: inline-block;
+    vertical-align: top;
     width: 448px;
     border: 1px solid #dedede;
     border-top: 2px solid #c70002;

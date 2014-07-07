@@ -78,13 +78,14 @@ defined('_JEXEC') or die('Restricted access');
                     </tr>
                 </table>
             </li>
-            <li class="row2">
+            <li class="row2 relative">
                 <table class="second_table">
                     <tr class="second_tr_first">
                         <td class="first_td">кровь/ моча/ кал</td>
                         <td class="second_td"><?php echo $this->renderPosition('grafik-mocha-kal-pn-pt'); ?></td>
                         <td class="third_td"><?php echo $this->renderPosition('grafik-mazki-pn-pt'); ?></td>
                     </tr>
+                    <hr class="line">
                     <tr class="second_tr">
                         <td class="first_td">мазки</td>
                         <td class="second_td"><?php echo $this->renderPosition('grafik-mocha-kal-sb-vs'); ?></td>
