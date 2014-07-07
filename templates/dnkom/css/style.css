@@ -8,7 +8,7 @@ body {
 }
 @font-face {
     font-family: "PT Sans";
-    src: url("../fonts/PTS55F.eot?") format("eot"),
+    src: url("../fonts/PTS55F.eot") format("eot"),
     url("../fonts/PTS55F.woff") format("woff"),
     url("../fonts/PTS55F.ttf") format("truetype"),
     url("../fonts/PTS55F.svg#PTSans-Regular") format("svg");
@@ -903,6 +903,10 @@ fieldset{
     text-decoration: none;
     padding-top: 10px;
 }
+.materials{
+    overflow: hidden;
+    padding-left: 38px;
+}
 /**NEWS**/
 .moduletablenews_bloc_module h3, .moduletablematerials_bloc_module h3{
     color: #171717;
@@ -920,7 +924,6 @@ fieldset{
 }
 .moduletablematerials_bloc_module h3{
     background: url("../images/materials.jpg") no-repeat center left;
-    margin-left: 470px;
 }
 .all_news_link a:hover, .all_materials_link a:hover{
     color: #b20f00;
