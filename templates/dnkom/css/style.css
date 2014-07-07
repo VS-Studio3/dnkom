@@ -1653,3 +1653,15 @@ fieldset{
 #novosti .article-info-term , #novosti .counter, .pagination-start, .pagination-end{
     display:none !important;
 }
+
+#adress_and_uslugi .container.only_text{
+    width:100%;
+}
+#adress_and_uslugi .container.only_text .btn{
+    margin: 0 auto;
+    width:1000px;
+}
+#adress_and_uslugi .container.only_text .btn + div{
+    width:100%;
+    background-color: black;
+}
