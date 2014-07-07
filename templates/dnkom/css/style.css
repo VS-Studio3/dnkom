@@ -1180,6 +1180,9 @@ fieldset{
     text-align: center;
     vertical-align: middle;
 }
+#main_page .container{
+    width: 1000px!important;
+}
 .table-grafic .third_td{
     width: 155px;
     text-align: center;
