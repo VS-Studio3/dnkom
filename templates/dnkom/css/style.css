@@ -228,7 +228,7 @@ fieldset{
 #adress_and_uslugi #owl-example{
     display: block;
     width: 645px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 #adress_and_uslugi #owl-example .owl-controls.clickable{
     position: absolute;
@@ -250,6 +250,13 @@ fieldset{
     width: 28px;
     opacity: 1;
     height: 26px;
+}
+.container.only_text{
+    padding: 0px;
+    margin-bottom: 40px;
+}
+.jbzoo{
+  margin-bottom: 0px;
 }
 #adress_and_uslugi #owl-example .owl-page:first-child span:hover{
     background: url("../images/price_slider.png") no-repeat 0px -35px;
@@ -1134,7 +1141,7 @@ fieldset{
 }
 .line{
     position: absolute;
-    top: 30px;
+    top: 39px;
     height: 1px;
     width: 681px;
 }
@@ -1272,6 +1279,7 @@ fieldset{
     font-size: 20px;
     color: #5b5b5b;
     line-height: 16px;
+    margin-bottom: 12px;
 }
 .table-grafic ul{
     padding: 0px;
@@ -1294,7 +1302,7 @@ fieldset{
 .btn_two{
     padding: 0px;
     margin: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .btn_two li{
     list-style-type: none;
@@ -1339,6 +1347,9 @@ fieldset{
     box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
     background: url("../images/yandex.png");
 }
+.second_table tr{
+    height: 44px;
+}
 .second_table .first_td{
     font-size: 16px;
     color: #5e5e5e;
@@ -1368,14 +1379,21 @@ fieldset{
     text-align: center;
     vertical-align: middle;
 }
+.table-grafic .row1{
+    margin: 17px 0px 9px;
+}
+.table-grafic .row3{
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
 .table-grafic{
     display: inline-flex;
     width: 684px;
     border: 1px solid #dedede;
     border-top: 2px solid #c70002;
     border-radius: 5px;
-    padding: 10px 20px;
-    margin: 0px 20px 25px 0px;
+    padding: 0px 20px;
+    margin: 0px 20px 30px 0px;
     -webkit-box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
     -moz-box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
     box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
@@ -1510,7 +1528,8 @@ fieldset{
 #adress_and_uslugi .title{
     font-size: 24px;
     color: #b20f00;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 #adress_and_uslugi .subcategory-title{
     text-align: center;
@@ -1663,5 +1682,22 @@ fieldset{
 }
 #adress_and_uslugi .container.only_text .btn + div{
     width:100%;
-    background-color: black;
+    background: url("../images/back_how.png");
+    -webkit-box-shadow: inset 0px 0px 3px rgba(209, 209, 209, 0.75);
+    -moz-box-shadow:    inset 0px 0px 3px rgba(209, 209, 209, 0.75);
+    box-shadow:         inset 0px 0px 3px rgba(209, 209, 209, 0.75);
+    margin-top: 2px;
+}
+.how-to-go .jbimage{
+    margin: 14px 0px;
+}
+.small_title{
+    font-size: 20px;
+    color: #5b5b5b;
+    line-height: 16px;
+    font-weight: bold;
+    margin: 28px 0px 15px;
+}
+.small_title.last{
+    margin: 0px 0px 0px 0px!important;
 }

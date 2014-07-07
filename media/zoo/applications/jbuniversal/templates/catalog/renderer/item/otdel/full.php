@@ -122,11 +122,11 @@ defined('_JEXEC') or die('Restricted access');
     </div>
 
     <?php echo $this->renderPosition('descr'); ?>
-
+    <div class="small_title">Наше отделение на фото</div>
     <div id="owl-example" class="owl-carousel">
         <?php echo $this->renderPosition('photo-otdel'); ?>
     </div>
-
+<div class="small_title last">Как пройти в это отделение?</div>
     <div class="how-to-go">
         <?php echo $this->renderPosition('how-to-go'); ?>
     </div>
