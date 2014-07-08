@@ -44,6 +44,7 @@ $task = $_GET['task'];
 <body  id="<?php echo $pageclass ? htmlspecialchars($pageclass) : 'default'; ?>" class="<?php echo $option.' '.$task. ' '. $view ; ?>">
 <img src="<?php echo $this->baseurl
 ?>/templates/<?php echo $this->template ?>/images/lines.png" alt="dnkom" class="lines"/>
+<div class="for_header">
 <div id="wrapper">
     <div id="header" class="header">
         <div class="logos-area">
@@ -69,7 +70,7 @@ $task = $_GET['task'];
 
     </div><!-- #middle-->
 </div><!-- #wrapper -->
-
+</div>
 <div class="width_100_monitor">
     <div class="container for_search">
         <jdoc:include type="modules" name="search_module" style="xhtml"/>
