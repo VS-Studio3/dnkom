@@ -5,9 +5,12 @@ body {
 	padding: 0;
 	margin: 0;
 	color: #909090;
-    min-height: 100%;
+    height: 100%;
 }
-
+html {
+    position:relative;
+    min-height:100%;
+}
 a {
 	color: #22b24c;
 	outline: none;
@@ -82,6 +85,8 @@ fieldset{
     -moz-box-shadow: inset rgba(163, 163, 163, 0.74902) 1px 0px 3px;
     -webkit-box-shadow: inset rgba(163, 163, 163, 0.74902) 1px 0px 3px;
     box-shadow: inset rgba(163, 163, 163, 0.74902) 1px 0px 3px;
+    position: absolute;
+    bottom: 0;
 }
 #footer .numder_phone.tel:after{
     background: none;
@@ -210,6 +215,13 @@ fieldset{
     padding-right: 9px;
     padding-left: 8px;
     vertical-align: top;
+    padding-left: 9px\0/!important;
+    padding-right: 9px\0/!important;
+}
+@-moz-document url-prefix() {
+    .menu_container .menu > li{
+        padding-left: 9px;
+}
 }
 .menu_container .menu > li > a, .menu_container .menu > li > span{
     color:black;
@@ -1411,7 +1423,7 @@ fieldset{
     vertical-align: middle;
 }
 .table-grafic .second_td{
-    width: 139px;
+    width: 140px;
     text-align: center;
     vertical-align: middle;
 }
