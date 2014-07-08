@@ -33,8 +33,8 @@ $imageAlign = $item->params->get('template.item_teaser_image_align', 'left');
     <?php if ($this->checkPosition('title')) {?>
 	<h3 class="title"><?php echo $this->renderPosition('title');?></h3>
 <?php } ?>
-    <?php if ($this->checkPosition('text')) { ?>
-    <div class="text"><?php echo $this->renderPosition('text');?></div>
+    <?php if ($this->checkPosition('short-text')) { ?>
+    <div class="text"><?php echo $this->renderPosition('short-text');?></div>
 <?php } ?>
 </div>
 

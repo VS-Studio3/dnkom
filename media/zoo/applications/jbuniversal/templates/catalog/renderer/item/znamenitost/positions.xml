@@ -5,7 +5,7 @@
         <position name="name">Name</position>
 		<position name="image">Image</position>
 		<position name="job">Job</position>
-		<position name="text">Text</position>
+		<position name="short-text">Краткий текст</position>
 	</positions>
 
     <positions layout="full">

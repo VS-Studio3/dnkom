@@ -5,11 +5,6 @@ body {
 	padding: 0;
 	margin: 0;
 	color: #909090;
-    height: 100%;
-}
-html {
-    position:relative;
-    min-height:100%;
 }
 a {
 	color: #22b24c;
@@ -85,8 +80,6 @@ fieldset{
     -moz-box-shadow: inset rgba(163, 163, 163, 0.74902) 1px 0px 3px;
     -webkit-box-shadow: inset rgba(163, 163, 163, 0.74902) 1px 0px 3px;
     box-shadow: inset rgba(163, 163, 163, 0.74902) 1px 0px 3px;
-    position: absolute;
-    bottom: 0;
 }
 #footer .numder_phone.tel:after{
     background: none;
@@ -1120,11 +1113,17 @@ fieldset{
     padding: 0px;
     margin: 0px;
 }
+#right_menu .menu li a:hover{
+    color: #b20f00;
+}
 #right_menu .menu li{
     list-style-type: none;
     width: 215px;
     margin-bottom: 32px;
     height: 30px;
+}
+#right_menu .menu li a:hover:after{
+    background: url("../images/price_active_right.png") no-repeat 0px 0px;
 }
 #right_menu .menu li a:after{
     position: absolute;
@@ -1135,6 +1134,9 @@ fieldset{
     width: 24px;
     top: 18px;
 }
+#right_menu .menu li:first-child a:hover:after{
+    background: url("../images/price_active_right.png") no-repeat 0px -33px;
+}
 #right_menu .menu li:first-child a:after{
     background: url("../images/question.png");
 }
@@ -1142,6 +1144,9 @@ fieldset{
     background: url("../images/address.png");
     width: 15px;
     left: 10px;
+}
+#right_menu .menu li:last-child a:hover:after{
+    background: url("../images/price_active_right.png") no-repeat 0px -66px;
 }
 #right_menu .menu li a{
     font-size: 18px;
@@ -1318,6 +1323,13 @@ fieldset{
     line-height: 16px;
     background: url("../images/back_btn_right.png");
 }
+.map_caption{
+    font-size: 20px;
+    color: #262626;
+    font-family: 'PT Sans', sans-serif;
+    line-height: 11px;
+    margin-bottom: 10px;
+}
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item{
     display: inline-block;
     vertical-align: top;
@@ -1330,6 +1342,7 @@ fieldset{
     -webkit-box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
     -moz-box-shadow:    0px 0px 3px rgba(209, 209, 209, 0.75);
     box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
+    min-height: 212px;
 }
 #adress_and_uslugi .address{
     font-size: 20px;
@@ -1381,7 +1394,9 @@ fieldset{
     box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
 }
 .btn_two .yandex a:hover,
-.btn_two .proezd a:hover{
+.btn_two .proezd a:hover,
+.btn_two .yandex a.activeButton,
+.btn_two .proezd a.activeButton{
     cursor: pointer;
     color: #b20f00;
     background: url("../images/proezd.png");
@@ -1531,6 +1546,7 @@ fieldset{
     display: inline-block;
     line-height: 16px;
     color: #5e5e5e;
+    vertical-align: top;
 }
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .uzi a,
 #adress_and_uslugi .jbzoo-item.jbzoo-item-otdel.jbzoo-item-subcategory_item .otdel .ekg a,
@@ -1612,9 +1628,9 @@ fieldset{
     font-size: 18px;
     color: #ffffff;
     font-weight: normal;
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(163, 163, 163, 0.75);
+    -moz-box-shadow:    0px 2px 2px 0px rgba(163, 163, 163, 0.75);
+    box-shadow:         0px 2px 2px 0px rgba(163, 163, 163, 0.75);
     padding: 4px 10px;
     background-color: #b20f00;
     border-radius: 5px;

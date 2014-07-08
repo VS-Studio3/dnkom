@@ -27,6 +27,7 @@ defined('_JEXEC') or die('Restricted access');
                 jQuery('#yamap-tab').hide();
                 jQuery('#schema-tab').show();
             }
+            return false
         });
 
         jQuery("#owl-example").owlCarousel({
