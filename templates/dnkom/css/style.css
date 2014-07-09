@@ -211,6 +211,17 @@ fieldset{
     padding-left: 9px\0/!important;
     padding-right: 9px\0/!important;
 }
+.active_menu_link,
+.menu_container .menu > li.active{
+    background : none !important;
+    background-color : #b20f00 !important;
+    color : white !important;
+    border-top : 3px solid white !important;
+}
+.active_menu_link span,
+.menu_container .menu > li.active a{
+    color:white !important;
+}
 @-moz-document url-prefix() {
     .menu_container .menu > li{
         padding-left: 9px;
@@ -334,15 +345,7 @@ fieldset{
     text-decoration: underline;
     vertical-align: middle;
 }
-.active_menu_link{
-    background : none !important;
-    background-color : #b20f00 !important;
-    color : white !important;
-    border-top : 3px solid white !important;
-}
-.active_menu_link span{
-    color:white !important;
-}
+
 /****/
 .left_block{
     width: 320px;
@@ -1016,7 +1019,7 @@ fieldset{
 .blognovosti h2{
     line-height: 14px;
     margin: 0px;
-    margin-left: 15px;
+    margin-left: 5px;
     display: inline;
     font-weight: normal;
 }
@@ -1111,7 +1114,10 @@ fieldset{
 }
 #right_menu .menu{
     padding: 0px;
-    margin: 0px;
+    margin: 0px 0px 67px 0px;
+}
+.moduletablebaner p{
+    margin-bottom: 6px;
 }
 #right_menu .menu li a:hover{
     color: #b20f00;
@@ -1669,10 +1675,10 @@ fieldset{
 }
 
 
-.jbzoo-item-znamenitost{
+.column.rborder.width100{
     border-bottom: 1px dotted #c7c7c7;
 }
-.jbzoo-item-znamenitost:last-child{
+.column.rborder.width100:last-child{
     border-bottom: none;
     margin: 0px!important;
 }
