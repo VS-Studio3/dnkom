@@ -148,7 +148,7 @@ echo $parametr;
 
 
 <script type="text/javascript">
-jQuery(document).ready(function(){
+/*jQuery(document).ready(function(){
 jQuery('#jlgrouppro a:first').tab('show');
-});
+});*/
 </script>

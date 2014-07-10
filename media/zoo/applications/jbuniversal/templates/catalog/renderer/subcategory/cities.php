@@ -108,7 +108,9 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
             // Получим ссылку на провайдер пробок "Сейчас" и включим показ инфоточек.
             trafficControl.getProvider('traffic#actual').state.set('infoLayerShown', true);
 
-            myCollection = new ymaps.GeoObjectCollection();
+            myCollection = new ymaps.GeoObjectCollection({},{
+			preset: 'twirl#redIcon'
+			});
 
             for (var i = 0, l = myPoints.length; i < l; i++) {
                 var point = myPoints[i];
@@ -120,13 +122,15 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
             }
 
             myMap.geoObjects.add(myCollection);
-            myMap.controls.add('zoomControl').add('mapTools');
+            myMap.controls.add('zoomControl').add('mapTools').add('typeSelector');
         }
 
         ymaps.ready(initYMap);
 
 
         jQuery(function () {
+		
+		var toppos = jQuery('.map_caption').offset().top - 40;
 
             jQuery('.show_all_territories button').click(function () {
                 jQuery('#map').html('');
@@ -134,6 +138,11 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
                 window.temporaryCoordsObject = window.coordsObjects.slice();
                 ymaps.ready(initYMap);
                 jQuery('.map_caption').html('Все отделения на карте');
+				
+				jQuery('body, html').animate({
+					scrollTop: toppos
+				}, 800);
+				
             });
 
             jQuery('a.show_map').click(function () {
@@ -154,6 +163,10 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
                 ymaps.ready(initYMap);
                 //console.log($j(this).parent().html())
                 jQuery('.map_caption').html('Отделение на ' + jQuery(this).parent().find('h2').find('a.address').text());
+				
+				jQuery('body, html').animate({
+					scrollTop: toppos
+				}, 800);
             });
         });
 

@@ -45,7 +45,7 @@ if ($vars['count']) {
     }
 
     echo '</div>';
-    echo '<div class="clear clr"></div>';
+    //echo '<div class="clear clr"></div>';
 
 }
 

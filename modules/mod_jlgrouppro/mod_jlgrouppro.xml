@@ -88,5 +88,5 @@
 		</fieldset>
      </fields>
 	</config>
-	<updateservers><server type="extension" priority="1" name="Joomline">http://joomlamoduli.ru/</server></updateservers>
+	<!--updateservers><server type="extension" priority="1" name="Joomline">http://joomlamoduli.ru/</server></updateservers-->
 </extension>

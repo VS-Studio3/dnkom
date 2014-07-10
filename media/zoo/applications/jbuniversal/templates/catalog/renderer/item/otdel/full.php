@@ -38,7 +38,8 @@ defined('_JEXEC') or die('Restricted access');
             jQuery(this).before('<div class="btn unactive">' + jQuery(this).attr('title') + '</div>');
             jQuery(this).wrap('<div class="wr1"><div class="wr2"></div></div>');
         });
-
+		jQuery('#footer').before(jQuery('.how-to-go'));
+		
         jQuery('.how-to-go img').each(function(){
             //jQuery(this).parent().slideUp();
         });

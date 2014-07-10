@@ -37,19 +37,21 @@ $task = $_GET['task'];
     <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/owl-carousel/owl.theme.css" />
     <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/owl-carousel/owl.carousel.js"></script>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/jquery.fancybox.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/fancyBox/source/jquery.fancybox.pack.js"></script>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+
+<script src="<?php echo $this->baseurl ?>/templates/dnkom/js/scripts.js" type="text/javascript"></script>
 </head>
 <body  id="<?php echo $pageclass ? htmlspecialchars($pageclass) : 'default'; ?>" class="<?php echo $option.' '.$task. ' '. $view ; ?>">
-<img src="<?php echo $this->baseurl
-?>/templates/<?php echo $this->template ?>/images/lines.png" alt="dnkom" class="lines"/>
+
 <div class="for_header">
 <div id="wrapper">
     <div id="header" class="header">
         <div class="logos-area">
             <a href="<?php echo $this->baseurl ?>" class="logo">
-                <jdoc:include type="modules" name="header_logo" style="xhtml"/>
+                <jdoc:include type="modules" name="header_logo"/>
             </a>
         </div>
         <jdoc:include type="modules" name="header_content" style="xhtml"/>
@@ -141,9 +143,11 @@ $task = $_GET['task'];
         </div>
     </div>
 <?php endif; ?>
+<?php if ($this->countModules( 'description_module' )) : ?>
     <div class="container only_text">
         <jdoc:include type="modules" name="description_module" style="xhtml"/>
     </div>
+	<?php endif; ?>
     <div id="footer" class="footer">
 		<jdoc:include type="modules" name="footer" style="xhtml"/>
     <div class="container">
@@ -156,7 +160,7 @@ $task = $_GET['task'];
         <div class="footer_menu">
             <jdoc:include type="modules" name="menu_polovie" style="xhtml"/>
         </div>
-        <div class="footer_menu absolute">
+        <div class="footer_menu last">
             <jdoc:include type="modules" name="social-tabs" style="xhtml"/>
         </div>
     </div>
@@ -184,50 +188,6 @@ $task = $_GET['task'];
 	</div>
 </div>
 
-<script src="<?php echo $this->baseurl ?>/templates/dnkom/js/scripts.js" type="text/javascript"></script>
-<script type="text/javascript">
 
-    jQuery(function(){
-            jQuery('.calls a').fancybox({
-                width: 300,
-                height: 350,
-                autoSize : false,
-                fitToView : false,
-                maxWidth : '100%'
-            });
-
-        /**SLIDER**/
-        if(jQuery('.nivo-directionNav') != null){
-            var sliderShow = function(){
-                jQuery('.nivo-directionNav').show();
-            }
-            sliderShow();
-            jQuery('.nivo-slider-wrapper').hover(function(){
-                sliderShow();
-            });
-        }
-
-        /**MAIN MENU**/
-        jQuery('#top_menu .menu > li:last-child').css({'background' : 'none', 'background-color' : 'white',
-            'border-top-right-radius' : '5px', 'border-bottom-right-radius' : '5px'});
-        jQuery('.menu > li > span').click(function(){
-            jQuery('.submenu_container').html(jQuery(this).next('ul').clone());
-            jQuery('.menu > li').removeClass('active_menu_link');
-            jQuery(this).parent().addClass('active_menu_link');
-            return false;
-        });
-
-        function msieversion() {
-            var ua = window.navigator.userAgent;
-            var msie = ua.indexOf("MSIE ");
-            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) return true;
-            else return false;
-        }
-
-        if(msieversion()) {
-            jQuery('.menu_container .menu > li').css({'padding-right' : '6px', 'padding-left' : '5px'});
-        }
-    });
-</script>
 </body>
 </html>
