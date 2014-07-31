@@ -45,6 +45,7 @@ $task = $_GET['task'];
 
 
 <script src="<?php echo $this->baseurl ?>/templates/dnkom/js/scripts.js" type="text/javascript"></script>
+<script src="<?php echo $this->baseurl ?>/templates/dnkom/js/underscore.js" type="text/javascript"></script>
 </head>
 <body  id="<?php echo $pageclass ? htmlspecialchars($pageclass) : 'default'; ?>" class="<?php echo $option.' '.$task. ' '. $view ; ?>">
 
@@ -91,7 +92,11 @@ $task = $_GET['task'];
 
 
     <div class="container">
+        <?php if (($option == 'com_zoo' && $task == 'category') || ($option == 'com_zoo' && $task == 'filter')): ?>
+        <jdoc:include type="modules" name="sort-mod" style="xhtml"/>
+        <?php endif; ?>
         <jdoc:include type="component" />
+        
 
         <?php if ($option == 'com_content' && $view == 'article') : ?>
             <jdoc:include type="modules" name="link-news" style="xhtml"/>
