@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<renderer>
+
+    <positions layout="full">
+        <position name="title">Название анализа</position>
+        <position name="price">Цена в руб.</position>
+        <position name="srok">Срок исполнения</position>
+        <position name="proizvoditel">Производитель реактивов</position>
+        <position name="code">Код</position>
+        <position name="biomaterialy">Биоматериалы</position>
+        <position name="description_issledovalie">Описание исследования</position>
+        <position name="podgotovka">Подготовка к иследованию</position>
+        
+        <position name="related2">related2</position>
+    </positions>
+    
+    <positions layout="teaser">
+        <position name="title">Название анализа</position>
+        <position name="price">Цена в руб.</position>
+        <position name="srok">Срок исполнения</position>
+        <position name="proizvoditel">Производитель реактивов</position>
+        <position name="code">Код</position>
+    </positions>
+
+    <positions layout="subcategory_item">
+        <position name="title">Название анализа</position>
+    </positions>
+    
+    <positions layout="related2">
+         <position name="title">Название анализа</position>
+        <position name="price">Цена в руб.</position>
+        <position name="srok">Срок исполнения</position>
+        <position name="proizvoditel">Производитель реактивов</position>
+        <position name="code">Код</position>
+    </positions>
+
+</renderer>

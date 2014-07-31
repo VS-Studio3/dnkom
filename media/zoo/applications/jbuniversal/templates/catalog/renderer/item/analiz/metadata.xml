@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+
+    <layout name="full">
+        <name>Full</name>
+        <description>Full</description>
+    </layout>
+    
+    <layout name="teaser">
+        <name>teaser</name>
+        <description>teaser</description>
+    </layout>
+
+    <layout name="subcategory_item">
+        <name>Subcategory Item</name>
+        <description>Subcategory Item</description>
+    </layout>
+    
+     <layout name="related2" type="related">
+        <name>related2</name>
+        <description>related2</description>
+    </layout>
+
+</metadata>

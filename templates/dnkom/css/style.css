@@ -1896,3 +1896,6 @@ box-shadow: inset rgba(163, 163, 163, 0.74902) 1px 0px 3px;
 	margin: 0 !important;
 	box-sizing: border-box;
 }
+#ogranicheniya{
+    display:none;
+}
