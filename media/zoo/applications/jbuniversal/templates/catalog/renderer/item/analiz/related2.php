@@ -1,4 +1,4 @@
-<div class="inner">
+<div class="iner_for_other">
     <div>
         <?php if ($this->renderPosition('code')): ?>
             <?php echo $this->renderPosition('code'); ?>
