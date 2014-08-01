@@ -55,8 +55,13 @@ defined('_JEXEC') or die('Restricted access');
                     <?php endif; ?>      
                 </div>
 
-                <div>
-                    <input type="checkbox" id="calculator">
+                <?php if ($this->renderPosition('skidka')): ?>
+                    <div skidka="<?php echo $this->renderPosition('skidka'); ?>">
+                <?php endif; ?>  
+                <?php if (!$this->renderPosition('skidka')): ?>
+                        <div>
+                <?php endif; ?>
+                            <input type="checkbox" id="calculator" title="<?php echo $this->renderPosition('price'); ?>|<?php echo $this->renderPosition('code'); ?>">
                 </div>
             </div>
         </div>
@@ -71,7 +76,7 @@ defined('_JEXEC') or die('Restricted access');
     <?php endif; ?>
 
     <div class="add-to-calculator">Добавить в калькулятор</div>
-<div style="clear: both"></div>
+    <div style="clear: both"></div>
     <button class="opisaniye">Описание исследования</button>
     <button class="podgotovka">Подготовка к иследованию</button>
     <div class="opisaniye_text">
@@ -106,8 +111,8 @@ defined('_JEXEC') or die('Restricted access');
         for (var i = 0; i < biomaterialList.length; i++) {
             var separates = biomaterialList[i].split('-');
             jQuery('.biomaterialy .list').append('<div class="lines_bottom"><div class="material">' + separates[0] +
-                '</div><div>' +
-                separates[1] + '<span class="required"></span>руб.</div></div>');
+                    '</div><div>' +
+                    separates[1] + '<span class="required"></span>руб.</div></div>');
         }
 
         jQuery('.podgotovka_text').hide();

@@ -48,14 +48,72 @@ jQuery(function() {
     if (jQuery('body').has('div#category_list_parameters').length > 0) {
         //Вставляем разметку формы калькулятора
         jQuery('#right_menu .moduletable').prepend(getCalculatorHTML());
-        
+
         //Считываем куки калькулятора
         var calculatorCookie = CookieObject.find('calculatorCookie');
-        if(calculatorCookie == null){
+        var countOfAnalizes = 0;
+        var summa = 0;
+        var analizesList = '';
+
+        if (calculatorCookie == null) {
             jQuery('#calculator .count_of_analiz span').html('0');
             jQuery('#calculator .summa span').html('0 руб.');
         }
-        
+        else {
+            var cookieSpliters = calculatorCookie.split('|');
+            countOfAnalizes = cookieSpliters[0];
+            summa = cookieSpliters[1];
+
+            jQuery('#calculator .count_of_analiz span').html(countOfAnalizes);
+            jQuery('#calculator .summa span').html(summa + ' руб.');
+
+            if (cookieSpliters.length == 3) {
+                analizesList = cookieSpliters[2];
+                
+                jQuery('.item_object').each(function() {
+                    if (analizesList.indexOf(jQuery.trim(jQuery(this).find('div:eq(0)').text())) != -1) {
+                        jQuery(this).find('input').prop('checked', true);
+                    }
+                });
+            }
+        }
+
+        //События по клику на чекбокс
+        jQuery('input:checkbox').click(function() {
+            var title = jQuery.trim(this.title).replace(' ', '');
+            var currentSumma = title.substr(0, title.indexOf('|'));
+            var currentCode = title.substr(title.indexOf('|') + 1);
+
+            var generalPrice = jQuery.trim(jQuery('#calculator .summa span').text());
+            generalPrice = parseFloat(generalPrice.substr(0, generalPrice.indexOf(' ')).replace(',', '.'));
+
+            var currentCountOfAnalizes = parseFloat(jQuery.trim(jQuery('#calculator .count_of_analiz span').text()));
+
+            if (this.checked) {
+                //Добавляем в калькулятор
+                generalPrice += parseFloat(currentSumma);
+                currentCountOfAnalizes++;
+                if(analizesList.indexOf(currentCode) == -1){
+                    analizesList += currentCode + ',';
+                }
+            }
+            else {
+                //Удаляем с калькулятора
+                generalPrice -= parseFloat(currentSumma);
+                currentCountOfAnalizes--;
+                if(analizesList.indexOf(currentCode) != -1){
+                    analizesList = analizesList.replace(currentCode + ',', '');
+                }
+            }
+            jQuery('#calculator .summa span').html(generalPrice + ' руб.');
+            jQuery('#calculator .count_of_analiz span').html(currentCountOfAnalizes);
+
+            //Сохраняем количество анализов и общую цену в cookie
+            var cookie = "calculatorCookie=value1|value2|value3".replace('value1', currentCountOfAnalizes).replace('value2', generalPrice).replace('value3', analizesList).replace(' ', '');
+            document.cookie = cookie;
+        });
+
+
         jQuery('.jbzoo-filter.filter-default').hide();
         jQuery('.items.items-col-1').after('<div class="navigation_and_sort">' + jQuery('.navigation_and_sort').clone().html() + '</div>');
         jQuery('.navigation_and_sort:eq(1)').after('<dic class="description_text">' + jQuery('.description-full').html() + '</div>');
@@ -196,7 +254,6 @@ jQuery(function() {
             jQuery('.submenu_container').html(jQuery(this).find('ul').clone());
         }
     });
-
 
     jQuery('#top_menu .menu > li > span').click(function() {
         jQuery('.submenu_container').html(jQuery(this).next('ul').clone());
