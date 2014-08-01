@@ -69,6 +69,29 @@ jQuery(function() {
             jQuery('.jbzoo-filter.filter-default input').click();
         });
     }
+    
+    /*Подготовка к анализам*/
+    if (jQuery('body').attr('id') == 'podgotovka_k_analizam') {
+        jQuery('.jbzoo.jbzoo-view-frontpage').after('<div class="nav"><div>Подготовка к анализам</div><div class="item_list"><ul></ul></div></div>' +
+                    '<dic class="description_wrapper"><div class="title"></div><div class="description"></div></div>');
+            
+        jQuery('.analiz').each(function(){
+            var listElement = jQuery(this).find('.grup').text();
+            jQuery('.nav .item_list ul').append('<li>' + listElement + '</li>');
+        });
+        
+        jQuery('.nav .item_list ul li').click(function(){
+            var grupName = jQuery(this).text();
+            jQuery('.analiz').each(function(){
+                if(grupName == jQuery(this).find('.grup').text()){
+                    jQuery('.description_wrapper .title').html(jQuery(this).find('.title').clone().text());
+                    jQuery('.description_wrapper .description').html(jQuery(this).find('.opisanie').clone().text());
+                }
+            });
+        });
+        
+       // jQuery('.jbzoo.jbzoo-view-frontpage').hide();
+    }
 
     /*Анализы на дому*/
     if (jQuery('body').attr('id') == 'analizy_na_domu') {

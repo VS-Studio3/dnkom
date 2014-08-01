@@ -95,6 +95,8 @@ $task = $_GET['task'];
         <?php if (($option == 'com_zoo' && $task == 'category') || ($option == 'com_zoo' && $task == 'filter')): ?>
         <jdoc:include type="modules" name="sort-mod" style="xhtml"/>
         <?php endif; ?>
+        
+        <jdoc:include type="modules" name="podgotovka-left-menu" style="xhtml"/>
         <jdoc:include type="component" />
         
 
