@@ -2291,6 +2291,9 @@ h1.title{
 #analiz_categories .rborder:first-child{
     margin-left: 0px;
 }
+.jbzoo-tmpl-catalog h1{
+    margin-bottom: 205px;
+}
 #analiz_categories .subcategory .subcategory-items{
     margin-right: 0px !important;
 }
