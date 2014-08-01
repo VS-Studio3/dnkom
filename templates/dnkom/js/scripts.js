@@ -2,6 +2,16 @@ jQuery(function() {
 
     jQuery('.calls a').fancybox();
 
+    function getCalculatorHTML() {
+        return '<div id="calculator"><div class="calc_title">КАЛЬКУЛЯТОР</div>' +
+                '<div class="count_of_analiz">Анализов: <span></span></div>' +
+                '<div class="add">Добавить исследование к расчету</div><div class="separator"></div>' +
+                '<div class="summa">Сумма: <span></span></div>' +
+                '<div class="skidka">Скидка: <span></span></div><div class="separator">' +
+                '<div class="itogo">Итого: <span></span></div><div class="clear">Очистить форму</div>' +
+                '<div class="count_order">Расчитать заказ</div></div>';
+    }
+
     CookieObject = {
         findAll: function() {
             var cookies = {};
@@ -36,6 +46,16 @@ jQuery(function() {
 
     /*Калькулятор*/
     if (jQuery('body').has('div#category_list_parameters').length > 0) {
+        //Вставляем разметку формы калькулятора
+        jQuery('#right_menu .moduletable').prepend(getCalculatorHTML());
+        
+        //Считываем куки калькулятора
+        var calculatorCookie = CookieObject.find('calculatorCookie');
+        if(calculatorCookie == null){
+            jQuery('#calculator .count_of_analiz span').html('0');
+            jQuery('#calculator .summa span').html('0 руб.');
+        }
+        
         jQuery('.jbzoo-filter.filter-default').hide();
         jQuery('.items.items-col-1').after('<div class="navigation_and_sort">' + jQuery('.navigation_and_sort').clone().html() + '</div>');
         jQuery('.navigation_and_sort:eq(1)').after('<dic class="description_text">' + jQuery('.description-full').html() + '</div>');
@@ -64,33 +84,33 @@ jQuery(function() {
                 '<div>Добавить в калькулятор</div></div>');
 
         jQuery('.items.items-col-1').after('<div class="navigation_and_sort">' + jQuery('.navigation_and_sort').clone().html() + '</div><div class="description_text">' + categoryDescription + '</div>');
-        
+
         jQuery('.navigation_and_sort .sort').click(function() {
             jQuery('.jbzoo-filter.filter-default input').click();
         });
     }
-    
+
     /*Подготовка к анализам*/
     if (jQuery('body').attr('id') == 'podgotovka_k_analizam') {
         jQuery('.jbzoo.jbzoo-view-frontpage').after('<div class="nav"><div>Подготовка к анализам</div><div class="item_list"><ul></ul></div></div>' +
-                    '<dic class="description_wrapper"><div class="title"></div><div class="description"></div></div>');
-            
-        jQuery('.analiz').each(function(){
+                '<dic class="description_wrapper"><div class="title"></div><div class="description"></div></div>');
+
+        jQuery('.analiz').each(function() {
             var listElement = jQuery(this).find('.grup').text();
             jQuery('.nav .item_list ul').append('<li>' + listElement + '</li>');
         });
-        
-        jQuery('.nav .item_list ul li').click(function(){
+
+        jQuery('.nav .item_list ul li').click(function() {
             var grupName = jQuery(this).text();
-            jQuery('.analiz').each(function(){
-                if(grupName == jQuery(this).find('.grup').text()){
+            jQuery('.analiz').each(function() {
+                if (grupName == jQuery(this).find('.grup').text()) {
                     jQuery('.description_wrapper .title').html(jQuery(this).find('.title').clone().text());
                     jQuery('.description_wrapper .description').html(jQuery(this).find('.opisanie').clone().text());
                 }
             });
         });
-        
-       // jQuery('.jbzoo.jbzoo-view-frontpage').hide();
+
+        // jQuery('.jbzoo.jbzoo-view-frontpage').hide();
     }
 
     /*Анализы на дому*/
