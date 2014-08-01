@@ -2285,12 +2285,11 @@ h1.title{
     margin-top: 10px;
 }
 #analiz_categories .rborder{
-    margin-left: 25px;
+    margin-left: 10px;
+    margin-right: 9px;
     width: 152px;
 }
-#analiz_categories .rborder:first-child{
-    margin-left: 0px;
-}
+
 #analiz_categories .subcategory .subcategory-items{
     margin-right: 0px !important;
 }
