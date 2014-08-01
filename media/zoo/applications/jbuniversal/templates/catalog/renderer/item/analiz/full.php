@@ -12,7 +12,8 @@ defined('_JEXEC') or die('Restricted access');
 <div id="category_list_parameters"></div>
 <div id="full_analiz">
     <h1><?php echo $this->renderPosition('title'); ?></h1>
-    <a href="<?php echo JURI::base(); ?>index.php/2014-06-25-06-27-00/2014-06-25-06-37-56">Вернуться назад</a>
+    <a class="back" href="<?php echo JURI::base(); ?>index.php/2014-06-25-06-27-00/2014-06-25-06-37-56">Вернуться
+        назад</a>
 
     <div class="full_description">
         <div>Код</div>
@@ -70,7 +71,7 @@ defined('_JEXEC') or die('Restricted access');
     <?php endif; ?>
 
     <div class="add-to-calculator">Добавить в калькулятор</div>
-
+<div style="clear: both"></div>
     <button class="opisaniye">Описание исследования</button>
     <button class="podgotovka">Подготовка к иследованию</button>
     <div class="opisaniye_text">
@@ -104,7 +105,9 @@ defined('_JEXEC') or die('Restricted access');
         jQuery('.biomaterialy .list').empty();
         for (var i = 0; i < biomaterialList.length; i++) {
             var separates = biomaterialList[i].split('-');
-            jQuery('.biomaterialy .list').append('<div class="material">' + separates[0] + '</div><div>' + separates[1] + '<span class="required"></span>руб.</div>');
+            jQuery('.biomaterialy .list').append('<div class="lines_bottom"><div class="material">' + separates[0] +
+                '</div><div>' +
+                separates[1] + '<span class="required"></span>руб.</div></div>');
         }
 
         jQuery('.podgotovka_text').hide();

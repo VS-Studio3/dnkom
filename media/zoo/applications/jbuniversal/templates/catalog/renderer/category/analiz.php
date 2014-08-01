@@ -67,7 +67,7 @@ if ((int) $vars['params']->get('template.category_show', 1)) :
         <?php endif; ?>
     </div>
 <?php endif; ?>
-
+<div class="lines_full_description">
 <div class="full_description">
     <div>Код</div>
     <div>Наименование</div>
