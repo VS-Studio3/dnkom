@@ -27,18 +27,49 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="full.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/otdel/full.php">
+        <entry file="file://$PROJECT_DIR$/../../../domovenok/media/zoo/applications/jbuniversal/templates/catalog/renderer/item/product/full.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="11" selection-start="1043" selection-end="1043" vertical-scroll-proportion="-16.115385" vertical-offset="125" max-vertical-offset="2380">
+            <state line="73" column="0" selection-start="2192" selection-end="2192" vertical-scroll-proportion="-5.5686274" vertical-offset="957" max-vertical-offset="2584">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../../domovenok/templates/domovenok/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2329" column="30" selection-start="55561" selection-end="55561" vertical-scroll-proportion="-10.68" vertical-offset="39326" max-vertical-offset="40443">
+            <state line="161" column="34" selection-start="7138" selection-end="7138" vertical-scroll-proportion="0.65181714" vertical-offset="2096" max-vertical-offset="5967">
+              <folding>
+                <element signature="n#style#0;n#jdoc:include#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#jdoc:include#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#jdoc:include#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#jdoc:include#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#jdoc:include#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#jdoc:include#0;n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#jdoc:include#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#jdoc:include#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#jdoc:include#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1406881553093" expanded="true" signature="2057:2299" placeholder="..." />
+                <marker date="1406881553093" expanded="true" signature="2250:2287" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="positions.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../domovenok/media/zoo/applications/jbuniversal/templates/catalog/renderer/item/product/positions.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="47" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="metadata.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../domovenok/media/zoo/applications/jbuniversal/templates/catalog/renderer/item/product/metadata.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="58" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -47,14 +78,8 @@
       <file leaf-file-name="full.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/analiz/full.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="9" selection-start="685" selection-end="685" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="1360">
-              <folding>
-                <element signature="tag#div#6;tag#div#0;tag#div#1" expanded="false" />
-                <element signature="e#2235#2592#0" expanded="false" />
-                <element signature="n#style#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-                <element signature="tag#div#4;tag#div#1" expanded="false" />
-                <element signature="tag#div#5;tag#div#1" expanded="false" />
-              </folding>
+            <state line="18" column="9" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2210">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,7 +87,7 @@
       <file leaf-file-name="_default.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/subcategory_columns/_default.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="816">
+            <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
@@ -71,16 +96,16 @@
       <file leaf-file-name="analiz.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/category/analiz.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="19" selection-start="2846" selection-end="2846" vertical-scroll-proportion="-23.0" vertical-offset="422" max-vertical-offset="1326">
+            <state line="69" column="19" selection-start="2846" selection-end="2846" vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="1479">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analizy_razdely.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="analizy_razdely.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/subcategories/analizy_razdely.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="71" selection-start="501" selection-end="501" vertical-scroll-proportion="0.11617312" vertical-offset="0" max-vertical-offset="878">
+            <state line="15" column="71" selection-start="501" selection-end="501" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="629">
               <folding />
             </state>
           </provider>
@@ -98,16 +123,7 @@
       <file leaf-file-name="related2.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/analiz/related2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="680">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="0" selection-start="3809" selection-end="3809" vertical-scroll-proportion="-22.884615" vertical-offset="527" max-vertical-offset="3417">
+            <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
               <folding />
             </state>
           </provider>
@@ -138,6 +154,9 @@
         <option value="$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item_columns/special.php" />
         <option value="$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/category/analiz.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/../../../domovenok/media/zoo/applications/jbuniversal/templates/catalog/renderer/item/product/positions.xml" />
+        <option value="$PROJECT_DIR$/../../../domovenok/media/zoo/applications/jbuniversal/templates/catalog/renderer/item/product/full.php" />
+        <option value="$PROJECT_DIR$/../../../domovenok/templates/domovenok/index.php" />
       </list>
     </option>
   </component>
@@ -280,11 +299,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -304,32 +323,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1297" column="21" selection-start="30448" selection-end="30448" vertical-scroll-proportion="0.0" vertical-offset="22049" max-vertical-offset="29036">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/otdel/full.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="27" selection-start="4708" selection-end="4708" vertical-scroll-proportion="0.0" vertical-offset="1468" max-vertical-offset="2346">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="229" column="0" selection-start="9047" selection-end="9047" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3995">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/otdel/subcategory_item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1496" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/ie.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102" />
@@ -531,37 +524,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/otdel/full.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="11" selection-start="1043" selection-end="1043" vertical-scroll-proportion="-16.115385" vertical-offset="125" max-vertical-offset="2380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="3809" selection-end="3809" vertical-scroll-proportion="-22.884615" vertical-offset="527" max-vertical-offset="3417">
+        <state line="32" column="11" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="2380">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/analiz/subcategory_item.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="904">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="904" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/analiz/teaser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="952">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="952" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item_columns/_default.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="10" selection-start="1162" selection-end="1168" vertical-scroll-proportion="-24.192308" vertical-offset="0" max-vertical-offset="816">
-          <folding />
-        </state>
+        <state line="46" column="10" selection-start="1162" selection-end="1168" vertical-scroll-proportion="-24.192308" vertical-offset="0" max-vertical-offset="816" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/analiz/related2.php">
@@ -573,34 +553,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/item/analiz/full.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="9" selection-start="685" selection-end="685" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="1360">
-          <folding>
-            <element signature="tag#div#6;tag#div#0;tag#div#1" expanded="false" />
-            <element signature="e#2235#2592#0" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="tag#div#4;tag#div#1" expanded="false" />
-            <element signature="tag#div#5;tag#div#1" expanded="false" />
-          </folding>
+        <state line="18" column="9" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2210">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/subcategory_columns/_default.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="816">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/category/analiz.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="19" selection-start="2846" selection-end="2846" vertical-scroll-proportion="-23.0" vertical-offset="422" max-vertical-offset="1326">
+        <state line="69" column="19" selection-start="2846" selection-end="2846" vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="1479">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/subcategories/analizy_razdely.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2329" column="30" selection-start="55561" selection-end="55561" vertical-scroll-proportion="-10.68" vertical-offset="39326" max-vertical-offset="40443">
+        <state line="15" column="71" selection-start="501" selection-end="501" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="0" selection-start="3809" selection-end="3809" vertical-scroll-proportion="3.2692308" vertical-offset="1207" max-vertical-offset="3417">
           <folding />
         </state>
       </provider>
@@ -612,10 +593,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../media/zoo/applications/jbuniversal/templates/catalog/renderer/subcategories/analizy_razdely.php">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="71" selection-start="501" selection-end="501" vertical-scroll-proportion="0.11617312" vertical-offset="0" max-vertical-offset="878">
+        <state line="2294" column="25" selection-start="54824" selection-end="54824" vertical-scroll-proportion="-13.08" vertical-offset="38671" max-vertical-offset="40511">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../domovenok/media/zoo/applications/jbuniversal/templates/catalog/renderer/item/product/metadata.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="58" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../domovenok/media/zoo/applications/jbuniversal/templates/catalog/renderer/item/product/positions.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="47" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../domovenok/media/zoo/applications/jbuniversal/templates/catalog/renderer/item/product/full.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="2192" selection-end="2192" vertical-scroll-proportion="-5.5686274" vertical-offset="957" max-vertical-offset="2584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../domovenok/templates/domovenok/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="34" selection-start="7138" selection-end="7138" vertical-scroll-proportion="0.65181714" vertical-offset="2096" max-vertical-offset="5967">
+          <folding>
+            <element signature="n#style#0;n#jdoc:include#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#jdoc:include#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#jdoc:include#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#jdoc:include#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#jdoc:include#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#jdoc:include#0;n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#jdoc:include#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#jdoc:include#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#jdoc:include#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1406881553093" expanded="true" signature="2057:2299" placeholder="..." />
+            <marker date="1406881553093" expanded="true" signature="2250:2287" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

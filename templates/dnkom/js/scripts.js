@@ -3,13 +3,100 @@ jQuery(function() {
     jQuery('.calls a').fancybox();
 
     function getCalculatorHTML() {
+        var baseUrl = window.location.href.substr(0, window.location.href.indexOf('index.php'));
         return '<div id="calculator"><div class="calc_title">КАЛЬКУЛЯТОР</div>' +
                 '<div class="count_of_analiz">Анализов: <span></span></div>' +
                 '<div class="add">Добавить исследование к расчету</div><div class="separator"></div>' +
                 '<div class="summa">Сумма: <span></span></div>' +
                 '<div class="skidka">Скидка: <span></span></div><div class="separator">' +
                 '<div class="itogo">Итого: <span></span></div><div class="clear">Очистить форму</div>' +
-                '<div class="count_order">Расчитать заказ</div></div>';
+                '<div class="count_order"><a href="' + baseUrl + 'index.php/rasschitat-zakaz">Рассчитать заказ</a></div></div>';
+    }
+    
+    function setCalculatorsCookie(){
+        //Вставляем разметку формы калькулятора
+        jQuery('#right_menu .moduletable').prepend(getCalculatorHTML());
+
+        //Считываем куки калькулятора
+        var calculatorCookie = CookieObject.find('calculatorCookie');
+        var countOfAnalizes = 0;
+        var summa = 0;
+        var analizesList = '';
+
+        if (calculatorCookie == null) {
+            jQuery('#calculator .count_of_analiz span').html('0');
+            jQuery('#calculator .summa span').html('0 руб.');
+        }
+        else {
+            var cookieSpliters = calculatorCookie.split('|');
+            countOfAnalizes = cookieSpliters[0];
+            summa = cookieSpliters[1];
+
+            jQuery('#calculator .count_of_analiz span').html(countOfAnalizes);
+            jQuery('#calculator .summa span').html(summa + ' руб.');
+
+            if (cookieSpliters.length == 3) {
+                analizesList = cookieSpliters[2];
+
+                jQuery('.item_object').each(function() {
+                    if (analizesList.indexOf(jQuery.trim(jQuery(this).attr('itemid'))) != -1) {
+                        jQuery(this).find('input').prop('checked', true);
+                    }
+                });
+            }
+        }
+
+        //События по клику на чекбокс
+        jQuery('input:checkbox').click(function() {
+            var currentPrice = jQuery.trim(jQuery(this).attr('title'));
+            var currentID = jQuery.trim(jQuery(this).closest('.item_object').eq(0).attr('itemid'));
+
+            var generalPrice = jQuery.trim(jQuery('#calculator .summa span').text());
+            generalPrice = parseFloat(generalPrice.substr(0, generalPrice.indexOf(' ')).replace(',', '.'));
+
+            var currentCountOfAnalizes = parseFloat(jQuery.trim(jQuery('#calculator .count_of_analiz span').text()));
+
+            if (this.checked) {
+                //Добавляем в калькулятор
+                generalPrice += parseFloat(currentPrice);
+                currentCountOfAnalizes++;
+                analizesList += jQuery.trim(currentID) + '-';
+            }
+            else {
+                //Удаляем с калькулятора
+                generalPrice -= parseFloat(currentPrice);
+                currentCountOfAnalizes--;
+                analizesList = analizesList.replace(jQuery.trim(currentID) + '-', '');
+            }
+            jQuery('#calculator .summa span').html(generalPrice + ' руб.');
+            jQuery('#calculator .count_of_analiz span').html(currentCountOfAnalizes);
+
+            //Сохраняем количество анализов и общую цену в cookie
+            var today = new Date();
+            var offset = 1000 * 60 * 60 * 24;
+            var expires_at = new Date(today.getTime() + offset).toGMTString();
+
+            var cookie = "calculatorCookie=value1|value2|value3; path=/; expires=" + expires_at;
+            var cookie = cookie.replace('value1', currentCountOfAnalizes).replace('value2', generalPrice).replace('value3', analizesList).replace(' ', '');
+            document.cookie = cookie;
+        });
+
+        jQuery('#calculator .clear').click(function() {
+            analizesList = '';
+            var today = new Date();
+            var offset = 1000 * 60 * 60 * 24;
+            var expires_at = new Date(today.getTime() + offset).toGMTString();
+
+            var cookie = "calculatorCookie=value1|value2|value3; path=/; expires=" + expires_at;
+            var cookie = cookie.replace('value1', '0').replace('value2', '0').replace('value3', '').replace(' ', '');
+            document.cookie = cookie;
+
+            jQuery('#calculator .count_of_analiz span').html('0');
+            jQuery('#calculator .summa span').html('0 руб.');
+            jQuery('.item_object').each(function() {
+                jQuery(this).find('input').prop('checked', false);
+            });
+        });
     }
 
     CookieObject = {
@@ -46,73 +133,7 @@ jQuery(function() {
 
     /*Калькулятор*/
     if (jQuery('body').has('div#category_list_parameters').length > 0) {
-        //Вставляем разметку формы калькулятора
-        jQuery('#right_menu .moduletable').prepend(getCalculatorHTML());
-
-        //Считываем куки калькулятора
-        var calculatorCookie = CookieObject.find('calculatorCookie');
-        var countOfAnalizes = 0;
-        var summa = 0;
-        var analizesList = '';
-
-        if (calculatorCookie == null) {
-            jQuery('#calculator .count_of_analiz span').html('0');
-            jQuery('#calculator .summa span').html('0 руб.');
-        }
-        else {
-            var cookieSpliters = calculatorCookie.split('|');
-            countOfAnalizes = cookieSpliters[0];
-            summa = cookieSpliters[1];
-
-            jQuery('#calculator .count_of_analiz span').html(countOfAnalizes);
-            jQuery('#calculator .summa span').html(summa + ' руб.');
-
-            if (cookieSpliters.length == 3) {
-                analizesList = cookieSpliters[2];
-                
-                jQuery('.item_object').each(function() {
-                    if (analizesList.indexOf(jQuery.trim(jQuery(this).find('div:eq(0)').text())) != -1) {
-                        jQuery(this).find('input').prop('checked', true);
-                    }
-                });
-            }
-        }
-
-        //События по клику на чекбокс
-        jQuery('input:checkbox').click(function() {
-            var title = jQuery.trim(this.title).replace(' ', '');
-            var currentSumma = title.substr(0, title.indexOf('|'));
-            var currentCode = title.substr(title.indexOf('|') + 1);
-
-            var generalPrice = jQuery.trim(jQuery('#calculator .summa span').text());
-            generalPrice = parseFloat(generalPrice.substr(0, generalPrice.indexOf(' ')).replace(',', '.'));
-
-            var currentCountOfAnalizes = parseFloat(jQuery.trim(jQuery('#calculator .count_of_analiz span').text()));
-
-            if (this.checked) {
-                //Добавляем в калькулятор
-                generalPrice += parseFloat(currentSumma);
-                currentCountOfAnalizes++;
-                if(analizesList.indexOf(currentCode) == -1){
-                    analizesList += currentCode + ',';
-                }
-            }
-            else {
-                //Удаляем с калькулятора
-                generalPrice -= parseFloat(currentSumma);
-                currentCountOfAnalizes--;
-                if(analizesList.indexOf(currentCode) != -1){
-                    analizesList = analizesList.replace(currentCode + ',', '');
-                }
-            }
-            jQuery('#calculator .summa span').html(generalPrice + ' руб.');
-            jQuery('#calculator .count_of_analiz span').html(currentCountOfAnalizes);
-
-            //Сохраняем количество анализов и общую цену в cookie
-            var cookie = "calculatorCookie=value1|value2|value3".replace('value1', currentCountOfAnalizes).replace('value2', generalPrice).replace('value3', analizesList).replace(' ', '');
-            document.cookie = cookie;
-        });
-
+        setCalculatorsCookie();
 
         jQuery('.jbzoo-filter.filter-default').hide();
         jQuery('.items.items-col-1').after('<div class="navigation_and_sort">' + jQuery('.navigation_and_sort').clone().html() + '</div>');
@@ -132,6 +153,7 @@ jQuery(function() {
     }
 
     if (jQuery('body').has('form#.jbzoo-filter.filter-default').length > 0 && jQuery('body').has('div#category_list_parameters').length == 0) {
+        setCalculatorsCookie();
         jQuery('.jbzoo-filter.filter-default, .title:eq(0), .title:eq(0) + p').hide();
         var categoryDescription = CookieObject.find('categoryDescription');
         jQuery('.items.items-col-1').before('<h1 class="title">' + jQuery.trim(jQuery('.jbzoo-filter.filter-default select:eq(0) option:selected').text()) + '</h1>' +

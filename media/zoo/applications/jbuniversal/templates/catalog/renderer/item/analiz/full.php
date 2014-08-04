@@ -24,7 +24,7 @@ defined('_JEXEC') or die('Restricted access');
         <div>Добавить в калькулятор</div>
 
         <div class="inner">
-            <div class="item_object">    
+            <div class="item_object" itemid="<?php echo $item->id; ?>">    
                 <div>
                     <?php if ($this->renderPosition('code')): ?>
                         <?php echo $this->renderPosition('code'); ?>
@@ -55,13 +55,8 @@ defined('_JEXEC') or die('Restricted access');
                     <?php endif; ?>      
                 </div>
 
-                <?php if ($this->renderPosition('skidka')): ?>
-                    <div skidka="<?php echo $this->renderPosition('skidka'); ?>">
-                <?php endif; ?>  
-                <?php if (!$this->renderPosition('skidka')): ?>
-                        <div>
-                <?php endif; ?>
-                            <input type="checkbox" id="calculator" title="<?php echo $this->renderPosition('price'); ?>|<?php echo $this->renderPosition('code'); ?>">
+                <div>
+                    <input type="checkbox" id="calculator" title="<?php echo $this->renderPosition('price'); ?>">
                 </div>
             </div>
         </div>
