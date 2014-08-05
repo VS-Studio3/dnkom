@@ -1,9 +1,7 @@
 ﻿<?php
-$issetAnalizesInCookie = false;
 if ($_COOKIE['calculatorCookie']) {
     $calculatorCookieLementsList = explode('|', $_COOKIE['calculatorCookie']);
     if (count($calculatorCookieLementsList) == 3) {
-        $issetAnalizesInCookie = true;
 
         //Считываем данные с БД
         $connection = new mysqli('localhost', 'root', '', 'joomla');
@@ -34,14 +32,13 @@ if ($_COOKIE['calculatorCookie']) {
     jQuery(function() {
         function ifIsNotCookie() {
             jQuery('#count_order_module').hide();
-            jQuery('.message').html('Необходимо выбрать исследования.');
         }
 
         var baseUrl = window.location.href.substr(0, window.location.href.indexOf('index.php')) + 'index.php/2014-06-25-06-27-00/2014-06-25-06-37-56';
         jQuery('.add-other-order a').attr('href', baseUrl);
 
         var issetAnalizesInCookie = '<?php echo $issetAnalizesInCookie; ?>';
-        if (issetAnalizesInCookie == 1) {
+        if ('<?php echo $calculatorCookieLementsList[2]; ?>' != '') {
             var analizesList = '<?php echo $separatorAnalizesString; ?>'.split('|');
 
             //Массив элементов с информацией по каждому выбранному анализу
