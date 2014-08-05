@@ -12,8 +12,8 @@ jQuery(function() {
                 '<div class="itogo">Итого: <span></span></div><div class="clear">Очистить форму</div>' +
                 '<div class="count_order"><a href="' + baseUrl + 'index.php/rasschitat-zakaz">Рассчитать заказ</a></div></div>';
     }
-    
-    function setCalculatorsCookie(){
+
+    function setCalculatorsCookie() {
         //Вставляем разметку формы калькулятора
         jQuery('#right_menu .moduletable').prepend(getCalculatorHTML());
 
@@ -131,13 +131,76 @@ jQuery(function() {
         }
     };
 
+    /*Отзывы и претензии*/
+    if (jQuery('body').attr('id') == 'otzyvy_i_pretenzii') {
+        jQuery('#comments-form').prepend('<p class="type_of_comment"><span>Тип отзыва<span class="required"></span></span>' +
+                '<span><input type="radio" name="type" value="+">Положительный<input type="radio" name="type" value="-">Отрицательный</span></p>');
+
+        jQuery('#comments-list-footer, #comments-footer, #jc h4, #comments-form p:eq(3), #comments').hide();
+        var type = '';
+
+        jQuery('#comments-form p.type_of_comment input').click(function() {
+            type = jQuery(this).val();
+            jQuery('#comments-form p:eq(3) input').val(type);
+        });
+
+        var comments = [];
+        jQuery('.comments-list .comment-box').each(function() {
+            var commentObject = {
+                date: jQuery(this).find('.comment-date').text(),
+                name: jQuery(this).find('.comment-author').text(),
+                type: jQuery(this).find('.comment-title').text(),
+                text: jQuery(this).find('.comment-body').text()
+            }
+
+            comments.push(commentObject);
+        });
+        comments = comments.reverse();
+        
+        //Функция для фильтрации вывода комментариев
+        var filterComments = function(separator) {
+            if(separator == '+-') return comments;
+            
+            var currentComments = [];
+            for (var i = 0; i < comments.length; i++) {
+                if (comments[i].type == separator)
+                    currentComments.push(comments[i]);
+            }
+            return currentComments;
+        }
+        
+        var renderFilteredComments = function(curentCommentsObject){
+            jQuery('#list_of_comments').empty();
+            for(var i = 0; i < curentCommentsObject.length; i++){
+                jQuery('#list_of_comments').append('<div class="comment_object">' +
+                        '<span class="date">' + curentCommentsObject[i].date + '</span>' +
+                        '<span class="name">' + curentCommentsObject[i].name + '</span>' +
+                        '<span class="type' + curentCommentsObject[i].type + '"></span>' + 
+                        '<div class="text">' + curentCommentsObject[i].text + '</div></div>');
+            }
+        }
+
+        jQuery('#comments-form-buttons').after('<div id="comments_category"><span class="+-">Все</span> <span class="+">Положительные</span> <span class="-">Негативные</span></div><div id="list_of_comments"></div>');
+        //Кликаем по все, позитивные или негативные
+        jQuery('#comments_category span').click(function(){
+            var currentComments = filterComments(jQuery(this).attr('class'));
+            renderFilteredComments(currentComments);
+            
+            jQuery('#comments_category span').removeAttr('id');
+            jQuery(this).attr('id', 'active');
+        });
+        
+        jQuery('#comments_category span:first').attr('id', 'active');
+        renderFilteredComments(comments);
+    }
+
     /*Калькулятор*/
     if (jQuery('body').has('div#category_list_parameters').length > 0) {
         setCalculatorsCookie();
-        
-        if(jQuery('body').has('div.add-to-calculator').length > 0){
-            jQuery('.add-to-calculator').click(function(){
-                if(!jQuery('#full_analiz .full_description input:checkbox').prop('checked')){
+
+        if (jQuery('body').has('div.add-to-calculator').length > 0) {
+            jQuery('.add-to-calculator').click(function() {
+                if (!jQuery('#full_analiz .full_description input:checkbox').prop('checked')) {
                     jQuery('#full_analiz .full_description input:checkbox').prop('checked', true);
                     jQuery('#full_analiz .full_description input:checkbox').click();
                     jQuery('#full_analiz .full_description input:checkbox').prop('checked', true);

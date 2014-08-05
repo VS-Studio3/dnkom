@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 05 2014 г., 14:07
+-- Время создания: Авг 05 2014 г., 16:47
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -39,63 +39,65 @@ CREATE TABLE IF NOT EXISTS `y18x3_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
 
 --
 -- Дамп данных таблицы `y18x3_assets`
 --
 
 INSERT INTO `y18x3_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 1, 99, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 1, 103, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (5, 1, 9, 10, 1, 'com_checkin', 'com_checkin', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (6, 1, 11, 12, 1, 'com_config', 'com_config', '{}'),
 (7, 1, 13, 16, 1, 'com_contact', 'com_contact', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(8, 1, 17, 46, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(9, 1, 47, 48, 1, 'com_cpanel', 'com_cpanel', '{}'),
-(10, 1, 49, 50, 1, 'com_installer', 'com_installer', '{"core.admin":[],"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
-(11, 1, 51, 52, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(12, 1, 53, 54, 1, 'com_login', 'com_login', '{}'),
-(13, 1, 55, 56, 1, 'com_mailto', 'com_mailto', '{}'),
-(14, 1, 57, 58, 1, 'com_massmail', 'com_massmail', '{}'),
-(15, 1, 59, 60, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
-(16, 1, 61, 62, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(17, 1, 63, 64, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
-(18, 1, 65, 66, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(19, 1, 67, 70, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(20, 1, 71, 72, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
-(21, 1, 73, 74, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
-(22, 1, 75, 76, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(23, 1, 77, 78, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(24, 1, 79, 82, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(25, 1, 83, 86, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(26, 1, 87, 88, 1, 'com_wrapper', 'com_wrapper', '{}'),
-(27, 8, 18, 23, 2, 'com_content.category.2', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(8, 1, 17, 48, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(9, 1, 49, 50, 1, 'com_cpanel', 'com_cpanel', '{}'),
+(10, 1, 51, 52, 1, 'com_installer', 'com_installer', '{"core.admin":[],"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
+(11, 1, 53, 54, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(12, 1, 55, 56, 1, 'com_login', 'com_login', '{}'),
+(13, 1, 57, 58, 1, 'com_mailto', 'com_mailto', '{}'),
+(14, 1, 59, 60, 1, 'com_massmail', 'com_massmail', '{}'),
+(15, 1, 61, 62, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
+(16, 1, 63, 64, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(17, 1, 65, 66, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
+(18, 1, 67, 68, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(19, 1, 69, 72, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(20, 1, 73, 74, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
+(21, 1, 75, 76, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
+(22, 1, 77, 78, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(23, 1, 79, 80, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(24, 1, 81, 84, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(25, 1, 85, 88, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(26, 1, 89, 90, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(27, 8, 18, 25, 2, 'com_content.category.2', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(30, 19, 68, 69, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(31, 25, 84, 85, 2, 'com_weblinks.category.6', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(32, 24, 80, 81, 1, 'com_users.notes.category.7', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(33, 1, 89, 90, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(34, 1, 91, 92, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(35, 1, 93, 94, 1, 'com_zoo', 'com_zoo', '{}'),
-(36, 1, 95, 96, 1, 'com_nivosliderpro', 'com_nivosliderpro', '{}'),
-(37, 38, 25, 26, 3, 'com_content.article.1', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(38, 8, 24, 31, 2, 'com_content.category.8', 'Новости', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
-(39, 8, 32, 39, 2, 'com_content.category.9', 'Статьи', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
-(40, 39, 33, 34, 3, 'com_content.article.2', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(41, 38, 27, 28, 3, 'com_content.article.3', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(42, 38, 29, 30, 3, 'com_content.article.4', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(43, 1, 97, 98, 1, 'com_foxcontact', 'com_foxcontact', '{}'),
-(44, 39, 35, 36, 3, 'com_content.article.5', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(45, 39, 37, 38, 3, 'com_content.article.6', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(30, 19, 70, 71, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(31, 25, 86, 87, 2, 'com_weblinks.category.6', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(32, 24, 82, 83, 1, 'com_users.notes.category.7', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(33, 1, 91, 92, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(34, 1, 93, 94, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(35, 1, 95, 96, 1, 'com_zoo', 'com_zoo', '{}'),
+(36, 1, 97, 98, 1, 'com_nivosliderpro', 'com_nivosliderpro', '{}'),
+(37, 38, 27, 28, 3, 'com_content.article.1', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(38, 8, 26, 33, 2, 'com_content.category.8', 'Новости', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(39, 8, 34, 41, 2, 'com_content.category.9', 'Статьи', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(40, 39, 35, 36, 3, 'com_content.article.2', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(41, 38, 29, 30, 3, 'com_content.article.3', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(42, 38, 31, 32, 3, 'com_content.article.4', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(43, 1, 99, 100, 1, 'com_foxcontact', 'com_foxcontact', '{}'),
+(44, 39, 37, 38, 3, 'com_content.article.5', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(45, 39, 39, 40, 3, 'com_content.article.6', 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (46, 27, 19, 20, 3, 'com_content.article.7', 'Анализы на дому', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (47, 27, 21, 22, 3, 'com_content.article.8', 'Рассчитать заказ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(48, 50, 43, 44, 3, 'com_content.article.9', 'Анализ крови', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(49, 50, 41, 42, 3, 'com_content.article.10', 'Анализ днк', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(50, 8, 40, 45, 2, 'com_content.category.10', 'Подготовка к анализам', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}');
+(48, 50, 45, 46, 3, 'com_content.article.9', 'Анализ крови', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(49, 50, 43, 44, 3, 'com_content.article.10', 'Анализ днк', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(50, 8, 42, 47, 2, 'com_content.category.10', 'Подготовка к анализам', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(51, 1, 101, 102, 1, 'com_jcomments', 'jcomments', '{}'),
+(52, 27, 23, 24, 3, 'com_content.article.11', 'Отзывы и предетзии', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}');
 
 -- --------------------------------------------------------
 
@@ -367,7 +369,7 @@ CREATE TABLE IF NOT EXISTS `y18x3_content` (
   KEY `idx_featured_catid` (`featured`,`catid`),
   KEY `idx_language` (`language`),
   KEY `idx_xreference` (`xreference`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `y18x3_content`
@@ -380,10 +382,11 @@ INSERT INTO `y18x3_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, 
 (4, 42, 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', 'material-december', '', '<p>С 15 декабря пункт забора с Петровского переулка переместился в новый корпус по адресу Тверская дом 6, строение 6</p>', '', 1, 0, 0, 8, '2013-12-24 16:22:26', 232, '', '2014-07-08 12:42:30', 232, 0, '0000-00-00 00:00:00', '2014-06-24 13:22:52', '0000-00-00 00:00:00', '{"image_intro":"images\\/razchitat.png","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 0, '', '', 1, 8, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (5, 44, 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', 'stati2', '', '<p>С 15 декабря пункт забора с Петровского переулка переместился в новый корпус по адресу Тверская дом 6, строение 6</p>', '', 1, 0, 0, 9, '2014-07-08 12:46:25', 232, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-07-08 12:46:25', '0000-00-00 00:00:00', '{"image_intro":"images\\/uzi.png","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 1, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (6, 45, 'Диагностика вируса папилломы человека в аспекте скрининга и профилактики рака шейки матки', 'stati3', '', '<p>С 15 декабря пункт забора с Петровского переулка переместился в новый корпус по адресу Тверская дом 6, строение 6</p>', '', 1, 0, 0, 9, '2014-07-08 12:48:41', 232, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-07-08 12:48:41', '0000-00-00 00:00:00', '{"image_intro":"images\\/med_tech.png","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(7, 46, 'Анализы на дому', 'analizy-na-domu', '', '<p>Анализы на дому – это лучший вариант сдачи анализов для людей, которые ценят комфортный и быстрый сервис. Преимущества данного способа взятия биологического материала перед традиционными методами неоспоримы:</p>\r\n<ul id="analizy_na_domy">\r\n<li>во-первых, вы бережете здоровье;</li>\r\n<li>во-вторых, экономите время.</li>\r\n</ul>\r\n<p>Даже если пациент в состоянии самостоятельно проследовать в лабораторию для сдачи биоматериала, он не лишен контакта с другими пациентами, которые пришли в лабораторию за тем же. Уже хотя бы по этой причине вам стоит выбрать удобный, безопасный и безболезненный способ сдачи анализов на дому.</p>\r\n<p> </p>\r\n<div id="error_information"> </div>\r\n<div id="forma_zakaza">{loadposition fox_analiz_at_home}</div>\r\n<div id="uslugi_block">\r\n<div id="uslugi">\r\n<div id="title">Наименование услуги:</div>\r\n<div>Стоимость:</div>\r\n<div>Взятие биоматериала на дому(Московский регион)</div>\r\n<div>1 000 руб.</div>\r\n<div>Доставка результатов(Московский регион)</div>\r\n<div>800 руб.</div>\r\n</div>\r\n<a href="#ogranicheniya">Список ограничений по взятию биоматериала на дому</a>\r\n<div id="ogranicheniya">\r\n<ul>\r\n<li>Ограничения 1</li>\r\n<li>Ограничения 2</li>\r\n<li>Ограничения 3</li>\r\n</ul>\r\n</div>\r\n<div><a id="print" href="#">Распечатать</a> / <a id="download" href="#">Скачать</a></div>\r\n</div>\r\n<h2>Анализы на дому детям и взрослым</h2>\r\n<p>Особенно важно выбрать правильное место взятия биоматериала, когда анализы необходимо сдавать маленьким детям. Все родители хотят оградить своих детей от долгих поездок в поликлинику, длинных очередей и инфицированных людей. Также каждая мать и каждый отец желают уберечь ребенка от стрессов, которые могут быть связаны с незнакомой обстановкой и множеством новых людей. Ваше решение проблемы – медсестра на дом. Москва, Московская область и регионы могут рассчитывать на нашу поддержку в любой день недели. Убедитесь на практике, что намного легче и безопаснее сдавать анализы детям на дому в комфортной для них обстановке.</p>\r\n<p>Отдельная ситуация складывается в случае, если заболевший член семьи ослаб и не может сам отправиться в лабораторию. Да и зачем лишний раз тревожить больного, мешая его отдыху и выздоровлению? Вызов медсестры на дом (Москва, Московская область и регионы) дает возможность сдать в тот же день анализы на дому, не причиняя неудобств пациенту.</p>\r\n<p>Сдать анализ крови на дому или прямо на работе удобно также занятым людям. Прежде всего, это сбережет время и нервы и, вместе с тем, даст возможность своевременно проверить состояние здоровья. Ведь с выездом медсестры отпадает необходимость брать отгулы и перестраивать расписание.</p>\r\n<p>Напомним, что без сдачи анализов не обходится ни одно лечение серьезных заболеваний. Кроме того, некоторые анализы необходимо сдавать в профилактических целях. Лабораторные исследования биологического материала помогают своевременно выявить болезнь и определить правильные пути ее лечения.</p>', '', 1, 0, 0, 2, '2014-07-28 06:31:28', 232, '', '2014-07-28 08:17:06', 232, 0, '0000-00-00 00:00:00', '2014-07-28 06:31:28', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"0","link_category":"","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 9, 0, 3, '', '', 1, 38, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(8, 47, 'Рассчитать заказ', 'rasschitat-zakaz', '', '<div class="add-other-order"><a href="http://localhost/dnkom3/">Добавить исследования</a></div>\r\n<div class="message"> </div>\r\n<div id="count_order_module">\r\n<div class="spisok-issledovaniy">Уточните список выбранных исследований <span><span>1</span> ШАГ</span></div>\r\n<div class="full_description list-issledovaniy">\r\n<div>Код</div>\r\n<div>Наименование</div>\r\n<div>Производитель реактивов</div>\r\n<div>Срок исполнения</div>\r\n<div>Цена в руб.</div>\r\n<div>Удалить</div>\r\n<div class="inner"> </div>\r\n</div>\r\n<div class="spisok-issledovaniy">Выберите платную услугу (взятие биоматериала)<span><span>2</span> ШАГ</span></div>\r\n<div class="full_description vyberite-uslugu">\r\n<div>Наименование</div>\r\n<div>Цена в руб.</div>\r\n<div> </div>\r\n<div class="inner"> </div>\r\n</div>\r\n<div class="spisok-issledovaniy">Выберите скидку<span><span>3</span> ШАГ</span></div>\r\n<div class="full_description vyberite-skidku">\r\n<div> </div>\r\n<div>Наименование</div>\r\n<div>Размер скидки</div>\r\n<div>Выбрать</div>\r\n<div class="inner">\r\n<div class="item_object">\r\n<div>Без скидки</div>\r\n<div> </div>\r\n<div>0%</div>\r\n<div><input type="radio" name="skidka" value="0" checked="checked" /></div>\r\n</div>\r\n<div class="item_object">\r\n<div>Возрастная</div>\r\n<div>Пациентам младше 25 и старше 55 лет <br /> (по информации о дате рождения)</div>\r\n<div>10%</div>\r\n<div><input type="radio" name="skidka" value="10" /></div>\r\n</div>\r\n<div class="item_object">\r\n<div>Дисконтная накопительная карта 5</div>\r\n<div>Держатели дисконтных карт при предъявлении карты (выдается при единовременной оплате лабораторных услуг на сумму более 2500 рублей)</div>\r\n<div>5%</div>\r\n<div><input type="radio" name="skidka" value="5" /></div>\r\n</div>\r\n<div class="item_object">\r\n<div>Дисконтная накопительная карта 10</div>\r\n<div>Держатели дисконтных карт при предъявлении карты (выдается при единовременной оплате лабораторных услуг на сумму более 12000 рублей)</div>\r\n<div>10%</div>\r\n<div><input type="radio" name="skidka" value="10" /></div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="spisok-issledovaniy">Выберите платную услугу (взятие биоматериала)<span><span>4</span> ШАГ</span></div>\r\n<div class="full_description vyberite-platnuy-uslugu">\r\n<div>Наименование</div>\r\n<div>Цена в руб.</div>\r\n<div> </div>\r\n<div class="inner">\r\n<div class="item_object">\r\n<div>Взятие биоматериала на дому (Моссковский регион)</div>\r\n<div>1 000 руб.</div>\r\n<div><input title="1000" type="checkbox" /></div>\r\n</div>\r\n<div class="item_object">\r\n<div>Доставка результатов (Моссковский регион)</div>\r\n<div>538 руб.</div>\r\n<div><input title="538" type="checkbox" /></div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="spisok-issledovaniy">Стоимость заказа</div>\r\n<div class="full_description stoimost-zakaza">\r\n<div class="inner">\r\n<div>Сумма:</div>\r\n<div>Скидка:</div>\r\n<div>ИТОГО:</div>\r\n</div>\r\n</div>\r\n<div class="for_form_redactor">\r\n<div class="clear_form">Очистить форму</div>\r\n<div class="doc_form">Распечатать</div>\r\n</div>\r\n<div class="count_order_email">{loadposition count_order_email_module}</div>\r\n<p>{loadposition count_order_module}</p>\r\n</div>', '', 1, 0, 0, 2, '2014-08-01 12:19:09', 232, '', '2014-08-05 08:10:29', 232, 0, '0000-00-00 00:00:00', '2014-08-01 12:19:09', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 35, 0, 2, '', '', 1, 355, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(7, 46, 'Анализы на дому', 'analizy-na-domu', '', '<p>Анализы на дому – это лучший вариант сдачи анализов для людей, которые ценят комфортный и быстрый сервис. Преимущества данного способа взятия биологического материала перед традиционными методами неоспоримы:</p>\r\n<ul id="analizy_na_domy">\r\n<li>во-первых, вы бережете здоровье;</li>\r\n<li>во-вторых, экономите время.</li>\r\n</ul>\r\n<p>Даже если пациент в состоянии самостоятельно проследовать в лабораторию для сдачи биоматериала, он не лишен контакта с другими пациентами, которые пришли в лабораторию за тем же. Уже хотя бы по этой причине вам стоит выбрать удобный, безопасный и безболезненный способ сдачи анализов на дому.</p>\r\n<p> </p>\r\n<div id="error_information"> </div>\r\n<div id="forma_zakaza">{loadposition fox_analiz_at_home}</div>\r\n<div id="uslugi_block">\r\n<div id="uslugi">\r\n<div id="title">Наименование услуги:</div>\r\n<div>Стоимость:</div>\r\n<div>Взятие биоматериала на дому(Московский регион)</div>\r\n<div>1 000 руб.</div>\r\n<div>Доставка результатов(Московский регион)</div>\r\n<div>800 руб.</div>\r\n</div>\r\n<a href="#ogranicheniya">Список ограничений по взятию биоматериала на дому</a>\r\n<div id="ogranicheniya">\r\n<ul>\r\n<li>Ограничения 1</li>\r\n<li>Ограничения 2</li>\r\n<li>Ограничения 3</li>\r\n</ul>\r\n</div>\r\n<div><a id="print" href="#">Распечатать</a> / <a id="download" href="#">Скачать</a></div>\r\n</div>\r\n<h2>Анализы на дому детям и взрослым</h2>\r\n<p>Особенно важно выбрать правильное место взятия биоматериала, когда анализы необходимо сдавать маленьким детям. Все родители хотят оградить своих детей от долгих поездок в поликлинику, длинных очередей и инфицированных людей. Также каждая мать и каждый отец желают уберечь ребенка от стрессов, которые могут быть связаны с незнакомой обстановкой и множеством новых людей. Ваше решение проблемы – медсестра на дом. Москва, Московская область и регионы могут рассчитывать на нашу поддержку в любой день недели. Убедитесь на практике, что намного легче и безопаснее сдавать анализы детям на дому в комфортной для них обстановке.</p>\r\n<p>Отдельная ситуация складывается в случае, если заболевший член семьи ослаб и не может сам отправиться в лабораторию. Да и зачем лишний раз тревожить больного, мешая его отдыху и выздоровлению? Вызов медсестры на дом (Москва, Московская область и регионы) дает возможность сдать в тот же день анализы на дому, не причиняя неудобств пациенту.</p>\r\n<p>Сдать анализ крови на дому или прямо на работе удобно также занятым людям. Прежде всего, это сбережет время и нервы и, вместе с тем, даст возможность своевременно проверить состояние здоровья. Ведь с выездом медсестры отпадает необходимость брать отгулы и перестраивать расписание.</p>\r\n<p>Напомним, что без сдачи анализов не обходится ни одно лечение серьезных заболеваний. Кроме того, некоторые анализы необходимо сдавать в профилактических целях. Лабораторные исследования биологического материала помогают своевременно выявить болезнь и определить правильные пути ее лечения.</p>', '', 1, 0, 0, 2, '2014-07-28 06:31:28', 232, '', '2014-07-28 08:17:06', 232, 0, '0000-00-00 00:00:00', '2014-07-28 06:31:28', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"0","link_category":"","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 9, 0, 2, '', '', 1, 38, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(8, 47, 'Рассчитать заказ', 'rasschitat-zakaz', '', '<div class="add-other-order"><a href="http://localhost/dnkom3/">Добавить исследования</a></div>\r\n<div class="message"> </div>\r\n<div id="count_order_module">\r\n<div class="spisok-issledovaniy">Уточните список выбранных исследований <span><span>1</span> ШАГ</span></div>\r\n<div class="full_description list-issledovaniy">\r\n<div>Код</div>\r\n<div>Наименование</div>\r\n<div>Производитель реактивов</div>\r\n<div>Срок исполнения</div>\r\n<div>Цена в руб.</div>\r\n<div>Удалить</div>\r\n<div class="inner"> </div>\r\n</div>\r\n<div class="spisok-issledovaniy">Выберите платную услугу (взятие биоматериала)<span><span>2</span> ШАГ</span></div>\r\n<div class="full_description vyberite-uslugu">\r\n<div>Наименование</div>\r\n<div>Цена в руб.</div>\r\n<div> </div>\r\n<div class="inner"> </div>\r\n</div>\r\n<div class="spisok-issledovaniy">Выберите скидку<span><span>3</span> ШАГ</span></div>\r\n<div class="full_description vyberite-skidku">\r\n<div> </div>\r\n<div>Наименование</div>\r\n<div>Размер скидки</div>\r\n<div>Выбрать</div>\r\n<div class="inner">\r\n<div class="item_object">\r\n<div>Без скидки</div>\r\n<div> </div>\r\n<div>0%</div>\r\n<div><input type="radio" name="skidka" value="0" checked="checked" /></div>\r\n</div>\r\n<div class="item_object">\r\n<div>Возрастная</div>\r\n<div>Пациентам младше 25 и старше 55 лет <br /> (по информации о дате рождения)</div>\r\n<div>10%</div>\r\n<div><input type="radio" name="skidka" value="10" /></div>\r\n</div>\r\n<div class="item_object">\r\n<div>Дисконтная накопительная карта 5</div>\r\n<div>Держатели дисконтных карт при предъявлении карты (выдается при единовременной оплате лабораторных услуг на сумму более 2500 рублей)</div>\r\n<div>5%</div>\r\n<div><input type="radio" name="skidka" value="5" /></div>\r\n</div>\r\n<div class="item_object">\r\n<div>Дисконтная накопительная карта 10</div>\r\n<div>Держатели дисконтных карт при предъявлении карты (выдается при единовременной оплате лабораторных услуг на сумму более 12000 рублей)</div>\r\n<div>10%</div>\r\n<div><input type="radio" name="skidka" value="10" /></div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="spisok-issledovaniy">Выберите платную услугу (взятие биоматериала)<span><span>4</span> ШАГ</span></div>\r\n<div class="full_description vyberite-platnuy-uslugu">\r\n<div>Наименование</div>\r\n<div>Цена в руб.</div>\r\n<div> </div>\r\n<div class="inner">\r\n<div class="item_object">\r\n<div>Взятие биоматериала на дому (Моссковский регион)</div>\r\n<div>1 000 руб.</div>\r\n<div><input title="1000" type="checkbox" /></div>\r\n</div>\r\n<div class="item_object">\r\n<div>Доставка результатов (Моссковский регион)</div>\r\n<div>538 руб.</div>\r\n<div><input title="538" type="checkbox" /></div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class="spisok-issledovaniy">Стоимость заказа</div>\r\n<div class="full_description stoimost-zakaza">\r\n<div class="inner">\r\n<div>Сумма:</div>\r\n<div>Скидка:</div>\r\n<div>ИТОГО:</div>\r\n</div>\r\n</div>\r\n<div class="for_form_redactor">\r\n<div class="clear_form">Очистить форму</div>\r\n<div class="doc_form">Распечатать</div>\r\n</div>\r\n<div class="count_order_email">{loadposition count_order_email_module}</div>\r\n<p>{loadposition count_order_module}</p>\r\n</div>', '', 1, 0, 0, 2, '2014-08-01 12:19:09', 232, '', '2014-08-05 08:10:29', 232, 0, '0000-00-00 00:00:00', '2014-08-01 12:19:09', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 35, 0, 1, '', '', 1, 355, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (9, 48, 'Анализ крови', 'analiz-krovi', '', '<p>Описание анлиза крови</p>', '', 1, 0, 0, 10, '2014-08-05 10:42:43', 232, '', '2014-08-05 10:47:14', 232, 0, '0000-00-00 00:00:00', '2014-08-05 10:42:43', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 1, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(10, 49, 'Анализ днк', 'analiz-dnk', '', '<p>Описание анализа днк</p>', '', 1, 0, 0, 10, '2014-08-05 10:43:01', 232, '', '2014-08-05 10:46:59', 232, 0, '0000-00-00 00:00:00', '2014-08-05 10:43:01', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 0, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
+(10, 49, 'Анализ днк', 'analiz-dnk', '', '<p>Описание анализа днк</p>', '', 1, 0, 0, 10, '2014-08-05 10:43:01', 232, '', '2014-08-05 10:46:59', 232, 0, '0000-00-00 00:00:00', '2014-08-05 10:43:01', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 0, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(11, 52, 'Отзывы и предетзии', 'otzyvy-i-predetzii', '', '<p>фыв фыв фыв фыв фыв фы фы</p>\r\n<p>{jcomments on}</p>', '', 1, 0, 0, 2, '2014-08-05 11:38:19', 232, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-08-05 11:38:19', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 0, '', '', 1, 71, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
 
 -- --------------------------------------------------------
 
@@ -450,7 +453,7 @@ CREATE TABLE IF NOT EXISTS `y18x3_extensions` (
   KEY `element_clientid` (`element`,`client_id`),
   KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
   KEY `extension` (`type`,`element`,`folder`,`client_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10038 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10046 ;
 
 --
 -- Дамп данных таблицы `y18x3_extensions`
@@ -619,7 +622,15 @@ INSERT INTO `y18x3_extensions` (`extension_id`, `name`, `type`, `element`, `fold
 (10034, 'PLG_EDITORS-XTD_MODULESANYWHERE', 'plugin', 'modulesanywhere', 'editors-xtd', 0, 1, 1, 0, '{"legacy":true,"name":"PLG_EDITORS-XTD_MODULESANYWHERE","type":"plugin","creationDate":"April 2012","author":"NoNumber (Peter van Westen)","copyright":"Copyright \\u00a9 2012 NoNumber All Rights Reserved","authorEmail":"peter@nonumber.nl","authorUrl":"http:\\/\\/www.nonumber.nl","version":"2.0.3FREE","description":"PLG_EDITORS-XTD_MODULESANYWHERE_DESC","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10035, 'PLG_SYSTEM_NNFRAMEWORK', 'plugin', 'nnframework', 'system', 0, 1, 1, 0, '{"legacy":true,"name":"PLG_SYSTEM_NNFRAMEWORK","type":"plugin","creationDate":"April 2012","author":"NoNumber (Peter van Westen)","copyright":"Copyright \\u00a9 2012 NoNumber All Rights Reserved","authorEmail":"peter@nonumber.nl","authorUrl":"http:\\/\\/www.nonumber.nl","version":"12.4.3","description":"PLG_SYSTEM_NNFRAMEWORK_DESC","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10036, 'Special HTML', 'module', 'mod_specialhtml', '', 0, 1, 0, 0, '{"legacy":true,"name":"Special HTML","type":"module","creationDate":"03 February 2009","author":"Rony S Y Zebua - Member of camp26.biz","copyright":"2008-2009, www.camp26.biz","authorEmail":"ronysyz@gmail.com","authorUrl":"www.camp26.biz","version":"1.2","description":"MODULE : SPECIALHTML","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10037, 'Flexi Custom Code', 'module', 'mod_flexi_customcode', '', 0, 1, 0, 0, '{"legacy":false,"name":"Flexi Custom Code","type":"module","creationDate":"July 12th, 2012","author":"RBO Team","copyright":"RumahBelanja @ 2012 - Free Joomla Module","authorEmail":"rumahbelanja@gmail.com","authorUrl":"www.rumahbelanja.com","version":"1.3","description":"FLEXICUSTOMCODE","group":""}', '{"code_area":"","use_php":"1","userlevel":"1","clean_js":"1","clean_css":"1","clean_all":"1","cache":"1","cache_time":"900","cachemode":"static"}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
+(10037, 'Flexi Custom Code', 'module', 'mod_flexi_customcode', '', 0, 1, 0, 0, '{"legacy":false,"name":"Flexi Custom Code","type":"module","creationDate":"July 12th, 2012","author":"RBO Team","copyright":"RumahBelanja @ 2012 - Free Joomla Module","authorEmail":"rumahbelanja@gmail.com","authorUrl":"www.rumahbelanja.com","version":"1.3","description":"FLEXICUSTOMCODE","group":""}', '{"code_area":"","use_php":"1","userlevel":"1","clean_js":"1","clean_css":"1","clean_all":"1","cache":"1","cache_time":"900","cachemode":"static"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10038, 'com_jcomments', 'component', 'com_jcomments', '', 1, 1, 0, 0, '{"legacy":false,"name":"JComments","type":"component","creationDate":"01\\/08\\/2014","author":"smart","copyright":"Copyright 2006-2014 JoomlaTune.ru All rights reserved!","authorEmail":"smart@joomlatune.ru","authorUrl":"http:\\/\\/www.joomlatune.ru","version":"3.0.5","description":"JComments lets your users comment on content items.","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10039, 'plg_content_jcomments', 'plugin', 'jcomments', 'content', 0, 1, 1, 0, '{"legacy":false,"name":"plg_content_jcomments","type":"plugin","creationDate":"01\\/08\\/2014","author":"smart","copyright":"Copyright 2006-2014 JoomlaTune.ru All rights reserved!","authorEmail":"smart@joomlatune.ru","authorUrl":"http:\\/\\/www.joomlatune.ru","version":"1.0","description":"PLG_CONTENT_JCOMMENTS_XML_DESCRIPTION","group":""}', '{"show_frontpage":"1","enable_for_archived":"0","comments_count":"1","add_comments":"1","links_position":"1","readmore_link":"1","readmore_css_class":"readmore-link","comments_css_class":"comments-link","show_hits":"0","show_comments_event":"onAfterDisplayContent"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10040, 'plg_editors-xtd_jcommentson', 'plugin', 'jcommentson', 'editors-xtd', 0, 1, 1, 0, '{"legacy":false,"name":"plg_editors-xtd_jcommentson","type":"plugin","creationDate":"01\\/08\\/2014","author":"smart","copyright":"Copyright 2006-2014 JoomlaTune.ru All rights reserved!","authorEmail":"smart@joomlatune.ru","authorUrl":"http:\\/\\/www.joomlatune.ru","version":"1.0","description":"PLG_EDITORS-XTD_JCOMMENTSON_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10041, 'plg_editors-xtd_jcommentsoff', 'plugin', 'jcommentsoff', 'editors-xtd', 0, 1, 1, 0, '{"legacy":false,"name":"plg_editors-xtd_jcommentsoff","type":"plugin","creationDate":"01\\/08\\/2014","author":"smart","copyright":"Copyright 2006-2014 JoomlaTune.ru All rights reserved!","authorEmail":"smart@joomlatune.ru","authorUrl":"http:\\/\\/www.joomlatune.ru","version":"1.0","description":"PLG_EDITORS-XTD_JCOMMENTSOFF_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10042, 'plg_search_jcomments', 'plugin', 'jcomments', 'search', 0, 1, 1, 0, '{"legacy":false,"name":"plg_search_jcomments","type":"plugin","creationDate":"01\\/08\\/2014","author":"smart","copyright":"Copyright 2006-2014 JoomlaTune.ru All rights reserved!","authorEmail":"smart@joomlatune.ru","authorUrl":"http:\\/\\/www.joomlatune.ru","version":"1.0","description":"PLG_SEARCH_JCOMMENTS_XML_DESCRIPTION","group":""}', '{"search_limit":"50"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10043, 'plg_system_jcomments', 'plugin', 'jcomments', 'system', 0, 1, 1, 0, '{"legacy":false,"name":"plg_system_jcomments","type":"plugin","creationDate":"01\\/08\\/2014","author":"smart","copyright":"Copyright 2006-2014 JoomlaTune.ru All rights reserved!","authorEmail":"smart@joomlatune.ru","authorUrl":"http:\\/\\/www.joomlatune.ru","version":"1.0","description":"PLG_SYSTEM_JCOMMENTS_XML_DESCRIPTION","group":""}', '{"disable_template_css":"0","disable_error_reporting":"0","clear_rss":"0"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10044, 'plg_user_jcomments', 'plugin', 'jcomments', 'user', 0, 1, 1, 0, '{"legacy":false,"name":"plg_user_jcomments","type":"plugin","creationDate":"01\\/08\\/2014","author":"smart","copyright":"Copyright 2006-2014 JoomlaTune.ru All rights reserved!","authorEmail":"smart@joomlatune.ru","authorUrl":"http:\\/\\/www.joomlatune.ru","version":"1.0","description":"PLG_USER_JCOMMENTS_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10045, 'plg_quickicon_jcomments', 'plugin', 'jcomments', 'quickicon', 0, 1, 1, 0, '{"legacy":false,"name":"plg_quickicon_jcomments","type":"plugin","creationDate":"01\\/08\\/2014","author":"smart","copyright":"Copyright 2006-2014 JoomlaTune.ru All rights reserved!","authorEmail":"smart@joomlatune.ru","authorUrl":"http:\\/\\/www.joomlatune.ru","version":"1.0","description":"PLG_QUICKICON_JCOMMENTS_XML_DESCRIPTION","group":""}', '{"context":"mod_quickicon","displayedtext":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3569,13 +3580,6 @@ CREATE TABLE IF NOT EXISTS `y18x3_foxcontact_sessions` (
   UNIQUE KEY `index` (`id`,`cid`,`mid`,`keyword`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `y18x3_foxcontact_sessions`
---
-
-INSERT INTO `y18x3_foxcontact_sessions` (`id`, `cid`, `mid`, `keyword`, `birth`, `data`) VALUES
-('tsjmltlued5f65ooj8g7hisgj7', 0, 133, 'captcha_answer', '2014-08-05 07:55:52', 'w89fn1l');
-
 -- --------------------------------------------------------
 
 --
@@ -3596,6 +3600,418 @@ INSERT INTO `y18x3_foxcontact_settings` (`name`, `value`) VALUES
 ('captchadrawer', 'use_gd'),
 ('dns', 'dns_check'),
 ('mimefilter', 'disabled');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `parent` int(11) unsigned NOT NULL DEFAULT '0',
+  `thread_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `path` varchar(255) NOT NULL DEFAULT '',
+  `level` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `object_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `object_group` varchar(255) NOT NULL DEFAULT '',
+  `object_params` text NOT NULL,
+  `lang` varchar(255) NOT NULL DEFAULT '',
+  `userid` int(11) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `username` varchar(255) NOT NULL DEFAULT '',
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `homepage` varchar(255) NOT NULL DEFAULT '',
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `comment` text NOT NULL,
+  `ip` varchar(39) NOT NULL DEFAULT '',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `isgood` smallint(5) NOT NULL DEFAULT '0',
+  `ispoor` smallint(5) NOT NULL DEFAULT '0',
+  `published` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `subscribe` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `source` varchar(255) NOT NULL DEFAULT '',
+  `source_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `editor` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_userid` (`userid`),
+  KEY `idx_source` (`source`),
+  KEY `idx_email` (`email`),
+  KEY `idx_lang` (`lang`),
+  KEY `idx_subscribe` (`subscribe`),
+  KEY `idx_checkout` (`checked_out`),
+  KEY `idx_object` (`object_id`,`object_group`,`published`,`date`),
+  KEY `idx_path` (`path`,`level`),
+  KEY `idx_thread` (`thread_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `y18x3_jcomments`
+--
+
+INSERT INTO `y18x3_jcomments` (`id`, `parent`, `thread_id`, `path`, `level`, `object_id`, `object_group`, `object_params`, `lang`, `userid`, `name`, `username`, `email`, `homepage`, `title`, `comment`, `ip`, `date`, `isgood`, `ispoor`, `published`, `deleted`, `subscribe`, `source`, `source_id`, `checked_out`, `checked_out_time`, `editor`) VALUES
+(1, 0, 0, '0', 0, 11, 'com_content', '', 'ru-RU', 0, 'Роман--------', 'Роман--------', 'sadasdas@io.op', '', '-', '-----', '127.0.0.1', '2014-08-05 11:48:56', 0, 0, 1, 0, 0, '', 0, 0, '0000-00-00 00:00:00', ''),
+(2, 0, 0, '0', 0, 11, 'com_content', '', 'ru-RU', 0, 'негатив заголовок', 'негатив заголовок', 'sadasda365s@io.op', '', '-', 'негатив', '127.0.0.1', '2014-08-05 12:21:43', 0, 0, 1, 0, 0, '', 0, 0, '0000-00-00 00:00:00', ''),
+(3, 0, 0, '0', 0, 11, 'com_content', '', 'ru-RU', 0, 'позитивный заголовок', 'позитивный заголовок', 'sadasASDFda365s@io.op', '', '+', 'позитивный', '127.0.0.1', '2014-08-05 12:22:23', 0, 0, 1, 0, 0, '', 0, 0, '0000-00-00 00:00:00', ''),
+(4, 0, 0, '0', 0, 11, 'com_content', '', 'ru-RU', 0, 'Роман5НЕЙТРАЛЬНЫЙ', 'Роман5НЕЙТРАЛЬНЫЙ', 'sadasASsdfgDFda365s@io.op', '', '-', 'НЕЙТРАЛЬНЫЙ', '127.0.0.1', '2014-08-05 12:51:50', 0, 0, 1, 0, 0, '', 0, 0, '0000-00-00 00:00:00', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_blacklist`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_blacklist` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `ip` varchar(39) NOT NULL DEFAULT '',
+  `userid` int(11) unsigned NOT NULL DEFAULT '0',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `expire` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `reason` tinytext NOT NULL,
+  `notes` tinytext NOT NULL,
+  `checked_out` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `editor` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_checkout` (`checked_out`),
+  KEY `idx_ip` (`ip`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_custom_bbcodes`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_custom_bbcodes` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL DEFAULT '',
+  `simple_pattern` varchar(255) NOT NULL DEFAULT '',
+  `simple_replacement_html` text NOT NULL,
+  `simple_replacement_text` text NOT NULL,
+  `pattern` varchar(255) NOT NULL DEFAULT '',
+  `replacement_html` text NOT NULL,
+  `replacement_text` text NOT NULL,
+  `button_acl` text NOT NULL,
+  `button_open_tag` varchar(16) NOT NULL DEFAULT '',
+  `button_close_tag` varchar(16) NOT NULL DEFAULT '',
+  `button_title` varchar(255) NOT NULL DEFAULT '',
+  `button_prompt` varchar(255) NOT NULL DEFAULT '',
+  `button_image` varchar(255) NOT NULL DEFAULT '',
+  `button_css` varchar(255) NOT NULL DEFAULT '',
+  `button_enabled` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `ordering` int(11) unsigned NOT NULL DEFAULT '0',
+  `published` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+
+--
+-- Дамп данных таблицы `y18x3_jcomments_custom_bbcodes`
+--
+
+INSERT INTO `y18x3_jcomments_custom_bbcodes` (`id`, `name`, `simple_pattern`, `simple_replacement_html`, `simple_replacement_text`, `pattern`, `replacement_html`, `replacement_text`, `button_acl`, `button_open_tag`, `button_close_tag`, `button_title`, `button_prompt`, `button_image`, `button_css`, `button_enabled`, `ordering`, `published`, `checked_out`, `checked_out_time`) VALUES
+(1, 'YouTube Video', '[youtube]http://www.youtube.com/watch?v={IDENTIFIER}[/youtube]', '<iframe width="425" height="350" src="//www.youtube.com/embed/{IDENTIFIER}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/{IDENTIFIER}', '\\[youtube\\]http\\:\\/\\/www\\.youtube\\.com\\/watch\\?v\\=([A-Za-z0-9-_]+)([A-Za-z0-9\\%\\&\\=\\#]*?)\\[\\/youtube\\]', '<iframe width="425" height="350" src="//www.youtube.com/embed/${1}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/${1}', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '[youtube]', '[/youtube]', 'YouTube Video', '', '', 'bbcode-youtube', 1, 1, 1, 0, '0000-00-00 00:00:00'),
+(2, 'YouTube Video (short syntax)', '[youtube]{IDENTIFIER}[/youtube]', '<iframe width="425" height="350" src="//www.youtube.com/embed/{IDENTIFIER}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/{IDENTIFIER}', '\\[youtube\\]([A-Za-z0-9-_]+)([A-Za-z0-9\\%\\&\\=\\#]*?)\\[\\/youtube\\]', '<iframe width="425" height="350" src="//www.youtube.com/embed/${1}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/${1}', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '', '', '', '', '', '', 0, 2, 1, 0, '0000-00-00 00:00:00'),
+(3, 'YouTube Video (alternate syntax)', '[youtube]http://www.youtube.com/watch?v={IDENTIFIER}{TEXT}[/youtube]', '<iframe width="425" height="350" src="//www.youtube.com/embed/{IDENTIFIER}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/{IDENTIFIER}', '\\[youtube\\]http\\:\\/\\/www\\.youtube\\.com\\/watch\\?v\\=([A-Za-z0-9-_]+)([\\w0-9-\\+\\=\\!\\?\\(\\)\\[\\]\\{\\}\\&\\%\\*\\#\\.,_ ]+)\\[\\/youtube\\]', '<iframe width="425" height="350" src="//www.youtube.com/embed/${1}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/${1}', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '[youtube]', '[/youtube]', 'YouTube Video', '', '', '', 0, 3, 1, 0, '0000-00-00 00:00:00'),
+(4, 'YouTube Video (alternate syntax)', '[youtube]http://www.youtube.com/watch?feature=player_embedded&v={IDENTIFIER}[/youtube]', '<iframe width="425" height="350" src="//www.youtube.com/embed/{IDENTIFIER}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/{IDENTIFIER}', '\\[youtube\\]http\\://www\\.youtube\\.com/watch\\?feature\\=player_embedded&v\\=([\\w0-9-_]+)\\[/youtube\\]', '<iframe width="425" height="350" src="//www.youtube.com/embed/${1}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/${1}', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '', '', '', '', '', '', 0, 4, 1, 0, '0000-00-00 00:00:00'),
+(5, 'YouTube Video (alternate syntax)', '[youtube]http://youtu.be/{IDENTIFIER}[/youtube]', '<iframe width="425" height="350" src="//www.youtube.com/embed/{IDENTIFIER}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/{IDENTIFIER}', '\\[youtube\\]http\\://youtu\\.be/([\\w0-9-_]+)\\[/youtube\\]', '<iframe width="425" height="350" src="//www.youtube.com/embed/${1}?rel=0" frameborder="0" allowfullscreen></iframe>', 'http://youtu.be/${1}', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '', '', '', '', '', '', 0, 5, 1, 0, '0000-00-00 00:00:00'),
+(6, 'Facebook Video', '[fv]http://www.facebook.com/video/video.php?v={IDENTIFIER}[/fv]', '<iframe width="425" height="350" src="//www.facebook.com/video/embed?video_id={IDENTIFIER}" frameborder="0"></iframe>', 'http://www.facebook.com/photo.php?v={IDENTIFIER}', '\\[fv\\]http\\:\\/\\/www\\.facebook\\.com\\/video\\/video\\.php\\?v\\=([A-Za-z0-9-_]+)([A-Za-z0-9\\%\\&\\=\\#]*?)\\[\\/fv\\]', '<iframe width="425" height="350" src="//www.facebook.com/video/embed?video_id=${1}" frameborder="0"></iframe>', 'http://www.facebook.com/photo.php?v=${1}', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '[fv]', '[/fv]', 'Facebook Video', '', '', 'bbcode-facebook', 1, 6, 1, 0, '0000-00-00 00:00:00'),
+(7, 'Facebook Video (short syntax)', '[fv]{IDENTIFIER}[/fv]', '<iframe width="425" height="350" src="//www.facebook.com/video/embed?video_id={IDENTIFIER}" frameborder="0"></iframe>', 'http://www.facebook.com/photo.php?v={IDENTIFIER}', '\\[fv\\]([A-Za-z0-9-_]+)([A-Za-z0-9\\%\\&\\=\\#]*?)\\[\\/fv\\]', '<iframe width="425" height="350" src="//www.facebook.com/video/embed?video_id=${1}" frameborder="0"></iframe>', 'http://www.facebook.com/photo.php?v=${1}', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '', '', '', '', '', '', 0, 7, 1, 0, '0000-00-00 00:00:00'),
+(8, 'Facebook Video (alternate syntax)', '[fv]http://www.facebook.com/photo.php?v={IDENTIFIER}[/fv]', '<iframe width="425" height="350" src="//www.facebook.com/video/embed?video_id={IDENTIFIER}" frameborder="0"></iframe>', 'http://www.facebook.com/photo.php?v={IDENTIFIER}', '\\[fv\\]http\\:\\/\\/www\\.facebook\\.com\\/photo\\.php\\?v\\=([A-Za-z0-9-_]+)([A-Za-z0-9\\%\\&\\=\\#]*?)\\[\\/fv\\]', '<iframe width="425" height="350" src="//www.facebook.com/video/embed?video_id=${1}" frameborder="0"></iframe>', 'http://www.facebook.com/photo.php?v=${1}', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '', '', '', '', '', '', 0, 8, 1, 0, '0000-00-00 00:00:00'),
+(9, 'Instagram', '[instagram]http://instagram.com/p/{IDENTIFIER}/[/instagram]', '<iframe width="425" height="350" src="//instagram.com/p/{IDENTIFIER}/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>', 'http://instagram.com/p/{IDENTIFIER}/', '\\[instagram\\]http\\:\\/\\/instagram\\.com\\/p\\/([\\w0-9-_]+)\\/\\[/instagram\\]', '<iframe width="425" height="350" src="//instagram.com/p/${1}/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>', 'http://instagram.com/p/${1}/', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '[instagram]', '[/instagram]', 'Instagram Photo', '', '', 'bbcode-instagram', 1, 9, 1, 0, '0000-00-00 00:00:00'),
+(10, 'Instagram (short syntax)', '[instagram]{IDENTIFIER}[/instagram]', '<iframe width="425" height="350" src="//instagram.com/p/{IDENTIFIER}/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>', 'http://instagram.com/p/{IDENTIFIER}/', '\\[instagram\\]([\\w0-9-_]+)\\[/instagram\\]', '<iframe width="425" height="350" src="//instagram.com/p/${1}/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>', 'http://instagram.com/p/${1}/', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '', '', '', '', '', '', 0, 10, 1, 0, '0000-00-00 00:00:00'),
+(11, 'Instagram (alternate syntax)', '[instagram]http://instagram.com/p/{IDENTIFIER}[/instagram]', '<iframe width="425" height="350" src="//instagram.com/p/{IDENTIFIER}/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>', 'http://instagram.com/p/{IDENTIFIER}/', '\\[instagram\\]http\\:\\/\\/instagram\\.com\\/p\\/([\\w0-9-_]+)\\[/instagram\\]', '<iframe width="425" height="350" src="//instagram.com/p/${1}/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>', 'http://instagram.com/p/${1}/', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '', '', '', '', '', '', 0, 11, 1, 0, '0000-00-00 00:00:00'),
+(12, 'Vimeo', '[vimeo]http://vimeo.com/{IDENTIFIER}/[/vimeo]', '<iframe width="425" height="239" src="//player.vimeo.com/video/{IDENTIFIER}/" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>', 'http://vimeo.com/{IDENTIFIER}/', '\\[vimeo\\]http\\:\\/\\/vimeo\\.com\\/([\\w0-9-_]+)\\[/vimeo\\]', '<iframe width="425" height="239" src="//player.vimeo.com/video/${1}" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>', 'http://vimeo.com/${1}/', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '[vimeo]', '[/vimeo]', 'Vimeo Video', '', '', 'bbcode-vimeo', 1, 12, 1, 0, '0000-00-00 00:00:00'),
+(13, 'Vimeo (short syntax)', '[vimeo]{IDENTIFIER}[/vimeo]', '<iframe width="425" height="239" src="//player.vimeo.com/video/{IDENTIFIER}/" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>', 'http://vimeo.com/{IDENTIFIER}/', '\\[vimeo\\]([\\w0-9-_]+)\\[/vimeo\\]', '<iframe width="425" height="239" src="//player.vimeo.com/video/${1}" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>', 'http://vimeo.com/${1}/', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '', '', '', '', '', '', 0, 13, 1, 0, '0000-00-00 00:00:00'),
+(14, 'Vimeo (alternate syntax)', '[vimeo]https://vimeo.com/{IDENTIFIER}/[/vimeo]', '<iframe width="425" height="239" src="//player.vimeo.com/video/{IDENTIFIER}/" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>', 'https://vimeo.com/{IDENTIFIER}/', '\\[vimeo\\]https\\:\\/\\/vimeo\\.com\\/([\\w0-9-_]+)\\[/vimeo\\]', '<iframe width="425" height="239" src="//player.vimeo.com/video/${1}" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>', 'https://vimeo.com/${1}/', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '', '', '', '', '', '', 0, 13, 1, 0, '0000-00-00 00:00:00'),
+(15, 'Wiki', '[wiki]{SIMPLETEXT}[/wiki]', '<a href="http://www.wikipedia.org/wiki/{SIMPLETEXT}" title="{SIMPLETEXT}" target="_blank">{SIMPLETEXT}</a>', '{SIMPLETEXT}', '\\[wiki\\]([A-Za-z0-9\\-\\+\\.,_ ]+)\\[\\/wiki\\]', '<a href="http://www.wikipedia.org/wiki/${1}" title="${1}" target="_blank">${1}</a>', '${1}', 'Public,Registered,Author,Editor,Publisher,Manager,Administrator,Super Users', '[wiki]', '[/wiki]', 'Wikipedia', '', '', 'bbcode-wiki', 1, 14, 1, 0, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_mailq`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_mailq` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` text NOT NULL,
+  `body` text NOT NULL,
+  `created` datetime NOT NULL,
+  `attempts` tinyint(1) NOT NULL DEFAULT '0',
+  `priority` tinyint(1) NOT NULL DEFAULT '0',
+  `session_id` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_priority` (`priority`),
+  KEY `idx_attempts` (`attempts`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_objects`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_objects` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `object_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `object_group` varchar(255) NOT NULL DEFAULT '',
+  `category_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `lang` varchar(20) NOT NULL DEFAULT '',
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `link` text NOT NULL,
+  `access` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `userid` int(11) unsigned NOT NULL DEFAULT '0',
+  `expired` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `idx_object` (`object_id`,`object_group`,`lang`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `y18x3_jcomments_objects`
+--
+
+INSERT INTO `y18x3_jcomments_objects` (`id`, `object_id`, `object_group`, `category_id`, `lang`, `title`, `link`, `access`, `userid`, `expired`, `modified`) VALUES
+(1, 11, 'com_content', 2, 'ru-RU', 'Отзывы и предетзии', '/dnkom3/index.php/2014-06-25-06-27-00/otzyvy-i-prezentatsii', 1, 232, 0, '2014-08-05 12:51:50');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_reports`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_reports` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `commentid` int(11) unsigned NOT NULL DEFAULT '0',
+  `userid` int(11) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `ip` varchar(39) NOT NULL DEFAULT '',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `reason` tinytext NOT NULL,
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_settings`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_settings` (
+  `component` varchar(50) NOT NULL DEFAULT '',
+  `lang` varchar(20) NOT NULL DEFAULT '',
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `value` text NOT NULL,
+  PRIMARY KEY (`component`,`lang`,`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `y18x3_jcomments_settings`
+--
+
+INSERT INTO `y18x3_jcomments_settings` (`component`, `lang`, `name`, `value`) VALUES
+('', '', 'author_email', '2'),
+('', '', 'author_homepage', '0'),
+('', '', 'author_name', '2'),
+('', '', 'autolinkurls', ''),
+('', '', 'autopublish', ''),
+('', '', 'badwords', ''),
+('', '', 'can_ban', ''),
+('', '', 'can_comment', '1'),
+('', '', 'can_delete', ''),
+('', '', 'can_delete_for_my_object', ''),
+('', '', 'can_delete_own', ''),
+('', '', 'can_edit', ''),
+('', '', 'can_edit_for_my_object', ''),
+('', '', 'can_edit_own', ''),
+('', '', 'can_publish', ''),
+('', '', 'can_publish_for_my_object', ''),
+('', '', 'can_reply', ''),
+('', '', 'can_report', ''),
+('', '', 'can_view_email', ''),
+('', '', 'can_view_homepage', ''),
+('', '', 'can_view_ip', ''),
+('', '', 'can_vote', ''),
+('', '', 'captcha_engine', 'kcaptcha'),
+('', '', 'censor_replace_word', '[censored]'),
+('', '', 'comments_list_order', 'DESC'),
+('', '', 'comments_page_limit', '15'),
+('', '', 'comments_pagination', 'both'),
+('', '', 'comments_per_page', '10'),
+('', '', 'comments_tree_order', '0'),
+('', '', 'comment_maxlength', '1000'),
+('', '', 'comment_minlength', '0'),
+('', '', 'comment_title', '3'),
+('', '', 'delete_mode', '0'),
+('', '', 'display_author', 'name'),
+('', '', 'emailprotection', ''),
+('', '', 'enable_autocensor', ''),
+('', '', 'enable_bbcode_b', ''),
+('', '', 'enable_bbcode_code', 'Registered,Author,Editor,Publisher,Manager,Administrator,Super Users'),
+('', '', 'enable_bbcode_hide', ''),
+('', '', 'enable_bbcode_i', ''),
+('', '', 'enable_bbcode_img', ''),
+('', '', 'enable_bbcode_list', ''),
+('', '', 'enable_bbcode_quote', ''),
+('', '', 'enable_bbcode_s', ''),
+('', '', 'enable_bbcode_u', ''),
+('', '', 'enable_bbcode_url', ''),
+('', '', 'enable_blacklist', '0'),
+('', '', 'enable_captcha', ''),
+('', '', 'enable_categories', ''),
+('', '', 'enable_comment_length_check', ''),
+('', '', 'enable_comment_maxlength_check', ''),
+('', '', 'enable_custom_bbcode', '0'),
+('', '', 'enable_geshi', '0'),
+('', '', 'enable_gravatar', ''),
+('', '', 'enable_nested_quotes', '1'),
+('', '', 'enable_notification', '0'),
+('', '', 'enable_plugins', '1'),
+('', '', 'enable_quick_moderation', '0'),
+('', '', 'enable_reports', '1'),
+('', '', 'enable_rss', '0'),
+('', '', 'enable_smilies', '0'),
+('', '', 'enable_subscribe', ''),
+('', '', 'enable_username_check', '1'),
+('', '', 'enable_voting', '0'),
+('', '', 'feed_limit', '100'),
+('', '', 'floodprotection', ''),
+('', '', 'flood_time', '0'),
+('', '', 'forbidden_names', 'administrator,moderator'),
+('', '', 'form_position', '1'),
+('', '', 'form_show', '1'),
+('', '', 'link_maxlength', '50'),
+('', '', 'load_cached_comments', '1'),
+('', '', 'max_comments_per_object', '0'),
+('', '', 'merge_time', '0'),
+('', '', 'message_banned', ''),
+('', '', 'message_locked', 'Comments are now closed for this entry'),
+('', '', 'message_policy_post', ''),
+('', '', 'message_policy_whocancomment', 'You have no rights to post comments'),
+('', '', 'notification_email', ''),
+('', '', 'notification_type', '1,2'),
+('', '', 'reports_before_unpublish', '0'),
+('', '', 'reports_per_comment', '0'),
+('', '', 'report_reason_required', '1'),
+('', '', 'show_commentlength', '0'),
+('', '', 'show_policy', ''),
+('', '', 'smilies', ':D	laugh.gif\n:lol:	lol.gif\n:-)	smile.gif\n;-)	wink.gif\n8)	cool.gif\n:-|	normal.gif\n:-*	whistling.gif\n:oops:	redface.gif\n:sad:	sad.gif\n:cry:	cry.gif\n:o	surprised.gif\n:-?	confused.gif\n:-x	sick.gif\n:eek:	shocked.gif\n:zzz	sleeping.gif\n:P	tongue.gif\n:roll:	rolleyes.gif\n:sigh:	unsure.gif'),
+('', '', 'smilies_path', '/components/com_jcomments/images/smilies/'),
+('', '', 'template', 'default'),
+('', '', 'template_view', 'tree'),
+('', '', 'username_maxlength', '20'),
+('', '', 'word_maxlength', '50');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_smilies`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_smilies` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(39) NOT NULL DEFAULT '',
+  `alias` varchar(39) NOT NULL DEFAULT '',
+  `image` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
+  `ordering` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `idx_checkout` (`checked_out`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+
+--
+-- Дамп данных таблицы `y18x3_jcomments_smilies`
+--
+
+INSERT INTO `y18x3_jcomments_smilies` (`id`, `code`, `alias`, `image`, `name`, `published`, `ordering`, `checked_out`, `checked_out_time`) VALUES
+(1, ':D', '', 'laugh.gif', 'Laugh', 1, 1, 0, '0000-00-00 00:00:00'),
+(2, ':lol:', '', 'lol.gif', 'Lol', 1, 2, 0, '0000-00-00 00:00:00'),
+(3, ':-)', '', 'smile.gif', 'Smile', 1, 3, 0, '0000-00-00 00:00:00'),
+(4, ';-)', '', 'wink.gif', 'Wink', 1, 4, 0, '0000-00-00 00:00:00'),
+(5, '8)', '', 'cool.gif', 'Cool', 1, 5, 0, '0000-00-00 00:00:00'),
+(6, ':-|', '', 'normal.gif', 'Normal', 1, 6, 0, '0000-00-00 00:00:00'),
+(7, ':-*', '', 'whistling.gif', 'Whistling', 1, 7, 0, '0000-00-00 00:00:00'),
+(8, ':oops:', '', 'redface.gif', 'Redface', 1, 8, 0, '0000-00-00 00:00:00'),
+(9, ':sad:', '', 'sad.gif', 'Sad', 1, 9, 0, '0000-00-00 00:00:00'),
+(10, ':cry:', '', 'cry.gif', 'Cry', 1, 10, 0, '0000-00-00 00:00:00'),
+(11, ':o', '', 'surprised.gif', 'Surprised', 1, 11, 0, '0000-00-00 00:00:00'),
+(12, ':-?', '', 'confused.gif', 'Confused', 1, 12, 0, '0000-00-00 00:00:00'),
+(13, ':-x', '', 'sick.gif', 'Sick', 1, 13, 0, '0000-00-00 00:00:00'),
+(14, ':eek:', '', 'shocked.gif', 'Shocked', 1, 14, 0, '0000-00-00 00:00:00'),
+(15, ':zzz', '', 'sleeping.gif', 'Sleeping', 1, 15, 0, '0000-00-00 00:00:00'),
+(16, ':P', '', 'tongue.gif', 'Tongue', 1, 16, 0, '0000-00-00 00:00:00'),
+(17, ':roll:', '', 'rolleyes.gif', 'Rolleyes', 1, 17, 0, '0000-00-00 00:00:00'),
+(18, ':sigh:', '', 'unsure.gif', 'Unsure', 1, 18, 0, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_subscriptions`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_subscriptions` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `object_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `object_group` varchar(255) NOT NULL DEFAULT '',
+  `lang` varchar(255) NOT NULL DEFAULT '',
+  `userid` int(11) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `hash` varchar(255) NOT NULL DEFAULT '',
+  `published` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `source` varchar(255) NOT NULL DEFAULT '',
+  `checked_out` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `idx_object` (`object_id`,`object_group`),
+  KEY `idx_lang` (`lang`),
+  KEY `idx_source` (`source`),
+  KEY `idx_hash` (`hash`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_version`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_version` (
+  `version` varchar(16) NOT NULL DEFAULT '',
+  `previous` varchar(16) NOT NULL DEFAULT '',
+  `installed` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `y18x3_jcomments_votes`
+--
+
+CREATE TABLE IF NOT EXISTS `y18x3_jcomments_votes` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `commentid` int(11) unsigned NOT NULL DEFAULT '0',
+  `userid` int(11) unsigned NOT NULL DEFAULT '0',
+  `ip` varchar(39) NOT NULL DEFAULT '',
+  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `value` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_comment` (`commentid`,`userid`),
+  KEY `idx_user` (`userid`,`date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -3673,14 +4089,14 @@ CREATE TABLE IF NOT EXISTS `y18x3_menu` (
   KEY `idx_alias` (`alias`),
   KEY `idx_path` (`path`(255)),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=142 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=152 ;
 
 --
 -- Дамп данных таблицы `y18x3_menu`
 --
 
 INSERT INTO `y18x3_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `ordering`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 123, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 143, 0, '*', 0),
 (2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'menu', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -3728,7 +4144,7 @@ INSERT INTO `y18x3_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (126, 'top-menu', 'Подготовка к анализам', '2014-06-25-09-04-42', '', '2014-06-25-06-27-00/2014-06-25-09-04-42', 'index.php?option=com_content&view=category&layout=blog&id=10', 'component', 1, 117, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","page_subheading":"","num_leading_articles":"0","num_intro_articles":"0","num_columns":"0","num_links":"0","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"images\\/Dnk_diagnostik_main_page_final_15.jpg","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 78, 79, 0, '*', 0),
 (127, 'top-menu', 'Скидки', '2014-06-25-09-05-55', '', '2014-06-25-06-27-00/2014-06-25-09-05-55', '', 'url', 1, 117, 2, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"images\\/Dnk_diagnostik_main_page_final_17.jpg","menu_text":1}', 80, 81, 0, '*', 0),
 (128, 'top-menu', 'Анализы на дому', '2014-06-25-09-06-40', '', '2014-06-25-06-27-00/2014-06-25-09-06-40', 'index.php?option=com_content&view=article&id=7', 'component', 1, 117, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"images\\/Dnk_diagnostik_main_page_final_19.jpg","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"analizy_na_domu","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 82, 83, 0, '*', 0),
-(129, 'top-menu', 'Отзывы и презентации', '2014-06-25-09-07-48', '', '2014-06-25-06-27-00/2014-06-25-09-07-48', '', 'url', 1, 117, 2, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"images\\/Dnk_diagnostik_main_page_final_21.jpg","menu_text":1}', 84, 85, 0, '*', 0),
+(129, 'top-menu', 'Отзывы и презентации', 'otzyvy-i-prezentatsii', '', '2014-06-25-06-27-00/otzyvy-i-prezentatsii', 'index.php?option=com_content&view=article&id=11', 'component', 1, 117, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"images\\/Dnk_diagnostik_main_page_final_21.jpg","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"otzyvy_i_pretenzii","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 84, 85, 0, '*', 0),
 (130, 'hidden', 'Новости', 'novosti', '', 'novosti', 'index.php?option=com_content&view=category&layout=blog&id=8', 'component', -2, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 103, 104, 0, '*', 0),
 (131, 'hidden', 'Статьи', 'stati', '', 'stati', 'index.php?option=com_content&view=category&layout=blog&id=9', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 105, 106, 0, '*', 0),
 (132, 'main', 'COM_FOXCONTACT_MENU', 'com-foxcontact-menu', '', 'com-foxcontact-menu', 'index.php?option=com_foxcontact', 'component', 0, 1, 1, 10032, 0, 0, '0000-00-00 00:00:00', 0, 1, '../media/com_foxcontact/images/email-16.png', 0, '', 107, 108, 0, '', 1),
@@ -3740,7 +4156,17 @@ INSERT INTO `y18x3_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (138, 'content-bottom', 'Вернутся к списку новостей', '2014-07-01-13-25-11', '', '2014-07-01-13-25-11', 'index.php?Itemid=', 'alias', 1, 1, 1, 0, 0, 232, '2014-07-01 10:27:39', 0, 1, '', 0, '{"aliasoptions":"133","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 115, 116, 0, '*', 0),
 (139, 'hidden', 'Рассчитать заказ', 'rasschitat-zakaz', '', 'rasschitat-zakaz', 'index.php?option=com_content&view=article&id=8', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 117, 118, 0, '*', 0),
 (140, 'left-menu-podgotovka', 'Крови', 'krovi', '', 'krovi', 'index.php?option=com_content&view=article&id=9', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 119, 120, 0, '*', 0),
-(141, 'left-menu-podgotovka', 'ДНК', 'dnk', '', 'dnk', 'index.php?option=com_content&view=article&id=10', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 121, 122, 0, '*', 0);
+(141, 'left-menu-podgotovka', 'ДНК', 'dnk', '', 'dnk', 'index.php?option=com_content&view=article&id=10', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 121, 122, 0, '*', 0),
+(142, 'main', 'COM_JCOMMENTS', 'com-jcomments', '', 'com-jcomments', 'index.php?option=com_jcomments', 'component', 0, 1, 1, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jcomments/assets/images/icon-16-jcomments.png', 0, '', 123, 142, 0, '', 1),
+(143, 'main', 'COM_JCOMMENTS_COMMENTS', 'com-jcomments-comments', '', 'com-jcomments/com-jcomments-comments', 'index.php?option=com_jcomments&view=comments', 'component', 0, 142, 2, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:jcomments-comments', 0, '', 124, 125, 0, '', 1),
+(144, 'main', 'COM_JCOMMENTS_SETTINGS', 'com-jcomments-settings', '', 'com-jcomments/com-jcomments-settings', 'index.php?option=com_jcomments&view=settings', 'component', 0, 142, 2, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:jcomments-settings', 0, '', 126, 127, 0, '', 1),
+(145, 'main', 'COM_JCOMMENTS_SMILIES', 'com-jcomments-smilies', '', 'com-jcomments/com-jcomments-smilies', 'index.php?option=com_jcomments&view=smilies', 'component', 0, 142, 2, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:jcomments-smilies', 0, '', 128, 129, 0, '', 1),
+(146, 'main', 'COM_JCOMMENTS_SUBSCRIPTIONS', 'com-jcomments-subscriptions', '', 'com-jcomments/com-jcomments-subscriptions', 'index.php?option=com_jcomments&view=subscriptions', 'component', 0, 142, 2, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:jcomments-subscriptions', 0, '', 130, 131, 0, '', 1),
+(147, 'main', 'COM_JCOMMENTS_CUSTOM_BBCODE', 'com-jcomments-custom-bbcode', '', 'com-jcomments/com-jcomments-custom-bbcode', 'index.php?option=com_jcomments&view=custombbcodes', 'component', 0, 142, 2, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:jcomments-custombbcodes', 0, '', 132, 133, 0, '', 1),
+(148, 'main', 'COM_JCOMMENTS_BLACKLIST', 'com-jcomments-blacklist', '', 'com-jcomments/com-jcomments-blacklist', 'index.php?option=com_jcomments&view=blacklists', 'component', 0, 142, 2, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:jcomments-blacklist', 0, '', 134, 135, 0, '', 1),
+(149, 'main', 'COM_JCOMMENTS_MAILQ', 'com-jcomments-mailq', '', 'com-jcomments/com-jcomments-mailq', 'index.php?option=com_jcomments&view=mailq', 'component', 0, 142, 2, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:jcomments-mailq', 0, '', 136, 137, 0, '', 1),
+(150, 'main', 'COM_JCOMMENTS_IMPORT', 'com-jcomments-import', '', 'com-jcomments/com-jcomments-import', 'index.php?option=com_jcomments&view=import', 'component', 0, 142, 2, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:jcomments-import', 0, '', 138, 139, 0, '', 1),
+(151, 'main', 'COM_JCOMMENTS_ABOUT', 'com-jcomments-about', '', 'com-jcomments/com-jcomments-about', 'index.php?option=com_jcomments&view=about', 'component', 0, 142, 2, 10038, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:jcomments-about', 0, '', 140, 141, 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -4178,8 +4604,8 @@ CREATE TABLE IF NOT EXISTS `y18x3_session` (
 --
 
 INSERT INTO `y18x3_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`, `usertype`) VALUES
-('tsjmltlued5f65ooj8g7hisgj7', 0, 1, '1407236703', '__default|a:7:{s:15:"session.counter";i:22;s:19:"session.timer.start";i:1407235689;s:18:"session.timer.last";i:1407236701;s:17:"session.timer.now";i:1407236702;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":26:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}}__jbzoo|a:1:{s:6:"viewed";a:1:{i:7;a:2:{s:4:"type";s:6:"analiz";s:5:"appId";s:1:"3";}}}', 0, '', ''),
-('vqisml46uofr094ij2covs0dq5', 1, 0, '1407236678', '__default|a:8:{s:15:"session.counter";i:119;s:19:"session.timer.start";i:1407230871;s:18:"session.timer.last";i:1407236674;s:17:"session.timer.now";i:1407236675;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":9:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:18:"com_zooapplication";i:3;s:9:"com_menus";O:8:"stdClass":2:{s:4:"edit";O:8:"stdClass":2:{s:4:"menu";O:8:"stdClass":1:{s:4:"data";N;}s:4:"item";O:8:"stdClass":5:{s:4:"data";N;s:4:"type";N;s:4:"link";N;s:8:"menutype";s:20:"left-menu-podgotovka";s:2:"id";a:1:{i:0;i:126;}}}s:5:"items";O:8:"stdClass":2:{s:6:"filter";O:8:"stdClass":1:{s:8:"menutype";s:8:"top-menu";}s:10:"limitstart";i:0;}}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":4:{s:6:"filter";O:8:"stdClass":8:{s:18:"client_id_previous";i:0;s:6:"search";s:0:"";s:6:"access";i:0;s:5:"state";s:0:"";s:8:"position";s:0:"";s:6:"module";s:0:"";s:9:"client_id";i:0;s:8:"language";s:0:"";}s:10:"limitstart";s:1:"0";s:8:"ordercol";s:8:"position";s:9:"orderdirn";s:3:"asc";}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:0:{}}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:4:"item";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:8:"menutype";s:20:"left-menu-podgotovka";}}s:11:"com_content";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:7:"article";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:0:{}}}}s:14:"com_categories";O:8:"stdClass":2:{s:10:"categories";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:9:"extension";s:11:"com_content";}}s:4:"edit";O:8:"stdClass":1:{s:8:"category";O:8:"stdClass":1:{s:4:"data";N;}}}s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:0;}}}}s:4:"user";O:5:"JUser":26:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:3:"232";s:4:"name";s:10:"Super User";s:8:"username";s:5:"admin";s:5:"email";s:15:"sasha@gmail.com";s:8:"password";s:34:"$P$DzdtNjhETnYwW17XdJe9AiwXNRRloj1";s:14:"password_clear";s:0:"";s:8:"usertype";s:10:"deprecated";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-06-19 08:03:05";s:13:"lastvisitDate";s:19:"2014-08-05 08:29:01";s:10:"activation";s:1:"0";s:6:"params";s:2:"{}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";b:1;}s:13:"session.token";s:32:"6c3503727fb8171391fe9c675fe955b7";}', 232, 'admin', '');
+('81f3b7991c6f01384040ac78afea2c4b', 1, 0, '1407246403', '__default|a:8:{s:15:"session.counter";i:10;s:19:"session.timer.start";i:1407246006;s:18:"session.timer.last";i:1407246399;s:17:"session.timer.now";i:1407246401;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":3:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_jcomments";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:7:"comment";O:8:"stdClass":2:{s:2:"id";a:1:{i:0;i:4;}s:4:"data";N;}}}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:3:"232";s:4:"name";s:10:"Super User";s:8:"username";s:5:"admin";s:5:"email";s:15:"sasha@gmail.com";s:8:"password";s:34:"$P$DzdtNjhETnYwW17XdJe9AiwXNRRloj1";s:14:"password_clear";s:0:"";s:8:"usertype";s:10:"deprecated";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-06-19 08:03:05";s:13:"lastvisitDate";s:19:"2014-08-05 12:21:51";s:10:"activation";s:1:"0";s:6:"params";s:2:"{}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"8a3b6bc8d3ca53fd8d992969498f8ccf";}', 232, 'admin', ''),
+('tsjmltlued5f65ooj8g7hisgj7', 0, 1, '1407246354', '__default|a:7:{s:15:"session.counter";i:152;s:19:"session.timer.start";i:1407238759;s:18:"session.timer.last";i:1407246352;s:17:"session.timer.now";i:1407246353;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":26:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}}__jbzoo|a:1:{s:6:"viewed";a:1:{i:7;a:2:{s:4:"type";s:6:"analiz";s:5:"appId";s:1:"3";}}}', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -4233,7 +4659,7 @@ CREATE TABLE IF NOT EXISTS `y18x3_updates` (
   `detailsurl` text NOT NULL,
   `infourl` text NOT NULL,
   PRIMARY KEY (`update_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=387 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=403 ;
 
 --
 -- Дамп данных таблицы `y18x3_updates`
@@ -4625,7 +5051,23 @@ INSERT INTO `y18x3_updates` (`update_id`, `update_site_id`, `extension_id`, `cat
 (383, 3, 0, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '2.5.22.1', '', 'http://update.joomla.org/language/details/bs-BA_details.xml', ''),
 (384, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
 (385, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
-(386, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', '');
+(386, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(387, 3, 0, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/da-DK_details.xml', ''),
+(388, 3, 0, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/fr-FR_details.xml', ''),
+(389, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(390, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(391, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(392, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(393, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(394, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(395, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(396, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(397, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(398, 3, 0, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ru-RU_details.xml', ''),
+(399, 3, 0, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '2.5.22.1', '', 'http://update.joomla.org/language/details/bs-BA_details.xml', ''),
+(400, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
+(401, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(402, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', '');
 
 -- --------------------------------------------------------
 
@@ -4656,7 +5098,7 @@ CREATE TABLE IF NOT EXISTS `y18x3_update_sites` (
   `enabled` int(11) DEFAULT '0',
   `last_check_timestamp` bigint(20) DEFAULT '0',
   PRIMARY KEY (`update_site_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `y18x3_update_sites`
@@ -4665,10 +5107,11 @@ CREATE TABLE IF NOT EXISTS `y18x3_update_sites` (
 INSERT INTO `y18x3_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
 (1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 1404289976),
 (2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 0, 1406105096),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 1, 1407230881),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 1, 1407246401),
 (4, 'Joomline', 'extension', 'http://joomlamoduli.ru/', 0, 1403502320),
 (5, 'JUNewsUltra', 'extension', 'http://www.joomla-ua.org/update/mod/junewsultra.xml', 0, 1403625779),
-(6, 'Foxcontact update site', 'extension', 'http://www.fox.ra.it/phocadownload/foxcontact.xml', 1, 1407230881);
+(6, 'Foxcontact update site', 'extension', 'http://www.fox.ra.it/phocadownload/foxcontact.xml', 1, 1407246401),
+(7, 'JComments Update Site', 'extension', 'http://www.joomlatune.ru/updates/jcomments.xml', 1, 1407246399);
 
 -- --------------------------------------------------------
 
@@ -4693,7 +5136,8 @@ INSERT INTO `y18x3_update_sites_extensions` (`update_site_id`, `extension_id`) V
 (4, 10003),
 (5, 10025),
 (5, 10030),
-(6, 10032);
+(6, 10032),
+(7, 10038);
 
 -- --------------------------------------------------------
 
@@ -4762,7 +5206,7 @@ CREATE TABLE IF NOT EXISTS `y18x3_users` (
 --
 
 INSERT INTO `y18x3_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`) VALUES
-(232, 'Super User', 'admin', 'sasha@gmail.com', '$P$DzdtNjhETnYwW17XdJe9AiwXNRRloj1', 'deprecated', 0, 1, '2014-06-19 08:03:05', '2014-08-05 09:27:55', '0', '{}', '0000-00-00 00:00:00', 0);
+(232, 'Super User', 'admin', 'sasha@gmail.com', '$P$DzdtNjhETnYwW17XdJe9AiwXNRRloj1', 'deprecated', 0, 1, '2014-06-19 08:03:05', '2014-08-05 13:40:10', '0', '{}', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -5070,7 +5514,7 @@ INSERT INTO `y18x3_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `
 (5, 2, 'otdel', 'ОТДЕЛЕНИЕ НА ТВЕРСКОЙ', 'otdelenie-na-tverskoj', '2014-07-08 12:34:02', '2014-07-08 12:36:31', 232, '2014-07-08 12:34:02', '0000-00-00 00:00:00', 0, 0, 1, 1, 232, '', 0, ' {\n	"f4286dc7-59ef-4d4e-8c75-1929b0700c77":  {\n		"option":  {\n			"0": "da"\n		},\n		"check": "1"\n	},\n	"fdacf0f7-9194-4fbb-be7b-88a50967e39b":  {\n		"option":  {\n			"0": "da"\n		},\n		"check": "1"\n	},\n	"e7c0fafd-570c-4941-8ba7-2bdfbdeab594":  {\n		"option":  {\n			"0": "da"\n		},\n		"check": "1"\n	},\n	"2a45f69f-fe4e-4fb7-9c14-d23f1434f3ab":  {\n		"0":  {\n			"value": "\\u041c. \\u0422\\u0432\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f, \\u0443\\u043b. \\u0422\\u0432\\u0435\\u0440\\u0441\\u043a\\u0430\\u044f, \\u0434\\u043e\\u043c 6, \\u0441\\u0442\\u0440. 6"\n		}\n	},\n	"488bf866-5f0e-4891-abf0-51181e9c017d":  {\n		"location": "37.27093,55.430447",\n		"width": "",\n		"height": "",\n		"zoom": "",\n		"ballun": ""\n	},\n	"75b057d6-6c3b-45ae-b5b4-d884df11ca4d":  {\n		"0":  {\n			"file": "images\\/schema-img.jpg",\n			"title": "",\n			"link": "",\n			"target": "0",\n			"rel": ""\n		}\n	},\n	"a24425ff-37dd-43ba-ba39-b48aadd363a8":  {\n		"0":  {\n			"file": "images\\/slide1.png",\n			"title": "",\n			"link": "",\n			"target": "0",\n			"rel": ""\n		},\n		"1":  {\n			"file": "images\\/how-to-go-img.png",\n			"title": "",\n			"link": "",\n			"target": "0",\n			"rel": ""\n		},\n		"2":  {\n			"file": "images\\/how-to-go-img.png",\n			"title": "",\n			"link": "",\n			"target": "0",\n			"rel": ""\n		},\n		"3":  {\n			"file": "images\\/slide1.png",\n			"title": "",\n			"link": "",\n			"target": "0",\n			"rel": ""\n		},\n		"4":  {\n			"file": "images\\/slide1.png",\n			"title": "",\n			"link": "",\n			"target": "0",\n			"rel": ""\n		}\n	},\n	"a19ecf20-acb1-40d2-804d-8039589a503e":  {\n		"0":  {\n			"file": "images\\/how-to-go-img.png",\n			"title": "",\n			"link": "",\n			"target": "0",\n			"rel": ""\n		}\n	},\n	"ab25815d-5c6d-4ca4-8c1a-de7832c59817":  {\n		"0":  {\n			"value": "<p>\\u0421\\u0440\\u043e\\u043a \\u0432\\u044b\\u043f\\u043e\\u043b\\u043d\\u0435\\u043d\\u0438\\u044f \\u0438\\u0441\\u0441\\u043b\\u0435\\u0434\\u043e\\u0432\\u0430\\u043d\\u0438\\u0439 \\u043a 14:00 \\u0432 \\u0434\\u0435\\u043d\\u044c \\u043f\\u0440\\u0438\\u0435\\u043c\\u0430 \\u0431\\u0438\\u043e\\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u0430<\\/p>"\n		}\n	},\n	"e2134a2e-a376-4efb-84de-81c2f102342d":  {\n		"0":  {\n			"value": "07:30-08:45"\n		}\n	},\n	"22e514f7-9d6b-4ece-84a4-d199d5cf7a8d":  {\n		"0":  {\n			"value": "07:30-10:00"\n		}\n	},\n	"63ef939e-3112-4dff-94a3-57982163d34f":  {\n		"0":  {\n			"value": "07:30-19:30  \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u0441\\u043b\\u0435 18:00"\n		}\n	},\n	"dcb6bed8-992b-4e40-9a98-2e2f3ff40510":  {\n		"0":  {\n			"value": "07:30-14:30 \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u0441\\u043b\\u0435 12:30"\n		}\n	},\n	"b278bcfa-8167-429a-b3dd-f7fd96e35bfa":  {\n		"0":  {\n			"value": "07:30-19:30"\n		}\n	},\n	"0c069bdb-0ac3-4879-876d-ba560d588dc4":  {\n		"0":  {\n			"value": " 07:30-14:30"\n		}\n	},\n	"dbdae6b8-9ef8-4ea1-b166-a0da64d8b080":  {\n		"0":  {\n			"value": "07:30-19:30"\n		}\n	},\n	"b5f81493-7c9b-4f23-aabc-22aa407f5625":  {\n		"0":  {\n			"value": " 07:30-14:30"\n		}\n	},\n	"5e9d3062-bd67-40c2-bb75-ca7f6100a4e8":  {\n		"0":  {\n			"value": "<p>\\u0412\\u043e\\u043f\\u0440\\u043e\\u0441\\u044b, \\u043a\\u0430\\u0441\\u0430\\u044e\\u0449\\u0438\\u0435\\u0441\\u044f \\u0437\\u0434\\u043e\\u0440\\u043e\\u0432\\u044c\\u044f \\u0432\\u0441\\u0435\\u0433\\u0434\\u0430 \\u043e\\u0441\\u0442\\u0440\\u043e \\u0432\\u0441\\u0442\\u0430\\u044e\\u0442 \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0442\\u043e\\u0433\\u0434\\u0430, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u043e\\u0442\\u043a\\u043b\\u0430\\u0434\\u044b\\u0432\\u0430\\u0442\\u044c \\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u0435 \\u0443\\u0436\\u0435 \\u043d\\u0435\\u043b\\u044c\\u0437\\u044f. \\u041a\\u0430\\u043a \\u043f\\u0440\\u0430\\u0432\\u0438\\u043b\\u043e, \\u0443 \\u0431\\u043e\\u043b\\u044c\\u0448\\u0438\\u043d\\u0441\\u0442\\u0432\\u0430 \\u0437\\u0430\\u0431\\u043e\\u043b\\u0435\\u0432\\u0430\\u043d\\u0438\\u0439 \\u043d\\u0430 \\u0440\\u0430\\u043d\\u043d\\u0438\\u0445 \\u0441\\u0442\\u0430\\u0434\\u0438\\u044f\\u0445 \\u0441\\u0438\\u043c\\u043f\\u0442\\u043e\\u043c\\u044b \\u043e\\u0442\\u0441\\u0443\\u0442\\u0441\\u0442\\u0432\\u0443\\u044e\\u0442. \\u0412\\u044b\\u044f\\u0432\\u0438\\u0442\\u044c \\u043f\\u0440\\u0438\\u0447\\u0438\\u043d\\u0443 \\u0431\\u043e\\u043b\\u0435\\u0437\\u043d\\u0438 \\u0438 \\u0432\\u043e\\u0432\\u0440\\u0435\\u043c\\u044f \\u043d\\u0430\\u0447\\u0430\\u0442\\u044c \\u044d\\u0444\\u0444\\u0435\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0435 \\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u0435, \\u0432 \\u044d\\u0442\\u043e\\u043c \\u0412\\u0430\\u043c \\u043f\\u043e\\u043c\\u043e\\u0436\\u0435\\u0442 \\u0443\\u043b\\u044c\\u0442\\u0440\\u0430\\u0437\\u0432\\u0443\\u043a\\u043e\\u0432\\u043e\\u0435 \\u0438\\u0441\\u0441\\u043b\\u0435\\u0434\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435. \\u041d\\u0430 \\u0441\\u0435\\u0433\\u043e\\u0434\\u043d\\u044f\\u0448\\u043d\\u0438\\u0439 \\u0434\\u0435\\u043d\\u044c \\u0443\\u043b\\u044c\\u0442\\u0440\\u0430\\u0437\\u0432\\u0443\\u043a\\u043e\\u0432\\u0430\\u044f \\u0434\\u0438\\u0430\\u0433\\u043d\\u043e\\u0441\\u0442\\u0438\\u043a\\u0430 \\u044f\\u0432\\u043b\\u044f\\u0435\\u0442\\u0441\\u044f \\u043e\\u0434\\u043d\\u0438\\u043c \\u0438\\u0437 \\u0441\\u0430\\u043c\\u044b\\u0445 \\u0432\\u043e\\u0441\\u0442\\u0440\\u0435\\u0431\\u043e\\u0432\\u0430\\u043d\\u043d\\u044b\\u0445, \\u0442\\u043e\\u0447\\u043d\\u044b\\u0445 \\u0438 \\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u044b\\u0445 \\u043c\\u0435\\u0442\\u043e\\u0434\\u043e\\u0432 \\u0438\\u0441\\u0441\\u043b\\u0435\\u0434\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0431\\u043e\\u043b\\u044c\\u0448\\u0438\\u043d\\u0441\\u0442\\u0432\\u0430 \\u0437\\u0430\\u0431\\u043e\\u043b\\u0435\\u0432\\u0430\\u043d\\u0438\\u0439. \\u041c\\u0435\\u0442\\u043e\\u0434 \\u0423\\u0417\\u0418 \\u0448\\u0438\\u0440\\u043e\\u043a\\u043e \\u043f\\u0440\\u0438\\u043c\\u0435\\u043d\\u044f\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043f\\u0435\\u0434\\u0438\\u0430\\u0442\\u0440\\u0438\\u0438, \\u043e\\u0431\\u0449\\u0435\\u0439 \\u0442\\u0435\\u0440\\u0430\\u043f\\u0438\\u0438, \\u0432\\u0435\\u0434\\u0435\\u043d\\u0438\\u0435 \\u0431\\u0435\\u0440\\u0435\\u043c\\u0435\\u043d\\u043d\\u043e\\u0441\\u0442\\u0438, \\u0433\\u0438\\u043d\\u0435\\u043a\\u043e\\u043b\\u043e\\u0433\\u0438\\u0438, \\u0443\\u0440\\u043e\\u043b\\u043e\\u0433\\u0438\\u0438 \\u0438 \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u0435\\u0442 \\u043e\\u0431\\u0441\\u043b\\u0435\\u0434\\u043e\\u0432\\u0430\\u0442\\u044c \\u043c\\u043d\\u043e\\u0433\\u0438\\u0435 \\u043e\\u0440\\u0433\\u0430\\u043d\\u044b \\u0438 \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u044b \\u043e\\u0440\\u0433\\u0430\\u043d\\u0438\\u0437\\u043c\\u0430.<\\/p>"\n		}\n	},\n	"f3c7bd1b-7d39-4b86-a458-421c0654089f":  {\n		"value": "126"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "0",\n	"config.primary_category": "2"\n}');
 INSERT INTO `y18x3_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `created`, `modified`, `modified_by`, `publish_up`, `publish_down`, `priority`, `hits`, `state`, `access`, `created_by`, `created_by_alias`, `searchable`, `elements`, `params`) VALUES
 (6, 1, 'znamenitost', 'Почему лучше выбрать нас? Анализы на дому', 'evgen', '2014-07-09 05:11:19', '2014-07-09 05:24:16', 232, '2014-07-09 05:11:19', '0000-00-00 00:00:00', 0, 0, 1, 1, 232, '', 0, ' {\n	"932429c8-283c-488d-96d4-22a45f1d20f0":  {\n		"0":  {\n			"value": "\\u0415\\u0432\\u0433\\u0435\\u043d\\u0438\\u0439 \\u041f\\u043b\\u044e\\u0449\\u0435\\u043d\\u043a\\u043e"\n		}\n	},\n	"8338b202-ca95-4dd1-9188-d7dc69067393":  {\n		"0":  {\n			"value": "\\u0424\\u0438\\u0433\\u0443\\u0440\\u0438\\u0441\\u0442"\n		}\n	},\n	"bd9b806c-14c8-4745-9419-124375268ca2":  {\n		"0":  {\n			"value": "<p>\\u0412\\u043e\\u043f\\u0440\\u043e\\u0441, \\u0433\\u0434\\u0435 \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b (\\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043b\\u0438\\u0447\\u043d\\u044b\\u0435 \\u0438\\u043d\\u0444\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u043e\\u043d\\u043a\\u043e\\u043c\\u0430\\u0440\\u043a\\u0435\\u0440\\u044b, \\u043d\\u0430 \\u0433\\u0438\\u0441\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e, \\u043d\\u0430 \\u0446\\u0438\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e \\u0438 \\u043f\\u0440\\u043e\\u0447\\u0435\\u0435) \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u0443\\u0435\\u0442 \\u0441\\u0435\\u0433\\u043e\\u0434\\u043d\\u044f \\u043c\\u043d\\u043e\\u0433\\u0438\\u0445. \\u0421\\u043b\\u0435\\u0434\\u0443\\u0435\\u0442 \\u043e\\u0442\\u043c\\u0435\\u0442\\u0438\\u0442\\u044c \\u0438 \\u0442\\u043e, \\u0447\\u0442\\u043e \\u043d\\u0435\\u0440\\u0435\\u0434\\u043a\\u043e \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u0442\\u0440\\u0435\\u0431\\u0443\\u0435\\u0442\\u0441\\u044f \\u0441\\u0440\\u043e\\u0447\\u043d\\u043e, \\u0437\\u0430 1 \\u0434\\u0435\\u043d\\u044c. \\u0411\\u0435\\u0437\\u0443\\u0441\\u043b\\u043e\\u0432\\u043d\\u043e, \\u0441\\u0434\\u0430\\u0442\\u044c \\u043c\\u043e\\u0436\\u043d\\u043e \\u0438 \\u0432 \\u043f\\u043e\\u043b\\u0438\\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u0435 \\u043f\\u043e \\u043c\\u0435\\u0441\\u0442\\u0443 \\u0436\\u0438\\u0442\\u0435\\u043b\\u044c\\u0441\\u0442\\u0432\\u0430, \\u043d\\u043e \\u0442\\u043e\\u0447\\u043d\\u043e\\u0441\\u0442\\u044c \\u0442\\u0430\\u043a\\u0438\\u0445 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u043c\\u043e\\u0436\\u043d\\u043e \\u043f\\u043e\\u0434\\u0432\\u0435\\u0440\\u0433\\u043d\\u0443\\u0442\\u044c \\u0441\\u043e\\u043c\\u043d\\u0435\\u043d\\u0438\\u044e, \\u0434\\u0430 \\u0438 \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u044b \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u0432 \\u043b\\u0443\\u0447\\u0448\\u0435\\u043c \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435 \\u0431\\u044b\\u0432\\u0430\\u044e\\u0442 \\u0433\\u043e\\u0442\\u043e\\u0432\\u044f\\u0442\\u0441\\u044f \\u043e\\u0442 3-4 \\u0434\\u043d\\u0435\\u0439 \\u0434\\u043e \\u043c\\u0435\\u0441\\u044f\\u0446\\u0430.<\\/p>\\r\\n<p>\\u0417\\u043d\\u0430\\u0447\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u043d\\u0430\\u0434\\u0451\\u0436\\u043d\\u0435\\u0435 \\u0438 \\u043e\\u043f\\u0435\\u0440\\u0430\\u0442\\u0438\\u0432\\u043d\\u0435\\u0435 \\u0432\\u044b\\u043f\\u043e\\u043b\\u043d\\u044f\\u044e\\u0442 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0443 \\u0441\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u0438\\u0441\\u0442\\u044b \\u0446\\u0435\\u043d\\u0442\\u0440\\u043e\\u0432.<\\/p>"\n		}\n	},\n	"2a464b85-53de-4203-bd1c-2c1b323335ac":  {\n		"0":  {\n			"value": "<p>\\u0412\\u043e\\u043f\\u0440\\u043e\\u0441, \\u0433\\u0434\\u0435 \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b (\\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043b\\u0438\\u0447\\u043d\\u044b\\u0435 \\u0438\\u043d\\u0444\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u043e\\u043d\\u043a\\u043e\\u043c\\u0430\\u0440\\u043a\\u0435\\u0440\\u044b, \\u043d\\u0430 \\u0433\\u0438\\u0441\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e, \\u043d\\u0430 \\u0446\\u0438\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e \\u0438 \\u043f\\u0440\\u043e\\u0447\\u0435\\u0435) \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u0443\\u0435\\u0442 \\u0441\\u0435\\u0433\\u043e\\u0434\\u043d\\u044f \\u043c\\u043d\\u043e\\u0433\\u0438\\u0445. \\u0421\\u043b\\u0435\\u0434\\u0443\\u0435\\u0442 \\u043e\\u0442\\u043c\\u0435\\u0442\\u0438\\u0442\\u044c \\u0438 \\u0442\\u043e, \\u0447\\u0442\\u043e \\u043d\\u0435\\u0440\\u0435\\u0434\\u043a\\u043e \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u0442\\u0440\\u0435\\u0431\\u0443\\u0435\\u0442\\u0441\\u044f \\u0441\\u0440\\u043e\\u0447\\u043d\\u043e, \\u0437\\u0430 1 \\u0434\\u0435\\u043d\\u044c. \\u0411\\u0435\\u0437\\u0443\\u0441\\u043b\\u043e\\u0432\\u043d\\u043e, \\u0441\\u0434\\u0430\\u0442\\u044c \\u043c\\u043e\\u0436\\u043d\\u043e \\u0438 \\u0432 \\u043f\\u043e\\u043b\\u0438\\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u0435 \\u043f\\u043e \\u043c\\u0435\\u0441\\u0442\\u0443 \\u0436\\u0438\\u0442\\u0435\\u043b\\u044c\\u0441\\u0442\\u0432\\u0430, \\u043d\\u043e \\u0442\\u043e\\u0447\\u043d\\u043e\\u0441\\u0442\\u044c \\u0442\\u0430\\u043a\\u0438\\u0445 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u043c\\u043e\\u0436\\u043d\\u043e \\u043f\\u043e\\u0434\\u0432\\u0435\\u0440\\u0433\\u043d\\u0443\\u0442\\u044c \\u0441\\u043e\\u043c\\u043d\\u0435\\u043d\\u0438\\u044e, \\u0434\\u0430 \\u0438 \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u044b \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u0432 \\u043b\\u0443\\u0447\\u0448\\u0435\\u043c \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435 \\u0431\\u044b\\u0432\\u0430\\u044e\\u0442 \\u0433\\u043e\\u0442\\u043e\\u0432\\u044f\\u0442\\u0441\\u044f \\u043e\\u0442 3-4 \\u0434\\u043d\\u0435\\u0439 \\u0434\\u043e \\u043c\\u0435\\u0441\\u044f\\u0446\\u0430.<\\/p>\\r\\n<p>\\u0417\\u043d\\u0430\\u0447\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u043d\\u0430\\u0434\\u0451\\u0436\\u043d\\u0435\\u0435 \\u0438 \\u043e\\u043f\\u0435\\u0440\\u0430\\u0442\\u0438\\u0432\\u043d\\u0435\\u0435 \\u0432\\u044b\\u043f\\u043e\\u043b\\u043d\\u044f\\u044e\\u0442 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0443 \\u0441\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u0438\\u0441\\u0442\\u044b \\u0446\\u0435\\u043d\\u0442\\u0440\\u043e\\u0432.<\\/p>\\r\\n<p>\\u0412\\u043e\\u043f\\u0440\\u043e\\u0441, \\u0433\\u0434\\u0435 \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b (\\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043b\\u0438\\u0447\\u043d\\u044b\\u0435 \\u0438\\u043d\\u0444\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u043e\\u043d\\u043a\\u043e\\u043c\\u0430\\u0440\\u043a\\u0435\\u0440\\u044b, \\u043d\\u0430 \\u0433\\u0438\\u0441\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e, \\u043d\\u0430 \\u0446\\u0438\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e \\u0438 \\u043f\\u0440\\u043e\\u0447\\u0435\\u0435) \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u0443\\u0435\\u0442 \\u0441\\u0435\\u0433\\u043e\\u0434\\u043d\\u044f \\u043c\\u043d\\u043e\\u0433\\u0438\\u0445. \\u0421\\u043b\\u0435\\u0434\\u0443\\u0435\\u0442 \\u043e\\u0442\\u043c\\u0435\\u0442\\u0438\\u0442\\u044c \\u0438 \\u0442\\u043e, \\u0447\\u0442\\u043e \\u043d\\u0435\\u0440\\u0435\\u0434\\u043a\\u043e \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u0442\\u0440\\u0435\\u0431\\u0443\\u0435\\u0442\\u0441\\u044f \\u0441\\u0440\\u043e\\u0447\\u043d\\u043e, \\u0437\\u0430 1 \\u0434\\u0435\\u043d\\u044c.<\\/p>\\r\\n<p>\\u0411\\u0435\\u0437\\u0443\\u0441\\u043b\\u043e\\u0432\\u043d\\u043e, \\u0441\\u0434\\u0430\\u0442\\u044c \\u043c\\u043e\\u0436\\u043d\\u043e \\u0438 \\u0432 \\u043f\\u043e\\u043b\\u0438\\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u0435 \\u043f\\u043e \\u043c\\u0435\\u0441\\u0442\\u0443 \\u0436\\u0438\\u0442\\u0435\\u043b\\u044c\\u0441\\u0442\\u0432\\u0430, \\u043d\\u043e \\u0442\\u043e\\u0447\\u043d\\u043e\\u0441\\u0442\\u044c \\u0442\\u0430\\u043a\\u0438\\u0445 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u043c\\u043e\\u0436\\u043d\\u043e \\u043f\\u043e\\u0434\\u0432\\u0435\\u0440\\u0433\\u043d\\u0443\\u0442\\u044c \\u0441\\u043e\\u043c\\u043d\\u0435\\u043d\\u0438\\u044e, \\u0434\\u0430 \\u0438 \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u044b \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u0432 \\u043b\\u0443\\u0447\\u0448\\u0435\\u043c \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435 \\u0431\\u044b\\u0432\\u0430\\u044e\\u0442 \\u0433\\u043e\\u0442\\u043e\\u0432\\u044f\\u0442\\u0441\\u044f \\u043e\\u0442 3-4 \\u0434\\u043d\\u0435\\u0439 \\u0434\\u043e \\u043c\\u0435\\u0441\\u044f\\u0446\\u0430.<\\/p>\\r\\n<p>\\u0417\\u043d\\u0430\\u0447\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u043d\\u0430\\u0434\\u0451\\u0436\\u043d\\u0435\\u0435 \\u0438 \\u043e\\u043f\\u0435\\u0440\\u0430\\u0442\\u0438\\u0432\\u043d\\u0435\\u0435 \\u0432\\u044b\\u043f\\u043e\\u043b\\u043d\\u044f\\u044e\\u0442 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0443 \\u0441\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u0438\\u0441\\u0442\\u044b \\u0446\\u0435\\u043d\\u0442\\u0440\\u043e\\u0432.<\\/p>\\r\\n<p>\\u0412\\u043e\\u043f\\u0440\\u043e\\u0441, \\u0433\\u0434\\u0435 \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b (\\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043b\\u0438\\u0447\\u043d\\u044b\\u0435 \\u0438\\u043d\\u0444\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u043e\\u043d\\u043a\\u043e\\u043c\\u0430\\u0440\\u043a\\u0435\\u0440\\u044b, \\u043d\\u0430 \\u0433\\u0438\\u0441\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e, \\u043d\\u0430 \\u0446\\u0438\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e \\u0438 \\u043f\\u0440\\u043e\\u0447\\u0435\\u0435) \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u0443\\u0435\\u0442 \\u0441\\u0435\\u0433\\u043e\\u0434\\u043d\\u044f \\u043c\\u043d\\u043e\\u0433\\u0438\\u0445. \\u0421\\u043b\\u0435\\u0434\\u0443\\u0435\\u0442 \\u043e\\u0442\\u043c\\u0435\\u0442\\u0438\\u0442\\u044c \\u0438 \\u0442\\u043e, \\u0447\\u0442\\u043e \\u043d\\u0435\\u0440\\u0435\\u0434\\u043a\\u043e \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u0442\\u0440\\u0435\\u0431\\u0443\\u0435\\u0442\\u0441\\u044f \\u0441\\u0440\\u043e\\u0447\\u043d\\u043e, \\u0437\\u0430 1 \\u0434\\u0435\\u043d\\u044c. \\u0411\\u0435\\u0437\\u0443\\u0441\\u043b\\u043e\\u0432\\u043d\\u043e, \\u0441\\u0434\\u0430\\u0442\\u044c \\u043c\\u043e\\u0436\\u043d\\u043e \\u0438 \\u0432 \\u043f\\u043e\\u043b\\u0438\\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u0435 \\u043f\\u043e \\u043c\\u0435\\u0441\\u0442\\u0443 \\u0436\\u0438\\u0442\\u0435\\u043b\\u044c\\u0441\\u0442\\u0432\\u0430, \\u043d\\u043e \\u0442\\u043e\\u0447\\u043d\\u043e\\u0441\\u0442\\u044c \\u0442\\u0430\\u043a\\u0438\\u0445 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u043c\\u043e\\u0436\\u043d\\u043e \\u043f\\u043e\\u0434\\u0432\\u0435\\u0440\\u0433\\u043d\\u0443\\u0442\\u044c \\u0441\\u043e\\u043c\\u043d\\u0435\\u043d\\u0438\\u044e, \\u0434\\u0430 \\u0438 \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u044b \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u0432 \\u043b\\u0443\\u0447\\u0448\\u0435\\u043c \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435 \\u0431\\u044b\\u0432\\u0430\\u044e\\u0442 \\u0433\\u043e\\u0442\\u043e\\u0432\\u044f\\u0442\\u0441\\u044f \\u043e\\u0442 3-4 \\u0434\\u043d\\u0435\\u0439 \\u0434\\u043e \\u043c\\u0435\\u0441\\u044f\\u0446\\u0430.<\\/p>\\r\\n<p>\\u0417\\u043d\\u0430\\u0447\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u043d\\u0430\\u0434\\u0451\\u0436\\u043d\\u0435\\u0435 \\u0438 \\u043e\\u043f\\u0435\\u0440\\u0430\\u0442\\u0438\\u0432\\u043d\\u0435\\u0435 \\u0432\\u044b\\u043f\\u043e\\u043b\\u043d\\u044f\\u044e\\u0442 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0443 \\u0441\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u0438\\u0441\\u0442\\u044b \\u0446\\u0435\\u043d\\u0442\\u0440\\u043e\\u0432.<\\/p>\\r\\n<p>\\u0412\\u043e\\u043f\\u0440\\u043e\\u0441, \\u0433\\u0434\\u0435 \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b (\\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043b\\u0438\\u0447\\u043d\\u044b\\u0435 \\u0438\\u043d\\u0444\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u043d\\u0430 \\u043e\\u043d\\u043a\\u043e\\u043c\\u0430\\u0440\\u043a\\u0435\\u0440\\u044b, \\u043d\\u0430 \\u0433\\u0438\\u0441\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e, \\u043d\\u0430 \\u0446\\u0438\\u0442\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e \\u0438 \\u043f\\u0440\\u043e\\u0447\\u0435\\u0435) \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u0443\\u0435\\u0442 \\u0441\\u0435\\u0433\\u043e\\u0434\\u043d\\u044f \\u043c\\u043d\\u043e\\u0433\\u0438\\u0445. \\u0421\\u043b\\u0435\\u0434\\u0443\\u0435\\u0442 \\u043e\\u0442\\u043c\\u0435\\u0442\\u0438\\u0442\\u044c \\u0438 \\u0442\\u043e, \\u0447\\u0442\\u043e \\u043d\\u0435\\u0440\\u0435\\u0434\\u043a\\u043e \\u0441\\u0434\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u044b \\u0442\\u0440\\u0435\\u0431\\u0443\\u0435\\u0442\\u0441\\u044f \\u0441\\u0440\\u043e\\u0447\\u043d\\u043e, \\u0437\\u0430 1 \\u0434\\u0435\\u043d\\u044c. \\u0411\\u0435\\u0437\\u0443\\u0441\\u043b\\u043e\\u0432\\u043d\\u043e, \\u0441\\u0434\\u0430\\u0442\\u044c \\u043c\\u043e\\u0436\\u043d\\u043e \\u0438 \\u0432 \\u043f\\u043e\\u043b\\u0438\\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u0435 \\u043f\\u043e \\u043c\\u0435\\u0441\\u0442\\u0443 \\u0436\\u0438\\u0442\\u0435\\u043b\\u044c\\u0441\\u0442\\u0432\\u0430, \\u043d\\u043e \\u0442\\u043e\\u0447\\u043d\\u043e\\u0441\\u0442\\u044c \\u0442\\u0430\\u043a\\u0438\\u0445 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u043c\\u043e\\u0436\\u043d\\u043e \\u043f\\u043e\\u0434\\u0432\\u0435\\u0440\\u0433\\u043d\\u0443\\u0442\\u044c \\u0441\\u043e\\u043c\\u043d\\u0435\\u043d\\u0438\\u044e, \\u0434\\u0430 \\u0438 \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u044b \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437\\u043e\\u0432 \\u0432 \\u043b\\u0443\\u0447\\u0448\\u0435\\u043c \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435 \\u0431\\u044b\\u0432\\u0430\\u044e\\u0442 \\u0433\\u043e\\u0442\\u043e\\u0432\\u044f\\u0442\\u0441\\u044f \\u043e\\u0442 3-4 \\u0434\\u043d\\u0435\\u0439 \\u0434\\u043e \\u043c\\u0435\\u0441\\u044f\\u0446\\u0430.<\\/p>\\r\\n<p>\\u0417\\u043d\\u0430\\u0447\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e \\u043d\\u0430\\u0434\\u0451\\u0436\\u043d\\u0435\\u0435 \\u0438 \\u043e\\u043f\\u0435\\u0440\\u0430\\u0442\\u0438\\u0432\\u043d\\u0435\\u0435 \\u0432\\u044b\\u043f\\u043e\\u043b\\u043d\\u044f\\u044e\\u0442 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0443 \\u0441\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u0438\\u0441\\u0442\\u044b \\u0446\\u0435\\u043d\\u0442\\u0440\\u043e\\u0432.<\\/p>"\n		}\n	},\n	"c0c6c20e-d1c7-4179-92af-a22be67c8230":  {\n		"file": "images\\/gregory2.png",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"width": 220,\n		"height": 258\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "0",\n	"config.primary_category": ""\n}'),
-(7, 3, 'analiz', 'Анализ 1', 'analiz-1', '2014-07-30 09:57:47', '2014-08-05 10:07:29', 232, '2014-07-30 09:57:47', '0000-00-00 00:00:00', 0, 380, 1, 1, 232, '', 1, ' {\n	"71453018-f849-4d86-aa92-0b101f4241c9":  {\n		"0":  {\n			"value": "\\u0412\\u043a\\u043b\\u0430\\u0434\\u043a\\u0430 1"\n		}\n	},\n	"5e2c2247-4e6e-4712-8372-041f2ce3d960":  {\n		"0":  {\n			"value": "<p>\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435 \\u0432\\u043a\\u043b\\u0430\\u0434\\u043a\\u0438 1<\\/p>"\n		}\n	},\n	"b50e66f7-01cd-4998-aa9e-6ad2807f53bb":  {\n		"0":  {\n			"value": "\\u0412\\u041a\\u041b\\u0410\\u0414\\u041a\\u0410 2"\n		}\n	},\n	"6a02d751-5866-41b1-ba9a-ec32f6403a30":  {\n		"0":  {\n			"value": "<p>222222222222222222<\\/p>"\n		}\n	},\n	"10a10c14-81fe-4a43-ba11-3e246fe6735d":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"ca8d9cf6-df2c-4323-85f0-21d7892b5dc2":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"1e9bb41d-0bef-45dd-aed3-74141a761e46":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"4731ef3f-fdd9-4a12-aab3-875d8d3b7dc2":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"500b153d-951d-4bc2-a5bc-800836f87436":  {\n		"0":  {\n			"value": "50"\n		}\n	},\n	"bf2ac3ce-f1aa-4124-bff6-5813e841db6a":  {\n		"0":  {\n			"value": "\\u043a\\u0440\\u043e\\u0432\\u044c - 170, \\u0434\\u043d\\u043a - 888"\n		}\n	},\n	"c0a63fd1-6651-4710-a6bc-f1e252c7854e":  {\n		"0":  {\n			"value": "888"\n		}\n	},\n	"0cfa4f03-0cd0-4c23-96db-18c61ec1109c":  {\n		"0":  {\n			"value": "6 \\u0434\\u043d\\u0435\\u0439"\n		}\n	},\n	"60e031d8-2508-4d1c-b9f8-cd5b825a7afe":  {\n		"option":  {\n			"0": "rossiya"\n		},\n		"select": "1"\n	},\n	"5d8c05c2-3ef7-400d-bf7b-24b6c713a7e5":  {\n		"0":  {\n			"value": "12.201"\n		}\n	},\n	"64c37046-3921-4c99-a4e8-65952b0f3d76":  {\n		"value": "1"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "43"\n}'),
+(7, 3, 'analiz', 'Анализ 1', 'analiz-1', '2014-07-30 09:57:47', '2014-08-05 10:07:29', 232, '2014-07-30 09:57:47', '0000-00-00 00:00:00', 0, 382, 1, 1, 232, '', 1, ' {\n	"71453018-f849-4d86-aa92-0b101f4241c9":  {\n		"0":  {\n			"value": "\\u0412\\u043a\\u043b\\u0430\\u0434\\u043a\\u0430 1"\n		}\n	},\n	"5e2c2247-4e6e-4712-8372-041f2ce3d960":  {\n		"0":  {\n			"value": "<p>\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435 \\u0432\\u043a\\u043b\\u0430\\u0434\\u043a\\u0438 1<\\/p>"\n		}\n	},\n	"b50e66f7-01cd-4998-aa9e-6ad2807f53bb":  {\n		"0":  {\n			"value": "\\u0412\\u041a\\u041b\\u0410\\u0414\\u041a\\u0410 2"\n		}\n	},\n	"6a02d751-5866-41b1-ba9a-ec32f6403a30":  {\n		"0":  {\n			"value": "<p>222222222222222222<\\/p>"\n		}\n	},\n	"10a10c14-81fe-4a43-ba11-3e246fe6735d":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"ca8d9cf6-df2c-4323-85f0-21d7892b5dc2":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"1e9bb41d-0bef-45dd-aed3-74141a761e46":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"4731ef3f-fdd9-4a12-aab3-875d8d3b7dc2":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"500b153d-951d-4bc2-a5bc-800836f87436":  {\n		"0":  {\n			"value": "50"\n		}\n	},\n	"bf2ac3ce-f1aa-4124-bff6-5813e841db6a":  {\n		"0":  {\n			"value": "\\u043a\\u0440\\u043e\\u0432\\u044c - 170, \\u0434\\u043d\\u043a - 888"\n		}\n	},\n	"c0a63fd1-6651-4710-a6bc-f1e252c7854e":  {\n		"0":  {\n			"value": "888"\n		}\n	},\n	"0cfa4f03-0cd0-4c23-96db-18c61ec1109c":  {\n		"0":  {\n			"value": "6 \\u0434\\u043d\\u0435\\u0439"\n		}\n	},\n	"60e031d8-2508-4d1c-b9f8-cd5b825a7afe":  {\n		"option":  {\n			"0": "rossiya"\n		},\n		"select": "1"\n	},\n	"5d8c05c2-3ef7-400d-bf7b-24b6c713a7e5":  {\n		"0":  {\n			"value": "12.201"\n		}\n	},\n	"64c37046-3921-4c99-a4e8-65952b0f3d76":  {\n		"value": "1"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "43"\n}'),
 (8, 3, 'analiz', 'Анализ 2', 'ana', '2014-07-30 09:58:23', '2014-07-31 07:22:09', 232, '2014-07-30 09:58:23', '0000-00-00 00:00:00', 0, 12, 1, 1, 232, '', 1, ' {\n	"605568bf-46a9-4b13-8fde-ce1c13a6ff0f":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"4aa2b6b4-8073-483b-9a17-69e0f3d45f81":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"bf2ac3ce-f1aa-4124-bff6-5813e841db6a":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"c0a63fd1-6651-4710-a6bc-f1e252c7854e":  {\n		"0":  {\n			"value": "550"\n		}\n	},\n	"0cfa4f03-0cd0-4c23-96db-18c61ec1109c":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"60e031d8-2508-4d1c-b9f8-cd5b825a7afe":  {\n		"option":  {\n			"0": "rossiya"\n		},\n		"select": "1"\n	},\n	"192e7d33-95a7-4edc-8091-c9ede09c5228":  {\n		"0":  {\n			"value": "\\u0420\\u0435\\u0430\\u043a\\u0442\\u0438\\u0432 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0437 2"\n		}\n	},\n	"5d8c05c2-3ef7-400d-bf7b-24b6c713a7e5":  {\n		"0":  {\n			"value": "10.201"\n		}\n	},\n	"64c37046-3921-4c99-a4e8-65952b0f3d76":  {\n		"value": "1"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "43"\n}'),
 (9, 3, 'analiz', 'Б1', 'b1', '2014-07-30 10:08:58', '2014-07-30 10:09:12', 232, '2014-07-30 10:08:58', '0000-00-00 00:00:00', 0, 0, 1, 1, 232, '', 1, ' {\n	"c0a63fd1-6651-4710-a6bc-f1e252c7854e":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"0cfa4f03-0cd0-4c23-96db-18c61ec1109c":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"60e031d8-2508-4d1c-b9f8-cd5b825a7afe":  {\n		"option":  {\n			"0": ""\n		},\n		"select": "1"\n	},\n	"192e7d33-95a7-4edc-8091-c9ede09c5228":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"5d8c05c2-3ef7-400d-bf7b-24b6c713a7e5":  {\n		"0":  {\n			"value": ""\n		}\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "44"\n}'),
 (10, 3, 'analiz', 'Б2', 'b2', '2014-07-30 10:09:24', '2014-07-30 10:09:54', 232, '2014-07-30 10:09:24', '0000-00-00 00:00:00', 0, 1, 1, 1, 232, '', 1, ' {\n	"c0a63fd1-6651-4710-a6bc-f1e252c7854e":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"0cfa4f03-0cd0-4c23-96db-18c61ec1109c":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"60e031d8-2508-4d1c-b9f8-cd5b825a7afe":  {\n		"option":  {\n			"0": ""\n		},\n		"select": "1"\n	},\n	"192e7d33-95a7-4edc-8091-c9ede09c5228":  {\n		"0":  {\n			"value": ""\n		}\n	},\n	"5d8c05c2-3ef7-400d-bf7b-24b6c713a7e5":  {\n		"0":  {\n			"value": ""\n		}\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "44"\n}'),

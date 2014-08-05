@@ -1,0 +1,28 @@
+[26.06.2014 12:05:29.052] [INFO] [ServiceProgram] ***** Server version: 2014.1.0.0 *****
+[26.06.2014 12:05:30.412] [DEBUG] [ServiceProgram] ***** OnStart *****
+[26.06.2014 12:05:30.414] [INFO] [ServiceProgram] Initializing service runtime...
+[26.06.2014 12:05:30.416] [DEBUG] [ServiceProgram] Start initialization thread.
+[26.06.2014 12:05:31.430] [INFO] [ServiceProgram] Starting medical unit services initialization...
+[26.06.2014 12:05:31.434] [INFO] [ServiceProgram] Reading QSMED settings from [C:\QSWS\QSMED]...
+[26.06.2014 12:05:35.160] [INFO] [ServiceProgram] QsMedHttpService host opened
+[26.06.2014 12:05:35.212] [INFO] [ServiceProgram] Read QS-MED settings
+[26.06.2014 12:05:37.885] [INFO] [ServiceProgram] Fill QS-MED mandant options
+[26.06.2014 12:05:38.016] [INFO] [ServiceProgram] Initialization of app domains.
+[26.06.2014 12:05:38.352] [FATAL] [ServiceProgram] General error occurred while initializing service.
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeModule.GetTypes()
+   at System.Reflection.Assembly.GetTypes()
+   at Mmm.QsMed.WebHost.Service.Hosting.MandantServiceHelper.<GetMandantServices>b__0(MandantServicesAssemblyAttribute msaa) in D:\projects\qsmed4net\work\3M.QsMed.WebHost.Service\Hosting\MandantServiceHelper.cs:line 94
+   at System.Linq.Enumerable.<SelectManyIterator>d__14`2.MoveNext()
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Mmm.QsMed.WebHost.Service.Hosting.MandantServiceHelper.GetMandantServices() in D:\projects\qsmed4net\work\3M.QsMed.WebHost.Service\Hosting\MandantServiceHelper.cs:line 90
+   at Mmm.QsMed.WebHost.Service.ServiceProgram.Initialize() in D:\projects\qsmed4net\work\3M.QsMed.WebHost.Service\ServiceProgram.cs:line 636
+[26.06.2014 12:05:38.550] [INFO] [ServiceProgram] QsMedHttpService host closed.
+[26.06.2014 12:05:38.554] [INFO] [ServiceProgram] QsMedJobsService host closed.
+[26.06.2014 12:05:38.558] [INFO] [ServiceProgram] QsMedComClientService host closed.
+[26.06.2014 12:05:38.561] [INFO] [ServiceProgram] QsMedOptionsService host closed.
+[26.06.2014 12:05:38.564] [INFO] [ServiceProgram] Finalization of app domains.
+[26.06.2014 12:05:38.567] [INFO] [ServiceProgram] Finalization of app domains completed.
