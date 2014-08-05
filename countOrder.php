@@ -5,6 +5,7 @@ if ($_COOKIE['calculatorCookie']) {
 
         //Считываем данные с БД
         $connection = new mysqli('localhost', 'root', '', 'joomla');
+        $connection->query("SET NAMES 'utf8';");
         if ($connection->connect_error) {
             echo '<strong>Ошибка подключения к БД.</strong><br />Перезагрузите страницу пожалуйста.';
             exit;
