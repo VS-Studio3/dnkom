@@ -2462,6 +2462,9 @@ h1.title{
     text-decoration: underline;
 }
 #calculator .separator .clear:hover{
+    cursor: pointer;
+}
+#calculator .separator .clear:hover{
     text-decoration: none;
 }
 #calculator .separator .count_order{
@@ -2501,10 +2504,13 @@ h1.title{
 #calculator .separator .count_order:hover:before {
     background: url("../images/calculator.png") 0px -47px no-repeat;
 }
-#calculator{
+#right_menu #calculator{
     padding: 15px 7px 0px 7px;
     border-radius: 5px;
     border: 1px solid #aaaaaa;
     width: 199px;
     margin-bottom: 9px;
+}
+.lines_full_description .items{
+    padding-top: 1em;
 }
