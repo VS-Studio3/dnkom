@@ -180,6 +180,15 @@ if ($_COOKIE['calculatorCookie']) {
             }
             
             onChange();
+            jQuery('.fcaptchainputcontainer input').removeAttr('style');
+            jQuery('.foxform label').removeAttr('style');
+            jQuery('.fcaptcha-reload-container').append('<div class="reload">Обновить картинку</div>');
+            jQuery('.fcaptcha-reload-container img').hide();
+            jQuery('.fcaptcha-reload-container .reload').click(function(){
+                jQuery('.fcaptcha-reload-container img').click();
+            });
+            jQuery('.foxbutton').after('<div class="offcose"><span>*</span> - поля, ' +
+                'обязательные для заполнения</div>');
         }
         else
             ifIsNotCookie();
