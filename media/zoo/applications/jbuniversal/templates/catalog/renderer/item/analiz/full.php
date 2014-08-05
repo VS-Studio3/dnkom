@@ -78,10 +78,11 @@ defined('_JEXEC') or die('Restricted access');
     </div>
 </div>
 
-<div class="others">Другие анализы РАЗДЕЛА</div>
-
 <div class="tabs_header"></div>
 <div class="tab_container"></div>
+
+<div class="others">Другие анализы РАЗДЕЛА</div>
+
 
 <div id="tabs_description">  
     <?php if ($this->checkPosition('vkladka1')) : ?>
