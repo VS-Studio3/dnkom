@@ -2148,8 +2148,7 @@ box-shadow: inset rgba(163, 163, 163, 0.74902) 1px 0px 3px;
     -moz-box-shadow: none;
     box-shadow: none;
 }
-.opisaniye,
-.podgotovka{
+.tabs_header span{
     font-size: 16px;
     line-height: 16px;
     color: #262626;
@@ -2160,30 +2159,32 @@ box-shadow: inset rgba(163, 163, 163, 0.74902) 1px 0px 3px;
     border-top-left-radius: 5px;
     border: 1px solid #d2d2d2;
     padding: 9px 10px 8px;
+    margin-left: 1px;
+    display: inline-block;
+    margin-bottom: 1px;
 }
-.opisaniye:hover,
-.podgotovka:hover{
+.tabs_header span:hover{
     cursor: pointer;
     opacity: 0.8;
 }
-.podgotovka{
-    margin-left: -5px;
+.tabs_header span#active{
+    background-color: #f6f6f6;
 }
-.opisaniye_text,
-.podgotovka_text{
+.tabs_header span:first-child{
+    margin-left: 0px;
+}
+.tab_container{
     background-color: #f6f6f6;
     border: 1px solid #d2d2d2;
     border-radius: 5px;
     border-top-left-radius: 0px;
-    margin: -2px 0px 0px 2px;
+    margin: -2px 0px 0px 0px;
 }
-.opisaniye_text p,
-.podgotovka_text p{
+.tab_container p{
     margin-bottom: 17px;
     padding-left: 10px;
 }
-.opisaniye_text p:first-child,
-.podgotovka_text p:first-child{
+.tab_container p:first-child{
     margin-top: 14px;
 }
 .others{
