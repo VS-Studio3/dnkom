@@ -72,13 +72,43 @@ defined('_JEXEC') or die('Restricted access');
 
     <div class="add-to-calculator">Добавить в калькулятор</div>
     <div style="clear: both"></div>
-    
+
     <div class="tabs">
-        
+
     </div>
 </div>
 
 <div class="others">Другие анализы РАЗДЕЛА</div>
+
+<div class="tabs_header"></div>
+<div class="tab_container"></div>
+
+<div id="tabs_description">  
+    <?php if ($this->checkPosition('vkladka1')) : ?>
+        <div class="vkladka1">
+            <span><?php echo $this->renderPosition('vkladka1'); ?></span>
+            <div><?php echo $this->renderPosition('opisanie1'); ?></div>
+        </div>
+    <?php endif; ?>
+    <?php if ($this->checkPosition('vkladka2')) : ?>
+        <div class="vkladka2">
+            <span><?php echo $this->renderPosition('vkladka2'); ?></span>
+            <div><?php echo $this->renderPosition('opisanie2'); ?></div>
+        </div>
+    <?php endif; ?>
+    <?php if ($this->checkPosition('vkladka3')) : ?>
+        <div class="vkladka3">
+            <span><?php echo $this->renderPosition('vkladka3'); ?></span>
+            <div><?php echo $this->renderPosition('opisanie3'); ?></div>
+        </div>
+    <?php endif; ?>
+    <?php if ($this->checkPosition('vkladka4')) : ?>
+        <div class="vkladka4">
+            <span><?php echo $this->renderPosition('vkladka4'); ?></span>
+            <div><?php echo $this->renderPosition('opisanie4'); ?></div>
+        </div>
+    <?php endif; ?>
+</div>
 
 <div class="full_description">
     <div>Код</div>
@@ -101,5 +131,30 @@ defined('_JEXEC') or die('Restricted access');
                     '</div><div>' +
                     separates[1] + '<span class="required"></span>руб.</div></div>');
         }
+        
+        jQuery('#tabs_description').hide();
+
+        jQuery('#tabs_description > div').each(function() {
+            jQuery('.tabs_header').append('<span class="' + jQuery(this).attr('class') + '">' + jQuery(this).find('span').text() + '</span>');
+        });
+
+        jQuery('.tabs_header span').click(function() {
+            var currentClass = jQuery(this).attr('class');
+            
+            jQuery('#tabs_description > div').each(function() {
+                if(jQuery(this).attr('class') == currentClass){
+                    jQuery('.tab_container').html(jQuery(this).find('div').html());
+                }
+            });
+            
+            jQuery('.tabs_header span').each(function(){
+                jQuery(this).removeAttr('id');
+            });
+            jQuery(this).attr('id', 'active');
+            
+        });
+        
+        jQuery('.tabs_header span:eq(0)').click();
+        jQuery('.tabs_header span:eq(0)').attr('id', 'active');
     });
 </script>

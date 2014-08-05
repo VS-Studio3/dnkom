@@ -9,6 +9,14 @@
         <position name="code">Код</position>
         <position name="biomaterialy">Биоматериалы</position>
         <position name="skidka">Скидка</position>
+        <position name="vkladka1">Название вкладки 1</position>
+        <position name="vkladka2">Название вкладки 2</position>
+        <position name="vkladka3">Название вкладки 3</position>
+        <position name="vkladka4">Название вкладки 4</position>
+        <position name="opisanie1">Описание вкладки 1</position>
+        <position name="opisanie2">Описание вкладки 2</position>
+        <position name="opisanie3">Описание вкладки 3</position>
+        <position name="opisanie4">Описание вкладки 4</position>
         
         <position name="related2">related2</position>
     </positions>
