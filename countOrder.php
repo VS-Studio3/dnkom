@@ -86,19 +86,22 @@ if ($_COOKIE['calculatorCookie']) {
             }
 
             //Скрываем поле формы. В него буду записывать данные по заявке для отправки по E-mail'у
-            jQuery('.foxform textarea').hide();
+            //jQuery('.foxform .foxfield:eq(3)').hide();
 
             //Выбор взятия биоматериала
+            var listOfBiomaterials = '';
             var summaryPriceOfBiomaterials = 0;
             jQuery('.full_description.vyberite-uslugu input:checkbox').click(function() {
                 var currentPrice = parseFloat(jQuery(this).attr('price').replace(' ', '').replace(',', '.'));
                 if (this.checked) {
                     //summaryPriceOfBiomaterials +
                     summaryPriceOfBiomaterials += currentPrice;
+                    listOfBiomaterials += jQuery.trim(jQuery(this).closest('.item_object').find('div:eq(0)').html()) + ',';
                 }
                 else {
                     //summaryPriceOfBiomaterials -
                     summaryPriceOfBiomaterials -= currentPrice;
+                    listOfBiomaterials = listOfBiomaterials.replace(jQuery.trim(jQuery(this).closest('.item_object').find('div:eq(0)').html()) + ',', '');
                 }
                 onChange();
             });
@@ -110,16 +113,23 @@ if ($_COOKIE['calculatorCookie']) {
                 summaryPriceOfAnalizes += parseFloat(jQuery(this).find('div:eq(4)').text().replace(' ', '').replace(',', '.'));
             });
             
+            var listOfAnalizes = '';
+            jQuery('.full_description.list-issledovaniy .item_object').each(function(){
+                listOfAnalizes += jQuery.trim(jQuery(this).find('div:eq(1)').html()) + ',';
+            });
+            
             //При удалении или добавлении(заново) анализа
             jQuery('.full_description.list-issledovaniy input:checkbox').click(function() {
                 var currentPrice = parseFloat(jQuery(this).attr('price').replace(' ', '').replace(',', '.'));
                 if (this.checked) {
                     //Снимаем анализ из списка
                     summaryPriceOfAnalizes -= currentPrice;
+                    listOfAnalizes = listOfAnalizes.replace(jQuery.trim(jQuery(this).closest('.item_object').find('div:eq(1)').html()) + ',', '');
                 }
                 else {
                     //Добавляем анализ к списку
                     summaryPriceOfAnalizes += currentPrice;
+                    listOfAnalizes += jQuery.trim(jQuery(this).closest('.item_object').find('div:eq(1)').html()) + ',';
                 }
                 onChange();
             });
@@ -132,16 +142,19 @@ if ($_COOKIE['calculatorCookie']) {
             });
             
             //Цена за взятие биоматериала (на дому и нет)
+            var listOfBiomaterialsNaDomu = '';
             var biomaterialNaDomu = 0;
             jQuery('.full_description.vyberite-platnuy-uslugu input:checkbox').click(function(){
                 var currentPrice = parseFloat(jQuery(this).attr('title').replace(' ', '').replace(',', '.'));
                 if (this.checked) {
                     //summaryPriceOfBiomaterials +
                     biomaterialNaDomu += currentPrice;
+                    listOfBiomaterialsNaDomu += jQuery.trim(jQuery(this).closest('.item_object').find('div:eq(0)').html()) + ',';
                 }
                 else {
                     //summaryPriceOfBiomaterials -
                     biomaterialNaDomu -= currentPrice;
+                    listOfBiomaterialsNaDomu = listOfBiomaterialsNaDomu.replace(jQuery.trim(jQuery(this).closest('.item_object').find('div:eq(0)').html()) + ',', '');
                 }
                 onChange();
             });
@@ -151,12 +164,19 @@ if ($_COOKIE['calculatorCookie']) {
                 jQuery('.full_description.stoimost-zakaza .inner div:eq(0)').html('Сумма: ' + generalSumma + ' руб.');
                 jQuery('.full_description.stoimost-zakaza .inner div:eq(1)').html('Скидка: ' + skidka + '%');
                 
+                var summary = 0;
                 if(skidka == 0) jQuery('.full_description.stoimost-zakaza .inner div:eq(2)').html('Сумма: ' + generalSumma + ' руб.');
                 else{
                     var generalSumma = parseFloat(generalSumma);
-                    var summary = generalSumma - ((generalSumma/100.00) * skidka);
+                    summary = generalSumma - ((generalSumma/100.00) * skidka);
                     jQuery('.full_description.stoimost-zakaza .inner div:eq(2)').html('Сумма: ' + summary + ' руб.');
                 }
+                
+                var printText = 'Сумма: ' + generalSumma + ' руб. | Скидка: ' + skidka + '% | Итого: ' + (skidka > 0 ? summary : generalSumma) + ' руб.';
+                printText += ' | Исследования: ' + (listOfAnalizes.length > 0 ? listOfAnalizes.substr(0, listOfAnalizes.length - 1) : ' не выбраны');
+                printText += ' | Платные услуги(взятие биоматериала): ' + (listOfBiomaterials.length > 0 ? listOfBiomaterials.substr(0, listOfBiomaterials.length - 1) : ' не выбраны');
+                printText += ' | Дополнительные услуги: ' + (listOfBiomaterialsNaDomu.length > 0 ? listOfBiomaterialsNaDomu.substr(0, listOfBiomaterialsNaDomu.length - 1) : ' не выбраны');
+                jQuery('.foxform textarea').html(printText);
             }
             
             onChange();
