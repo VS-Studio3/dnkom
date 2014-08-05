@@ -2562,7 +2562,7 @@ h1.title{
     font-family: 'PT Sans', 'sans-serif';
     line-height: 16px;
     color: #5b5b5b;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     margin-top: 30px;
 }
 .spisok-issledovaniy > span{
@@ -2697,10 +2697,12 @@ padding-left: 0px;
     line-height: 11px;
     color: #262626;
     font-weight: bold;
+    margin-bottom: 24px;
 }
 .count_order_email .foxfield label{
     font-size: 16px;
     line-height: 16px;
+    width: 90px;
     display: inline-block;
     font-family: 'PT Sans', 'sans-serif';
     color: #5e5e5e;
@@ -2712,7 +2714,10 @@ padding-left: 0px;
 .count_order_email .foxfield:first-child + .foxfield + .foxfield{
     float: right;
     position: relative;
-    top: -92px;
+    top: -79px;
+}
+.count_order_email .foxfield:first-child + .foxfield + .foxfield label{
+    width: 121px;
 }
 .count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield{
  display: none;
@@ -2720,18 +2725,19 @@ padding-left: 0px;
 .count_order_email .foxfield .foxbutton{
     position: relative;
     vertical-align: top;
-    font-size: 18px;
+    font-size: 22px;
     color: #ffffff;
     font-weight: normal;
     -webkit-box-shadow: 0px 2px 2px 0px rgba(163, 163, 163, 0.75);
     -moz-box-shadow: 0px 2px 2px 0px rgba(163, 163, 163, 0.75);
     box-shadow: 0px 2px 2px 0px rgba(163, 163, 163, 0.75);
-    padding: 5px 25px;
+    padding: 5px 126px;
     background-color: #b20f00;
     border-radius: 5px;
     border: 1px solid;
     margin-top: 13px;
     text-decoration: none;
+    margin-right: 0px !important;
 }
 .count_order_email .foxfield .foxbutton span{
     color: #ffffff !important;
@@ -2755,4 +2761,106 @@ padding-left: 0px;
 }
 .full_description.stoimost-zakaza div:first-child + div + div{
     font-weight: bold;
+}
+.fox_captcha_img{
+    padding: 0px !important;
+}
+.count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield label{
+    top: -23px;
+    position: relative;
+ }
+.count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield .fcaptchacontainer{
+    display: inline-block;
+    float: none;
+    height: 46px;
+    position: relative;
+    left: -6px;
+}
+.count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield .fcaptchacontainer .fcaptchafieldcontainer{
+    margin-right: 10px !important;
+}
+.count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield .fcaptchacontainer .fcaptcha-reload-container{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+.count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield .fcaptchacontainer .fcaptchainputcontainer input{
+    width: 113px;
+}
+.count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield .fcaptchacontainer .fcaptchafieldcontainer,
+.count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield .fcaptchacontainer .fcaptchainputcontainer,
+.count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield .fcaptchacontainer .fcaptcha-reload-container{
+    display: inline-block;
+    float: none;
+    margin: 0px;
+    padding: 0px!important;
+}
+.reload{
+    font-size: 11px;
+    font-family: 'PT Sans', 'sans-serif';
+    text-decoration: underline;
+    color: #5e5e5e;
+    margin: 0px !important;
+}
+.reload:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+.count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield + .foxfield{
+    display: inline-block;
+    float: right;
+    top: -80px;
+    position: relative;
+}
+.for_form_redactor div{
+    display: inline-block;
+    font-family: 'PT Sans', 'sans-serif';
+    font-size: 16px;
+    line-height: 20px;
+    color: #171717;
+    text-decoration: underline;
+}
+.for_form_redactor{
+    margin: 15px 0px 37px 0px;
+}
+.for_form_redactor div:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+.for_form_redactor .doc_form{
+    float: right;
+    position: relative;
+}
+.com_zoo.frontpage .items {
+    background-color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 0px !important;
+    margin: 0px !important;
+}
+.for_form_redactor .doc_form:after {
+    background: url("../images/price_right_two.png") no-repeat 0px -243px;
+    height: 19px;
+    width: 15px;
+    content: "";
+    left: -20px;
+    position: absolute;
+}
+.com_content.article .message{
+    display: none;
+}
+#count_order_module {
+    margin-top: -8px;
+}
+#count_order_module .moduletable h3{
+    display: none;
+}
+.offcose{
+    font-family: 'PT Sans', 'sans-serif';
+    ffont-size: 11px;
+    line-height: 11px;
+    color: #5e5e5e;
+    padding: 5px 8px!important;
+}
+.offcose span{
+    color: #b20f00;
 }
