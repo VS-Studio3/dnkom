@@ -2511,6 +2511,11 @@ h1.title{
     width: 199px;
     margin-bottom: 9px;
 }
+<<<<<<< HEAD
 .lines_full_description .items{
     padding-top: 1em;
+=======
+.article-info{
+    display:none;
+>>>>>>> 7ce30e5a0b77baa44769cb14df8f2f6ab44a2d31
 }
