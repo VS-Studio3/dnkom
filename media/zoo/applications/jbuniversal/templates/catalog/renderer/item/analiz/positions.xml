@@ -8,8 +8,6 @@
         <position name="proizvoditel">Производитель реактивов</position>
         <position name="code">Код</position>
         <position name="biomaterialy">Биоматериалы</position>
-        <position name="description_issledovalie">Описание исследования</position>
-        <position name="podgotovka">Подготовка к иследованию</position>
         <position name="skidka">Скидка</position>
         
         <position name="related2">related2</position>

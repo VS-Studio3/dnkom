@@ -72,17 +72,9 @@ defined('_JEXEC') or die('Restricted access');
 
     <div class="add-to-calculator">Добавить в калькулятор</div>
     <div style="clear: both"></div>
-    <button class="opisaniye">Описание исследования</button>
-    <button class="podgotovka">Подготовка к иследованию</button>
-    <div class="opisaniye_text">
-        <?php if ($this->renderPosition('description_issledovalie')): ?>
-            <?php echo $this->renderPosition('description_issledovalie'); ?>
-        <?php endif; ?>   
-    </div>
-    <div class="podgotovka_text">
-        <?php if ($this->renderPosition('podgotovka')): ?>
-            <?php echo $this->renderPosition('podgotovka'); ?>
-        <?php endif; ?>  
+    
+    <div class="tabs">
+        
     </div>
 </div>
 
@@ -109,17 +101,5 @@ defined('_JEXEC') or die('Restricted access');
                     '</div><div>' +
                     separates[1] + '<span class="required"></span>руб.</div></div>');
         }
-
-        jQuery('.podgotovka_text').hide();
-
-        jQuery('.opisaniye').click(function() {
-            jQuery('.opisaniye_text').show();
-            jQuery('.podgotovka_text').hide();
-        });
-
-        jQuery('.podgotovka').click(function() {
-            jQuery('.opisaniye_text').hide();
-            jQuery('.podgotovka_text').show();
-        });
     });
 </script>

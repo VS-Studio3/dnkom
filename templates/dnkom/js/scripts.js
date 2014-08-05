@@ -134,6 +134,16 @@ jQuery(function() {
     /*Калькулятор*/
     if (jQuery('body').has('div#category_list_parameters').length > 0) {
         setCalculatorsCookie();
+        
+        if(jQuery('body').has('div.add-to-calculator').length > 0){
+            jQuery('.add-to-calculator').click(function(){
+                if(!jQuery('#full_analiz .full_description input:checkbox').prop('checked')){
+                    jQuery('#full_analiz .full_description input:checkbox').prop('checked', true);
+                    jQuery('#full_analiz .full_description input:checkbox').click();
+                    jQuery('#full_analiz .full_description input:checkbox').prop('checked', true);
+                }
+            });
+        }
 
         jQuery('.jbzoo-filter.filter-default').hide();
         jQuery('.items.items-col-1').after('<div class="navigation_and_sort">' + jQuery('.navigation_and_sort').clone().html() + '</div>');
