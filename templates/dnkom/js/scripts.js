@@ -13,6 +13,22 @@ jQuery(function() {
                 '<div class="count_order"><a href="' + baseUrl + 'index.php/rasschitat-zakaz">Рассчитать заказ</a></div></div>';
     }
 
+    function setParametersInCalculator(countOfAnalizes, summaryPrice) {
+        jQuery('#calculator .count_of_analiz span').html(countOfAnalizes);
+        jQuery('#calculator .summa span').html(summaryPrice + ' руб.');
+    }
+
+    function setCookie(currentCountOfAnalizes, generalPrice, analizesList) {
+        //Сохраняем количество анализов и общую цену в cookie
+        var today = new Date();
+        var offset = 1000 * 60 * 60 * 24;
+        var expires_at = new Date(today.getTime() + offset).toGMTString();
+
+        var cookie = "calculatorCookie=value1|value2|value3; path=/; expires=" + expires_at;
+        var cookie = cookie.replace('value1', currentCountOfAnalizes).replace('value2', generalPrice).replace('value3', analizesList).replace(' ', '');
+        document.cookie = cookie;
+    }
+
     function setCalculatorsCookie() {
         //Вставляем разметку формы калькулятора
         jQuery('#right_menu .moduletable').prepend(getCalculatorHTML());
@@ -24,16 +40,14 @@ jQuery(function() {
         var analizesList = '';
 
         if (calculatorCookie == null) {
-            jQuery('#calculator .count_of_analiz span').html('0');
-            jQuery('#calculator .summa span').html('0 руб.');
+            setParametersInCalculator('0', '0');
         }
         else {
             var cookieSpliters = calculatorCookie.split('|');
             countOfAnalizes = cookieSpliters[0];
             summa = cookieSpliters[1];
 
-            jQuery('#calculator .count_of_analiz span').html(countOfAnalizes);
-            jQuery('#calculator .summa span').html(summa + ' руб.');
+            setParametersInCalculator(countOfAnalizes, summa);
 
             if (cookieSpliters.length == 3) {
                 analizesList = cookieSpliters[2];
@@ -68,31 +82,16 @@ jQuery(function() {
                 currentCountOfAnalizes--;
                 analizesList = analizesList.replace(jQuery.trim(currentID) + '-', '');
             }
-            jQuery('#calculator .summa span').html(generalPrice + ' руб.');
-            jQuery('#calculator .count_of_analiz span').html(currentCountOfAnalizes);
+            setParametersInCalculator(currentCountOfAnalizes, generalPrice);
 
-            //Сохраняем количество анализов и общую цену в cookie
-            var today = new Date();
-            var offset = 1000 * 60 * 60 * 24;
-            var expires_at = new Date(today.getTime() + offset).toGMTString();
-
-            var cookie = "calculatorCookie=value1|value2|value3; path=/; expires=" + expires_at;
-            var cookie = cookie.replace('value1', currentCountOfAnalizes).replace('value2', generalPrice).replace('value3', analizesList).replace(' ', '');
-            document.cookie = cookie;
+            setCookie(currentCountOfAnalizes, generalPrice, analizesList);
         });
 
         jQuery('#calculator .clear').click(function() {
             analizesList = '';
-            var today = new Date();
-            var offset = 1000 * 60 * 60 * 24;
-            var expires_at = new Date(today.getTime() + offset).toGMTString();
+            setCookie('0', '0', '');
 
-            var cookie = "calculatorCookie=value1|value2|value3; path=/; expires=" + expires_at;
-            var cookie = cookie.replace('value1', '0').replace('value2', '0').replace('value3', '').replace(' ', '');
-            document.cookie = cookie;
-
-            jQuery('#calculator .count_of_analiz span').html('0');
-            jQuery('#calculator .summa span').html('0 руб.');
+            setParametersInCalculator('0', '0');
             jQuery('.item_object').each(function() {
                 jQuery(this).find('input').prop('checked', false);
             });
