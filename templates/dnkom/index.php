@@ -95,10 +95,12 @@ $task = $_GET['task'];
         <?php if (($option == 'com_zoo' && $task == 'category') || ($option == 'com_zoo' && $task == 'filter')): ?>
         <jdoc:include type="modules" name="sort-mod" style="xhtml"/>
         <?php endif; ?>
-        
+        <div class="special_for_podgotovka">
+
+
         <jdoc:include type="modules" name="podgotovka-left-menu" style="xhtml"/>
         <jdoc:include type="component" />
-        
+        </div>
 
         <?php if ($option == 'com_content' && $view == 'article') : ?>
             <jdoc:include type="modules" name="link-news" style="xhtml"/>
