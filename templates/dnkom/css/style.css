@@ -2865,3 +2865,59 @@ padding-left: 0px;
 .offcose span{
     color: #b20f00;
 }
+.special_for_podgotovka .moduletable{
+    width: 213px;
+    display: inline-block;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+}
+.special_for_podgotovka .moduletable h3{
+    background-color: #eeeeee;
+    font-family: 'PT Sans', 'sans-serif';
+    font-size: 16px;
+    line-height: 16px;
+    color: #262626;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 13px 0px;
+}
+.special_for_podgotovka .moduletable .menu li{
+    list-style-type: none;
+}
+.special_for_podgotovka .moduletable .menu{
+    padding: 10px 0px;
+    margin: 0px;
+}
+.special_for_podgotovka .moduletable .menu li a{
+    text-decoration: none;
+    font-family: 'PT Sans', 'sans-serif';
+    font-size: 13px;
+    line-height: 13px;
+    padding: 9px 10px;
+    margin-top: 5px;
+    color: #171717;
+    display: block;
+    border: 1px solid #e5e5e5;
+    background-image: url("../images/back_pogdgotovka.png");
+}
+.special_for_podgotovka .moduletable .menu li:first-child a{
+    margin-top: 0px;
+}
+.special_for_podgotovka .moduletable .menu li a:hover{
+    background-image: none;
+    background-color: #b20f00;
+    color: #FFFFFF;
+    border: 1px solid #b20f00;
+}
+.special_for_podgotovka .blog,
+.special_for_podgotovka .item-page{
+    display: inline-block;
+    vertical-align: top;
+    width: 710px;
+    padding: 0px 10px 0px 37px;
+}
+.special_for_podgotovka{
+    width: 976px;
+}
