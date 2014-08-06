@@ -156,11 +156,12 @@ jQuery(function() {
             comments.push(commentObject);
         });
         comments = comments.reverse();
-        
+
         //Функция для фильтрации вывода комментариев
         var filterComments = function(separator) {
-            if(separator == '+-') return comments;
-            
+            if (separator == '+-')
+                return comments;
+
             var currentComments = [];
             for (var i = 0; i < comments.length; i++) {
                 if (comments[i].type == separator)
@@ -168,30 +169,105 @@ jQuery(function() {
             }
             return currentComments;
         }
-        
-        var renderFilteredComments = function(curentCommentsObject){
+
+        //Количество комментариев на станице
+        var countOfCommentsInPage = 2;
+
+        //Массив со всеми комментариями по категории
+        var tempCommentsList = comments;
+
+        var setCommentsPagination = function() {
             jQuery('#list_of_comments').empty();
-            for(var i = 0; i < curentCommentsObject.length; i++){
-                jQuery('#list_of_comments').append('<div class="comment_object">' +
-                        '<span class="date">' + curentCommentsObject[i].date + '</span>' +
-                        '<span class="name">' + curentCommentsObject[i].name + '</span>' +
-                        '<span class="type' + curentCommentsObject[i].type + '"></span>' + 
-                        '<div class="text">' + curentCommentsObject[i].text + '</div></div>');
+            jQuery('#list_of_comments').append('<div class="commentsPagination"><div class="prev">&lt;</div></div>');
+
+            var countOfSummaryComments = tempCommentsList.length;
+
+            var countOfPages = Math.ceil(parseFloat(countOfSummaryComments) / countOfCommentsInPage);
+
+            for (var i = 0; i < countOfPages; i++) {
+                var currentPage = i + 1;
+                jQuery('#list_of_comments .commentsPagination').append(' <div>' + currentPage + '</div>');
             }
+            jQuery('#list_of_comments .commentsPagination').append(' <div class="next">&gt;</div>');
+
+            jQuery('.commentsPagination div').click(function() {
+                var currentActiveNumber = jQuery('.commentsPagination div#active:eq(0)').text();
+                var countOfPages = jQuery('.commentsPagination div').size() - 2;
+
+                if (jQuery(this).attr('class') == 'prev') {
+                    previous(currentActiveNumber, countOfPages);
+                }
+                else if (jQuery(this).attr('class') == 'next') {
+                    next(currentActiveNumber, countOfPages);
+                }
+                else {
+                    separateCommentsInPage(jQuery(this).text());
+                }
+            });
+        }
+
+        var renderComment = function(comment) {
+            jQuery('#list_of_comments').prepend('<div class="comment_object">' +
+                    '<span class="date">' + comment.date + '</span>' +
+                    '<span class="name">' + comment.name + '</span>' +
+                    '<span class="type' + comment.type + '"></span>' +
+                    '<div class="text">' + comment.text + '</div></div>');
+        }
+
+        var previous = function(currentActiveNumber) {
+            if (currentActiveNumber != '1') {
+                separateCommentsInPage((parseInt(currentActiveNumber) - 1).toString());
+            }
+        }
+
+        var next = function(currentActiveNumber, countOfPages) {
+            if (currentActiveNumber != countOfPages) {
+                separateCommentsInPage((parseInt(currentActiveNumber) + 1).toString());
+            }
+        }
+
+        /*
+         * @param {string} selectedPage - выбранная пользователем страница перехода к комментариям
+         */
+        var separateCommentsInPage = function(selectedPage) {
+            jQuery('#list_of_comments .comment_object').remove();
+            var startCommentNumber, endCommentNumber;
+            var userSelectedNumber = parseInt(selectedPage);
+
+            startCommentNumber = userSelectedNumber * 2 - 2;
+            endCommentNumber = startCommentNumber + 1;
+
+            if (endCommentNumber > (tempCommentsList.length - 1))
+                endCommentNumber = tempCommentsList.length - 1;
+
+            if (endCommentNumber != startCommentNumber) {
+                renderComment(tempCommentsList[endCommentNumber]);
+            }
+            renderComment(tempCommentsList[startCommentNumber]);
+
+            jQuery('.commentsPagination div').removeAttr('id');
+            jQuery('.commentsPagination div').each(function() {
+                if (jQuery(this).text() == selectedPage)
+                    jQuery(this).attr('id', 'active');
+            });
         }
 
         jQuery('#comments-form-buttons').after('<div id="comments_category"><span class="+-">Все</span> <span class="+">Положительные</span> <span class="-">Негативные</span></div><div id="list_of_comments"></div>');
         //Кликаем по все, позитивные или негативные
-        jQuery('#comments_category span').click(function(){
-            var currentComments = filterComments(jQuery(this).attr('class'));
-            renderFilteredComments(currentComments);
-            
+        jQuery('#comments_category span').click(function() {
+            tempCommentsList = filterComments(jQuery(this).attr('class'));
+            setCommentsPagination();
+            jQuery('.commentsPagination div:eq(1)').attr('id', 'active');
+            separateCommentsInPage('1');
+
             jQuery('#comments_category span').removeAttr('id');
             jQuery(this).attr('id', 'active');
         });
-        
+
         jQuery('#comments_category span:first').attr('id', 'active');
-        renderFilteredComments(comments);
+        setCommentsPagination();
+        jQuery('.commentsPagination div:eq(1)').attr('id', 'active');
+        separateCommentsInPage('1');
     }
 
     /*Калькулятор*/
