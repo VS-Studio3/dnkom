@@ -566,7 +566,7 @@ jQuery(function() {
             jQuery('.submenu_container').html(jQuery(this).find('ul').clone());
         }
     });
-
+    jQuery('.foxtext.hasDatepicker').removeAttr('style');
     jQuery('#top_menu .menu > li > span').click(function() {
         jQuery('.submenu_container').html(jQuery(this).next('ul').clone());
         jQuery('#top_menu .menu > li').removeClass('active_menu_link');
