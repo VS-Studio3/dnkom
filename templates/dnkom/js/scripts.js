@@ -480,7 +480,13 @@ jQuery(function() {
     /*Анализы на дому*/
     if (jQuery('body').attr('id') == 'analizy_na_domu') {
         jQuery('#analizy_na_domu a[href="#ogranicheniya"]').fancybox();
-
+        jQuery('.fcaptchainputcontainer input').removeAttr('style');
+        jQuery('.foxform label').removeAttr('style');
+        jQuery('.fcaptcha-reload-container').append('<div class="reload">Обновить картинку</div>');
+        jQuery('.fcaptcha-reload-container img').hide();
+        jQuery('.fcaptcha-reload-container .reload').click(function(){
+            jQuery('.fcaptcha-reload-container img').click();
+        });
         jQuery('#analizy_na_domu .foxform .foxfield input[title="Телефон"]').mask('+7(999)999+99+99');
         jQuery('#analizy_na_domu .foxform .foxfield input[title="Дата выезда медсестры"]').mask('99.99.9999');
 
