@@ -13,6 +13,22 @@ jQuery(function() {
                 '<div class="count_order"><a href="' + baseUrl + 'index.php/rasschitat-zakaz">Рассчитать заказ</a></div></div>';
     }
 
+    function setParametersInCalculator(countOfAnalizes, summaryPrice) {
+        jQuery('#calculator .count_of_analiz span').html(countOfAnalizes);
+        jQuery('#calculator .summa span').html(summaryPrice + ' руб.');
+    }
+
+    function setCookie(currentCountOfAnalizes, generalPrice, analizesList) {
+        //Сохраняем количество анализов и общую цену в cookie
+        var today = new Date();
+        var offset = 1000 * 60 * 60 * 24;
+        var expires_at = new Date(today.getTime() + offset).toGMTString();
+
+        var cookie = "calculatorCookie=value1|value2|value3; path=/; expires=" + expires_at;
+        var cookie = cookie.replace('value1', currentCountOfAnalizes).replace('value2', generalPrice).replace('value3', analizesList).replace(' ', '');
+        document.cookie = cookie;
+    }
+
     function setCalculatorsCookie() {
         //Вставляем разметку формы калькулятора
         jQuery('#right_menu .moduletable').prepend(getCalculatorHTML());
@@ -24,16 +40,14 @@ jQuery(function() {
         var analizesList = '';
 
         if (calculatorCookie == null) {
-            jQuery('#calculator .count_of_analiz span').html('0');
-            jQuery('#calculator .summa span').html('0 руб.');
+            setParametersInCalculator('0', '0');
         }
         else {
             var cookieSpliters = calculatorCookie.split('|');
             countOfAnalizes = cookieSpliters[0];
             summa = cookieSpliters[1];
 
-            jQuery('#calculator .count_of_analiz span').html(countOfAnalizes);
-            jQuery('#calculator .summa span').html(summa + ' руб.');
+            setParametersInCalculator(countOfAnalizes, summa);
 
             if (cookieSpliters.length == 3) {
                 analizesList = cookieSpliters[2];
@@ -68,31 +82,16 @@ jQuery(function() {
                 currentCountOfAnalizes--;
                 analizesList = analizesList.replace(jQuery.trim(currentID) + '-', '');
             }
-            jQuery('#calculator .summa span').html(generalPrice + ' руб.');
-            jQuery('#calculator .count_of_analiz span').html(currentCountOfAnalizes);
+            setParametersInCalculator(currentCountOfAnalizes, generalPrice);
 
-            //Сохраняем количество анализов и общую цену в cookie
-            var today = new Date();
-            var offset = 1000 * 60 * 60 * 24;
-            var expires_at = new Date(today.getTime() + offset).toGMTString();
-
-            var cookie = "calculatorCookie=value1|value2|value3; path=/; expires=" + expires_at;
-            var cookie = cookie.replace('value1', currentCountOfAnalizes).replace('value2', generalPrice).replace('value3', analizesList).replace(' ', '');
-            document.cookie = cookie;
+            setCookie(currentCountOfAnalizes, generalPrice, analizesList);
         });
 
         jQuery('#calculator .clear').click(function() {
             analizesList = '';
-            var today = new Date();
-            var offset = 1000 * 60 * 60 * 24;
-            var expires_at = new Date(today.getTime() + offset).toGMTString();
+            setCookie('0', '0', '');
 
-            var cookie = "calculatorCookie=value1|value2|value3; path=/; expires=" + expires_at;
-            var cookie = cookie.replace('value1', '0').replace('value2', '0').replace('value3', '').replace(' ', '');
-            document.cookie = cookie;
-
-            jQuery('#calculator .count_of_analiz span').html('0');
-            jQuery('#calculator .summa span').html('0 руб.');
+            setParametersInCalculator('0', '0');
             jQuery('.item_object').each(function() {
                 jQuery(this).find('input').prop('checked', false);
             });
@@ -156,11 +155,12 @@ jQuery(function() {
             comments.push(commentObject);
         });
         comments = comments.reverse();
-        
+
         //Функция для фильтрации вывода комментариев
         var filterComments = function(separator) {
-            if(separator == '+-') return comments;
-            
+            if (separator == '+-')
+                return comments;
+
             var currentComments = [];
             for (var i = 0; i < comments.length; i++) {
                 if (comments[i].type == separator)
@@ -168,30 +168,105 @@ jQuery(function() {
             }
             return currentComments;
         }
-        
-        var renderFilteredComments = function(curentCommentsObject){
+
+        //Количество комментариев на станице
+        var countOfCommentsInPage = 2;
+
+        //Массив со всеми комментариями по категории
+        var tempCommentsList = comments;
+
+        var setCommentsPagination = function() {
             jQuery('#list_of_comments').empty();
-            for(var i = 0; i < curentCommentsObject.length; i++){
-                jQuery('#list_of_comments').append('<div class="comment_object">' +
-                        '<span class="date">' + curentCommentsObject[i].date + '</span>' +
-                        '<span class="name">' + curentCommentsObject[i].name + '</span>' +
-                        '<span class="type' + curentCommentsObject[i].type + '"></span>' + 
-                        '<div class="text">' + curentCommentsObject[i].text + '</div></div>');
+            jQuery('#list_of_comments').append('<div class="commentsPagination"><div class="prev">&lt;</div></div>');
+
+            var countOfSummaryComments = tempCommentsList.length;
+
+            var countOfPages = Math.ceil(parseFloat(countOfSummaryComments) / countOfCommentsInPage);
+
+            for (var i = 0; i < countOfPages; i++) {
+                var currentPage = i + 1;
+                jQuery('#list_of_comments .commentsPagination').append(' <div>' + currentPage + '</div>');
             }
+            jQuery('#list_of_comments .commentsPagination').append(' <div class="next">&gt;</div>');
+
+            jQuery('.commentsPagination div').click(function() {
+                var currentActiveNumber = jQuery('.commentsPagination div#active:eq(0)').text();
+                var countOfPages = jQuery('.commentsPagination div').size() - 2;
+
+                if (jQuery(this).attr('class') == 'prev') {
+                    previous(currentActiveNumber, countOfPages);
+                }
+                else if (jQuery(this).attr('class') == 'next') {
+                    next(currentActiveNumber, countOfPages);
+                }
+                else {
+                    separateCommentsInPage(jQuery(this).text());
+                }
+            });
+        }
+
+        var renderComment = function(comment) {
+            jQuery('#list_of_comments').prepend('<div class="comment_object">' +
+                    '<span class="date">' + comment.date + '</span>' +
+                    '<span class="name">' + comment.name + '</span>' +
+                    '<span class="type' + comment.type + '"></span>' +
+                    '<div class="text">' + comment.text + '</div></div>');
+        }
+
+        var previous = function(currentActiveNumber) {
+            if (currentActiveNumber != '1') {
+                separateCommentsInPage((parseInt(currentActiveNumber) - 1).toString());
+            }
+        }
+
+        var next = function(currentActiveNumber, countOfPages) {
+            if (currentActiveNumber != countOfPages) {
+                separateCommentsInPage((parseInt(currentActiveNumber) + 1).toString());
+            }
+        }
+
+        /*
+         * @param {string} selectedPage - выбранная пользователем страница перехода к комментариям
+         */
+        var separateCommentsInPage = function(selectedPage) {
+            jQuery('#list_of_comments .comment_object').remove();
+            var startCommentNumber, endCommentNumber;
+            var userSelectedNumber = parseInt(selectedPage);
+
+            startCommentNumber = userSelectedNumber * 2 - 2;
+            endCommentNumber = startCommentNumber + 1;
+
+            if (endCommentNumber > (tempCommentsList.length - 1))
+                endCommentNumber = tempCommentsList.length - 1;
+
+            if (endCommentNumber != startCommentNumber) {
+                renderComment(tempCommentsList[endCommentNumber]);
+            }
+            renderComment(tempCommentsList[startCommentNumber]);
+
+            jQuery('.commentsPagination div').removeAttr('id');
+            jQuery('.commentsPagination div').each(function() {
+                if (jQuery(this).text() == selectedPage)
+                    jQuery(this).attr('id', 'active');
+            });
         }
 
         jQuery('#comments-form-buttons').after('<div id="comments_category"><span class="+-">Все</span> <span class="+">Положительные</span> <span class="-">Негативные</span></div><div id="list_of_comments"></div>');
         //Кликаем по все, позитивные или негативные
-        jQuery('#comments_category span').click(function(){
-            var currentComments = filterComments(jQuery(this).attr('class'));
-            renderFilteredComments(currentComments);
-            
+        jQuery('#comments_category span').click(function() {
+            tempCommentsList = filterComments(jQuery(this).attr('class'));
+            setCommentsPagination();
+            jQuery('.commentsPagination div:eq(1)').attr('id', 'active');
+            separateCommentsInPage('1');
+
             jQuery('#comments_category span').removeAttr('id');
             jQuery(this).attr('id', 'active');
         });
-        
+
         jQuery('#comments_category span:first').attr('id', 'active');
-        renderFilteredComments(comments);
+        setCommentsPagination();
+        jQuery('.commentsPagination div:eq(1)').attr('id', 'active');
+        separateCommentsInPage('1');
     }
 
     /*Калькулятор*/
