@@ -158,12 +158,15 @@ jQuery(function() {
 
         //Функция для фильтрации вывода комментариев
         var filterComments = function(separator) {
-            if (separator == '+-')
-                return comments;
-
+            if(separator == 'neytral') return comments;
+                
+            var separatorValue = '';
+            if(separator == 'positive') separatorValue = '+';
+            else separatorValue = '-';
+            
             var currentComments = [];
             for (var i = 0; i < comments.length; i++) {
-                if (comments[i].type == separator)
+                if (comments[i].type == separatorValue)
                     currentComments.push(comments[i]);
             }
             return currentComments;
@@ -251,7 +254,7 @@ jQuery(function() {
             });
         }
 
-        jQuery('#comments-form-buttons').after('<div id="comments_category"><span class="+-">Все</span> <span class="+">Положительные</span> <span class="-">Негативные</span></div><div id="list_of_comments"></div>');
+        jQuery('#comments-form-buttons').after('<div id="comments_category"><span class="neytral">Все</span> <span class="positive">Положительные</span> <span class="negative">Негативные</span></div><div id="list_of_comments"></div>');
         //Кликаем по все, позитивные или негативные
         jQuery('#comments_category span').click(function() {
             tempCommentsList = filterComments(jQuery(this).attr('class'));
