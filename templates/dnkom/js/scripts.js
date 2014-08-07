@@ -1,11 +1,11 @@
 jQuery(function() {
 
     jQuery('.calls a').fancybox();
-    
+
     //еСЛИ ВЫВОДИТСЯ ПРАВЫЙ БЛОК
-     if (jQuery('body').has('#right_menu').length > 0) {
-         jQuery('#right_menu li:first a').attr('href', window.BASE_URL + '/chasto-zadavaemye-voprosy.html');
-     }
+    if (jQuery('body').has('#right_menu').length > 0) {
+        jQuery('#right_menu li:first a').attr('href', window.BASE_URL + '/chasto-zadavaemye-voprosy.html');
+    }
 
     function getCalculatorHTML() {
         return '<div id="calculator"><div class="calc_title">КАЛЬКУЛЯТОР</div>' +
@@ -133,8 +133,106 @@ jQuery(function() {
             return cookie;
         }
     };
-    
+
     /*Часто задаваемые вопросы*/
+    if (jQuery('body').attr('id') == 'chasto-zadavaemye-voprosy') {
+        jQuery('#comments-list-footer, #comments-footer, #jc h4, .comments-list .rbox').hide();
+        jQuery('#comments-form-title').val('ВОПРОС');
+        jQuery('#comments-form-title, label[for="comments-form-title"]').hide();
+
+        var questions = [];
+        jQuery('.comments-list .comment-box').each(function() {
+            if (jQuery(this).find('.comment-author').text() == 'Super User') {
+                var currentAnswerToQuestion = '<div class="answer"><div class="text"><span>ОТВЕТ: </span>' + jQuery(this).find('.comment-body').text() + '</div></div>';
+                questions[questions.length - 1] += currentAnswerToQuestion;
+            }
+            else {
+                var text = jQuery(this).find('.comment-body').text();
+                var answerButton = jQuery(this).find('.comments-buttons').html();
+                if (answerButton == null)
+                    answerButton = '';
+                questions.push(text + '<span class="comments-buttons">' + answerButton + '</span>');
+            }
+        });
+        questions = questions.reverse();
+
+        //Количество вопросов на станице
+        var countOfCommentsInPage = 3;
+
+        var setCommentsPagination = function() {
+            jQuery('#comments .rbox').empty();
+            jQuery('#comments').append('<div class="commentsPagination"><div class="prev">&lt;</div></div>');
+
+            var countOfSummaryComments = questions.length;
+
+            var countOfPages = Math.ceil(parseFloat(countOfSummaryComments) / countOfCommentsInPage);
+
+            for (var i = 0; i < countOfPages; i++) {
+                var currentPage = i + 1;
+                jQuery('#comments .commentsPagination').append(' <div>' + currentPage + '</div>');
+            }
+            jQuery('#comments .commentsPagination').append(' <div class="next">&gt;</div>');
+
+            jQuery('.commentsPagination div').click(function() {
+                var currentActiveNumber = jQuery('.commentsPagination div#active:eq(0)').text();
+                var countOfPages = jQuery('.commentsPagination div').size() - 2;
+
+                if (jQuery(this).attr('class') == 'prev') {
+                    previous(currentActiveNumber, countOfPages);
+                }
+                else if (jQuery(this).attr('class') == 'next') {
+                    next(currentActiveNumber, countOfPages);
+                }
+                else {
+                    separateCommentsInPage(jQuery(this).text());
+                }
+            });
+        }
+       
+        setCommentsPagination();
+
+        jQuery('.commentsPagination div:eq(1)').attr('id', 'active');
+
+        var renderComment = function(comment) {
+            jQuery('#comments').prepend('<div class="comment_object"><span>ВОПРОС: </span>' + comment + '</div></div>');
+        }
+        
+        var previous = function(currentActiveNumber) {
+            if (currentActiveNumber != '1') {
+                separateCommentsInPage((parseInt(currentActiveNumber) - 1).toString());
+            }
+        }
+
+        var next = function(currentActiveNumber, countOfPages) {
+            if (currentActiveNumber != countOfPages) {
+                separateCommentsInPage((parseInt(currentActiveNumber) + 1).toString());
+            }
+        }
+        
+        var separateCommentsInPage = function(selectedPage) {
+            jQuery('#comments .comment_object').remove();
+            var startCommentNumber, endCommentNumber;
+            var userSelectedNumber = parseInt(selectedPage);
+
+            startCommentNumber = userSelectedNumber * 3 - 3;
+            endCommentNumber = startCommentNumber + 2;
+
+            if (endCommentNumber > (questions.length - 1))
+                endCommentNumber = questions.length - 1;
+            
+            for(var i = endCommentNumber; i >= startCommentNumber; i--) {
+                renderComment(questions[i]);
+            }
+
+            jQuery('.commentsPagination div').removeAttr('id');
+            jQuery('.commentsPagination div').each(function() {
+                if (jQuery(this).text() == selectedPage)
+                    jQuery(this).attr('id', 'active');
+            });
+        }
+        
+        separateCommentsInPage('1');
+    }
 
     /*Отзывы и претензии*/
     if (jQuery('body').attr('id') == 'otzyvy_i_pretenzii') {
@@ -150,13 +248,13 @@ jQuery(function() {
                 type = jQuery(this).val();
                 jQuery('#comments-form p:eq(3) input').val(type);
             });
-            
-            
+
+
         }
-        else{
+        else {
             jQuery('#comments-form-title').val('Ответ администрации');
         }
-        
+
         jQuery('#comments-form-title, label[for="comments-form-title"]').hide();
 
         var comments = [];
@@ -168,12 +266,15 @@ jQuery(function() {
                 comments[comments.length - 1].text += currentAnswerToQuestion;
             }
             else {
+                var answerButton = jQuery(this).find('.comments-buttons').html();
+                if (answerButton == null)
+                    answerButton = '';
                 var commentObject = {
                     date: jQuery(this).find('.comment-date').text(),
                     name: jQuery(this).find('.comment-author').text(),
                     type: jQuery(this).find('.comment-title').text(),
                     text: jQuery(this).find('.comment-body').text(),
-                    button: '<span class="comments-buttons">' + jQuery(this).find('.comments-buttons').html() + '</span>'
+                    button: '<span class="comments-buttons">' + answerButton + '</span>'
                 }
                 comments.push(commentObject);
             }
@@ -293,7 +394,7 @@ jQuery(function() {
             setCommentsPagination();
             jQuery('.commentsPagination div:eq(1)').attr('id', 'active');
             separateCommentsInPage('1');
-
+            /***********************/
             jQuery('#comments_category span').removeAttr('id');
             jQuery(this).attr('id', 'active');
         });
