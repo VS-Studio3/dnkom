@@ -3,14 +3,13 @@ jQuery(function() {
     jQuery('.calls a').fancybox();
 
     function getCalculatorHTML() {
-        var baseUrl = window.location.href.substr(0, window.location.href.indexOf('index.php'));
         return '<div id="calculator"><div class="calc_title">КАЛЬКУЛЯТОР</div>' +
                 '<div class="count_of_analiz">Анализов: <span></span></div>' +
                 '<div class="add">Добавить исследование к расчету</div><div class="separator"></div>' +
                 '<div class="summa">Сумма: <span></span></div>' +
                 '<div class="skidka">Скидка: <span></span></div><div class="separator">' +
                 '<div class="itogo">Итого: <span></span></div><div class="clear">Очистить форму</div>' +
-                '<div class="count_order"><a href="' + baseUrl + 'index.php/rasschitat-zakaz">Рассчитать заказ</a></div></div>';
+                '<div class="count_order"><a href="' + window.BASE_URL + '/rasschitat-zakaz.html">Рассчитать заказ</a></div></div>';
     }
 
     function setParametersInCalculator(countOfAnalizes, summaryPrice) {
@@ -209,10 +208,14 @@ jQuery(function() {
         }
 
         var renderComment = function(comment) {
+            var typeValue = '';
+            if(comment.type == '+') typeValue = 'positive';
+            else typeValue = 'negative';
+            
             jQuery('#list_of_comments').prepend('<div class="comment_object">' +
                     '<span class="date">' + comment.date + '</span>' +
                     '<span class="name">' + comment.name + '</span>' +
-                    '<span class="type' + comment.type + '"></span>' +
+                    '<span class="type' + typeValue + '"></span>' +
                     '<div class="text">' + comment.text + '</div></div>');
         }
 

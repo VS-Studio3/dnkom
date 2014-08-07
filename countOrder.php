@@ -35,7 +35,7 @@ if ($_COOKIE['calculatorCookie']) {
             jQuery('#count_order_module').hide();
         }
 
-        var baseUrl = window.location.href.substr(0, window.location.href.indexOf('index.php')) + 'index.php/2014-06-25-06-27-00/2014-06-25-06-37-56';
+        var baseUrl = '<?php echo JURI::base(); ?>' + 'analizy-i-tseny/analizy-po-razdelam.html';
         jQuery('.add-other-order a').attr('href', baseUrl);
 
         var issetAnalizesInCookie = '<?php echo $issetAnalizesInCookie; ?>';
