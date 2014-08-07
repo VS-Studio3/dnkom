@@ -3198,6 +3198,8 @@ padding-left: 0px;
 }
 #uslugi_block{
     display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
 }
 .count_order_email .foxfield:first-child + .foxfield + .foxfield + .foxfield + .foxfield .fcaptchacontainer{
     display: inline-block;
@@ -3208,7 +3210,7 @@ padding-left: 0px;
 }
 #forma_zakaza .fcaptchacontainer{
     position: relative;
-    width: 325px;
+    width: 309px;
     margin: 0px!important;
     overflow: visible;
     padding-bottom: 10px;
@@ -3222,7 +3224,7 @@ padding-left: 0px;
     bottom: 0px;
 }
 #forma_zakaza .fcaptchacontainer .fcaptchainputcontainer input{
-    width: 168px;
+    width: 152px;
 }
 #forma_zakaza .reload{
     bottom: -3px;
@@ -3283,6 +3285,7 @@ padding-left: 0px;
     color: #262626;
     font-family: 'PT Sans', 'sans-serif';
     font-weight: bold;
+    margin-top: 6px;
 }
 #forma_zakaza label{
     color: #5e5e5e;
@@ -3310,15 +3313,16 @@ padding-left: 0px;
 #uslugi{
     width: 269px;
     display:block;
-    padding: 20px 10px;
+    padding: 20px 10px 13px 10px;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
+    margin-bottom: 25px;
 }
-#uslugi_block a:first-of-type{
+#uslugi_block a.list_biomaterial{
     font-size: 18px;
     position: relative;
-    font-family: PT Sans, sans-serif;
-    color: #535353;
+    font-family: 'PT Sans', 'sans-serif';
+    color: #171717;
     text-decoration: none;
     padding: 22px 17px;
     height: 100%;
@@ -3334,16 +3338,99 @@ padding-left: 0px;
     text-align: center;
     line-height: 20px;
 }
-
-
-
-
-
-
-
-
-
-
+#uslugi_block a.list_biomaterial:hover{
+    color: #b20f00;
+}
+#uslugi .names div{
+    float: right;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    color: #262626;
+    font-family: 'PT Sans', 'sans-serif';
+}
+#uslugi .names{
+    margin-bottom: 25px;
+}
+#uslugi .names div#title{
+    float: none;
+}
+#uslugi .how_murch_cost div:first-child{
+    font-size: 12px;
+    line-height: 14px;
+    color: #5e5e5e;
+    font-family: 'PT Sans', 'sans-serif';
+    float: none;
+    display: inline-block;
+    width: 155px;
+}
+#uslugi .how_murch_cost{
+    border-bottom: 1px solid #a0a0a0;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+}
+#uslugi .how_murch_cost div{
+    font-size: 14px;
+    line-height: 16px;
+    color: #262626;
+    font-family: 'PT Sans', 'sans-serif';
+    float: right;
+    display: inline-block;
+}
+#uslugi_block .for_peoples_download{
+    text-align: center;
+    padding-top: 15px;
+}
+#uslugi_block .for_peoples_download a{
+    font-size: 16px;
+    line-height: 20px;
+    color: #171717;
+    font-family: 'PT Sans', 'sans-serif';
+    position: relative;
+    padding-left: 20px;
+}
+#uslugi_block #download{
+    margin-left: 10px;
+}
+#uslugi_block #print{
+    margin-right: 10px;
+}
+#uslugi_block #download:before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    width: 18px;
+    height: 16px;
+    background: url("../images/download.png") 0px 0px no-repeat;
+}
+#uslugi_block #print:before{
+    background: url("../images/price_right_two.png") no-repeat 0px -243px;
+    height: 19px;
+    width: 15px;
+    content: "";
+    left: 0px;
+    position: absolute;
+}
+.item-pageanalizy_na_domu .analiz_child h2{
+    font-size: 20px;
+    line-height: 16px;
+    color: #5b5b5b;
+    font-family: 'PT Sans', 'sans-serif';
+}
+.item-pageanalizy_na_domu .analiz_child p{
+    font-size: 16px;
+    line-height: 18px;
+    color: #5b5b5b;
+    margin-bottom: 20px;
+    font-family: 'PT Sans', 'sans-serif';
+}
+.item-pageanalizy_na_domu .analiz_child{
+    padding-top: 20px;
+}
+#forma_zakaza input{
+    position: relative;
+}
 
 
 
