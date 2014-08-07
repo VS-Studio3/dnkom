@@ -3434,7 +3434,9 @@ padding-left: 0px;
 #forma_zakaza input{
     position: relative;
 }
-
+.hasDatepicker{
+    width: 57% !important;
+}
 
 
 
