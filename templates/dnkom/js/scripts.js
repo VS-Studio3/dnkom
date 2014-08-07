@@ -1,6 +1,11 @@
 jQuery(function() {
 
     jQuery('.calls a').fancybox();
+    
+    //еСЛИ ВЫВОДИТСЯ ПРАВЫЙ БЛОК
+     if (jQuery('body').has('#right_menu').length > 0) {
+         jQuery('#right_menu li:first a').attr('href', window.BASE_URL + '/chasto-zadavaemye-voprosy.html');
+     }
 
     function getCalculatorHTML() {
         return '<div id="calculator"><div class="calc_title">КАЛЬКУЛЯТОР</div>' +
@@ -128,41 +133,63 @@ jQuery(function() {
             return cookie;
         }
     };
+    
+    /*Часто задаваемые вопросы*/
 
     /*Отзывы и претензии*/
     if (jQuery('body').attr('id') == 'otzyvy_i_pretenzii') {
-        jQuery('#comments-form').prepend('<p class="type_of_comment"><span>Тип отзыва<span class="required"></span></span>' +
-                '<span><input type="radio" name="type" value="+">Положительный<input type="radio" name="type" value="-">Отрицательный</span></p>');
+        jQuery('#comments-list-footer, #comments-footer, #jc h4, .rbox').hide();
+        if (CookieObject.find('superuser') == null || CookieObject.find('superuser') == 'false')
+        {
+            jQuery('#comments-form').prepend('<p class="type_of_comment"><span>Тип отзыва<span class="required"></span></span>' +
+                    '<span><input type="radio" name="type" value="+">Положительный<input type="radio" name="type" value="-">Отрицательный</span></p>');
 
-        jQuery('#comments-list-footer, #comments-footer, #jc h4, #comments-form p:eq(3), #comments').hide();
-        var type = '';
+            var type = '';
 
-        jQuery('#comments-form p.type_of_comment input').click(function() {
-            type = jQuery(this).val();
-            jQuery('#comments-form p:eq(3) input').val(type);
-        });
+            jQuery('#comments-form p.type_of_comment input').click(function() {
+                type = jQuery(this).val();
+                jQuery('#comments-form p:eq(3) input').val(type);
+            });
+            
+            
+        }
+        else{
+            jQuery('#comments-form-title').val('Ответ администрации');
+        }
+        
+        jQuery('#comments-form-title, label[for="comments-form-title"]').hide();
 
         var comments = [];
         jQuery('.comments-list .comment-box').each(function() {
-            var commentObject = {
-                date: jQuery(this).find('.comment-date').text(),
-                name: jQuery(this).find('.comment-author').text(),
-                type: jQuery(this).find('.comment-title').text(),
-                text: jQuery(this).find('.comment-body').text()
-            }
+            if (jQuery(this).find('.comment-author').text() == 'Super User') {
+                var currentAnswerToQuestion = '<div class="answer"><span class="date">' + jQuery(this).find('.comment-date').text() + '</span>' +
+                        '<span>Администрация</span><div class="text">' + jQuery(this).find('.comment-body').text() + '</div></div>';
 
-            comments.push(commentObject);
+                comments[comments.length - 1].text += currentAnswerToQuestion;
+            }
+            else {
+                var commentObject = {
+                    date: jQuery(this).find('.comment-date').text(),
+                    name: jQuery(this).find('.comment-author').text(),
+                    type: jQuery(this).find('.comment-title').text(),
+                    text: jQuery(this).find('.comment-body').text(),
+                    button: '<span class="comments-buttons">' + jQuery(this).find('.comments-buttons').html() + '</span>'
+                }
+                comments.push(commentObject);
+            }
         });
-        comments = comments.reverse();
 
         //Функция для фильтрации вывода комментариев
         var filterComments = function(separator) {
-            if(separator == 'neytral') return comments;
-                
+            if (separator == 'neytral')
+                return comments;
+
             var separatorValue = '';
-            if(separator == 'positive') separatorValue = '+';
-            else separatorValue = '-';
-            
+            if (separator == 'positive')
+                separatorValue = '+';
+            else
+                separatorValue = '-';
+
             var currentComments = [];
             for (var i = 0; i < comments.length; i++) {
                 if (comments[i].type == separatorValue)
@@ -209,14 +236,16 @@ jQuery(function() {
 
         var renderComment = function(comment) {
             var typeValue = '';
-            if(comment.type == '+') typeValue = 'positive';
-            else typeValue = 'negative';
-            
+            if (comment.type == '+')
+                typeValue = 'positive';
+            else
+                typeValue = 'negative';
+
             jQuery('#list_of_comments').prepend('<div class="comment_object">' +
                     '<span class="date">' + comment.date + '</span>' +
                     '<span class="name">' + comment.name + '</span>' +
                     '<span class="type' + typeValue + '"></span>' +
-                    '<div class="text">' + comment.text + '</div></div>');
+                    '<div class="text">' + comment.text + comment.button + '</div></div>');
         }
 
         var previous = function(currentActiveNumber) {
