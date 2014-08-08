@@ -142,12 +142,8 @@ jQuery(function() {
         jQuery('#comments-list-footer, #comments-footer, #jc h4, .comments-list .rbox').hide();
         jQuery('#comments-form-title').val('ВОПРОС');
         jQuery('#comments-form-title, label[for="comments-form-title"]').hide();
-<<<<<<< HEAD
 		jQuery('#comments-form-title').parent().parent().css('position', 'absolute');
-        
-=======
 
->>>>>>> 38b5c438a88fd6d839fb5dd15fb09ba883df37ad
         jQuery('label[for="comments-form-name"]').html('ФИО<span class="required"></span>:');
         jQuery('label[for="comments-form-email"]').html('E-mail<span class="required"></span>:');
         jQuery('#comments-form-comment').before('<span class="text_of_question">Текст вопроса<span class="required"></span>:</span>');
