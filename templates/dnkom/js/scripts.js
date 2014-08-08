@@ -139,6 +139,14 @@ jQuery(function() {
         jQuery('#comments-list-footer, #comments-footer, #jc h4, .comments-list .rbox').hide();
         jQuery('#comments-form-title').val('ВОПРОС');
         jQuery('#comments-form-title, label[for="comments-form-title"]').hide();
+        
+        jQuery('label[for="comments-form-name"]').html('ФИО<span class="required"></span>:');
+        jQuery('label[for="comments-form-email"]').html('E-mail<span class="required"></span>:');
+        jQuery('#comments-form-comment').before('<span class="text_of_question">Текст вопроса<span class="required"></span>:</span>');
+        jQuery('#comments-form img.captcha[alt="Защитный код"]').before('<span class="captcha_text">Введите код с картинки<span class="required"></span>:</span>');
+        jQuery('.captcha:eq(1)').html('Обновить картинку');
+        jQuery('#comments-form-buttons #comments-form-send').after('<span class="bottom_text"><span class="required">*</span>- поля, обязательные для заполнения</div>');
+        jQuery('#comments-form').prepend('<h2>Задать вопрос врачу</h2>');
 
         var questions = [];
         jQuery('.comments-list .comment-box').each(function() {
@@ -261,7 +269,7 @@ jQuery(function() {
         jQuery('.comments-list .comment-box').each(function() {
             if (jQuery(this).find('.comment-author').text() == 'Super User') {
                 var currentAnswerToQuestion = '<div class="answer"><span class="date">' + jQuery(this).find('.comment-date').text() + '</span>' +
-                        '<span>Администрация</span><div class="text">' + jQuery(this).find('.comment-body').text() + '</div></div>';
+                        '<span class="name">Администрация</span><div class="text">' + jQuery(this).find('.comment-body').text() + '</div></div>';
 
                 comments[comments.length - 1].text += currentAnswerToQuestion;
             }
