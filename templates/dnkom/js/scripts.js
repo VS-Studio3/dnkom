@@ -1,6 +1,9 @@
 jQuery(function() {
 
     jQuery('.calls a').fancybox();
+    jQuery('.print-link').click(function(){
+         window.print();
+    });
 
     //еСЛИ ВЫВОДИТСЯ ПРАВЫЙ БЛОК
     if (jQuery('body').has('#right_menu').length > 0) {
@@ -139,8 +142,12 @@ jQuery(function() {
         jQuery('#comments-list-footer, #comments-footer, #jc h4, .comments-list .rbox').hide();
         jQuery('#comments-form-title').val('ВОПРОС');
         jQuery('#comments-form-title, label[for="comments-form-title"]').hide();
+<<<<<<< HEAD
 		jQuery('#comments-form-title').parent().parent().css('position', 'absolute');
         
+=======
+
+>>>>>>> 38b5c438a88fd6d839fb5dd15fb09ba883df37ad
         jQuery('label[for="comments-form-name"]').html('ФИО<span class="required"></span>:');
         jQuery('label[for="comments-form-email"]').html('E-mail<span class="required"></span>:');
         jQuery('#comments-form-comment').before('<span class="text_of_question">Текст вопроса<span class="required"></span>:</span>');
@@ -197,7 +204,7 @@ jQuery(function() {
                 }
             });
         }
-       
+
         setCommentsPagination();
 
         jQuery('.commentsPagination div:eq(1)').attr('id', 'active');
@@ -205,7 +212,7 @@ jQuery(function() {
         var renderComment = function(comment) {
             jQuery('#comments').prepend('<div class="comment_object"><span>ВОПРОС: </span>' + comment + '</div></div>');
         }
-        
+
         var previous = function(currentActiveNumber) {
             if (currentActiveNumber != '1') {
                 separateCommentsInPage((parseInt(currentActiveNumber) - 1).toString());
@@ -217,7 +224,7 @@ jQuery(function() {
                 separateCommentsInPage((parseInt(currentActiveNumber) + 1).toString());
             }
         }
-        
+
         var separateCommentsInPage = function(selectedPage) {
             jQuery('#comments .comment_object').remove();
             var startCommentNumber, endCommentNumber;
@@ -228,8 +235,8 @@ jQuery(function() {
 
             if (endCommentNumber > (questions.length - 1))
                 endCommentNumber = questions.length - 1;
-            
-            for(var i = endCommentNumber; i >= startCommentNumber; i--) {
+
+            for (var i = endCommentNumber; i >= startCommentNumber; i--) {
                 renderComment(questions[i]);
             }
 
@@ -239,7 +246,7 @@ jQuery(function() {
                     jQuery(this).attr('id', 'active');
             });
         }
-        
+
         separateCommentsInPage('1');
     }
 
@@ -258,7 +265,13 @@ jQuery(function() {
                 jQuery('#comments-form p:eq(3) input').val(type);
             });
 
-
+            jQuery('label[for="comments-form-name"]').html('ФИО<span class="required"></span>:');
+            jQuery('label[for="comments-form-email"]').html('E-mail<span class="required"></span>:');
+            jQuery('#comments-form-comment').before('<span class="text_of_question">Текст отзыва<span class="required"></span>:</span>');
+            jQuery('#comments-form img.captcha[alt="Защитный код"]').before('<span class="captcha_text">Введите код с картинки<span class="required"></span>:</span>');
+            jQuery('.captcha:eq(1)').html('Обновить картинку');
+            jQuery('#comments-form-buttons #comments-form-send').after('<span class="bottom_text"><span class="required">*</span>- поля, обязательные для заполнения</div>');
+            jQuery('#comments-form').prepend('<h2>Оставьте отзыв о работе нашего центра</h2>');
         }
         else {
             jQuery('#comments-form-title').val('Ответ администрации');
@@ -396,7 +409,7 @@ jQuery(function() {
             });
         }
 
-        jQuery('#comments-form-buttons').after('<div id="comments_category"><span class="neytral">Все</span> <span class="positive">Положительные</span> <span class="negative">Негативные</span></div><div id="list_of_comments"></div>');
+        jQuery('#comments-form').after('<div id="comments_category"><span class="neytral">Все</span> <span class="positive">Положительные</span> <span class="negative">Негативные</span></div><div id="list_of_comments"></div>');
         //Кликаем по все, позитивные или негативные
         jQuery('#comments_category span').click(function() {
             tempCommentsList = filterComments(jQuery(this).attr('class'));
@@ -493,7 +506,7 @@ jQuery(function() {
         jQuery('.foxform label').removeAttr('style');
         jQuery('.fcaptcha-reload-container').append('<div class="reload">Обновить картинку</div>');
         jQuery('.fcaptcha-reload-container img').hide();
-        jQuery('.fcaptcha-reload-container .reload').click(function(){
+        jQuery('.fcaptcha-reload-container .reload').click(function() {
             jQuery('.fcaptcha-reload-container img').click();
         });
         jQuery('#analizy_na_domu .foxform .foxfield input[title="Телефон"]').mask('+7(999)999+99+99');

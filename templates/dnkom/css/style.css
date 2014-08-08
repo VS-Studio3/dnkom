@@ -2983,6 +2983,7 @@ padding-left: 0px;
 }
 #jc #comments-form p .captcha_text{
 	display: inline-block;
+<<<<<<< HEAD
 	width: 90px;
 	float: left;
 	 font-family: 'PT Sans', 'sans-serif';
@@ -3004,18 +3005,25 @@ background: none;
 }
 #chasto-zadavaemye-voprosy #jc #comments-form p span.captcha:hover{
 text-decoration: none;
+=======
+	width: 102px;
+	float: left;
+>>>>>>> 38b5c438a88fd6d839fb5dd15fb09ba883df37ad
 }
 #jc #comments-form p{
     display: inline-block;
     vertical-align: top;
 	margin-left: 0px !important;
 	position: relative;
+<<<<<<< HEAD
 }
 #jc #comments-form h2{
 	 font-family: 'PT Sans', 'sans-serif';
 	 font-size: 20px;
 	 font-weight: bold;
 	 color: #262626;
+=======
+>>>>>>> 38b5c438a88fd6d839fb5dd15fb09ba883df37ad
 }
 #jc #comments-form p label{
     float: left;
