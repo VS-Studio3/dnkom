@@ -2981,10 +2981,41 @@ padding-left: 0px;
     margin-left: 15px;
     height: auto;
 }
+#jc #comments-form p .captcha_text{
+	display: inline-block;
+	width: 90px;
+	float: left;
+	 font-family: 'PT Sans', 'sans-serif';
+	   font-size: 16px;
+	   margin-left: 28px;
+	   color: #5e5e5e;
+margin-right: 4px;
+}
+#jc #comments-form p input#comments-form-email + label{
+	margin-left: 28px;
+}
+#chasto-zadavaemye-voprosy #jc #comments-form p span.captcha{
+	position: absolute;
+	bottom: 0px;
+	font-size: 11px;
+	left: 111px;
+text-decoration: underline;
+background: none;
+}
+#chasto-zadavaemye-voprosy #jc #comments-form p span.captcha:hover{
+text-decoration: none;
+}
 #jc #comments-form p{
     display: inline-block;
     vertical-align: top;
 	margin-left: 0px !important;
+	position: relative;
+}
+#jc #comments-form h2{
+	 font-family: 'PT Sans', 'sans-serif';
+	 font-size: 20px;
+	 font-weight: bold;
+	 color: #262626;
 }
 #jc #comments-form p label{
     float: left;
@@ -2996,8 +3027,11 @@ padding-left: 0px;
 }
 #jc #comments-form .text_of_question{
 	width: 90px;
+	color: #5e5e5e;	
 	display: inline-block;
 	vertical-align: top;
+	   font-family: 'PT Sans', 'sans-serif';
+	   font-size: 16px;
 }
 .foxform input, .foxform textarea{
     background-color: #eeeeee !important;
@@ -3017,6 +3051,7 @@ padding-left: 0px;
     border-radius: 5px;
     border: 1px solid #c0c0c0;
     margin: 0 3px ;
+	width: 240px;
 }
 #jc .type_of_comment{
     display: block !important;
@@ -3051,10 +3086,13 @@ padding-left: 0px;
     -moz-box-shadow: none;
     box-shadow: none;
 }
-#jc #comments-form #comments-form-buttons {
+#chasto-zadavaemye-voprosy #jc #comments-form #comments-form-buttons {
     overflow: visible !important;
-    float: right;
-    margin-left: 0px !important;
+position: absolute;
+margin-left: 0px !important;
+display: inline-block;
+right: 0px;
+bottom: 30px;
 }
 #comments-form .btn div{
     padding: 0px !important;
@@ -3066,18 +3104,40 @@ padding-left: 0px;
     border-radius: 5px;
     float: left;
 }
+#chasto-zadavaemye-voprosy #jc #comments-form p:first-child + p + p + p{
+	position: absolute !important;
+}
 #jc #comments-form .captcha{
     display: inline-block;
     vertical-align: top;
 }
 #jc #comments-form #comments-form-captcha{
     float: none;
+	width: 119px;
+	height: 25px;
 }
 #jc #comments-form br{
     display: none;
 }
 #jc #comments-form  input{
 	width: 240px;
+}
+#chasto-zadavaemye-voprosy #jc #comments-form {
+margin-bottom: 20px;
+}
+#chasto-zadavaemye-voprosy #jc #comments-form .required{
+	color: #c05050;
+font-size: 12px;
+font-weight: bold;
+}
+#chasto-zadavaemye-voprosy #jc #comments-form .bottom_text{
+	font-size: 11px;
+	line-height: 11px;
+	color: #5e5e5e;
+	  font-family: 'PT Sans', 'sans-serif';
+	position: absolute;
+left: 0px;
+bottom: -25px;
 }
 #chasto-zadavaemye-voprosy #jc #comments-form{
 	border: 1px solid #dedede;
@@ -3086,7 +3146,8 @@ border-radius: 5px;
 -webkit-box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
 -moz-box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
 box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
-padding: 10px;
+padding: 10px 10px 20px;
+position: relative;
 }
 #comments_category span{
     background: #d0d0d0;

@@ -139,6 +139,7 @@ jQuery(function() {
         jQuery('#comments-list-footer, #comments-footer, #jc h4, .comments-list .rbox').hide();
         jQuery('#comments-form-title').val('ВОПРОС');
         jQuery('#comments-form-title, label[for="comments-form-title"]').hide();
+		jQuery('#comments-form-title').parent().parent().css('position', 'absolute');
         
         jQuery('label[for="comments-form-name"]').html('ФИО<span class="required"></span>:');
         jQuery('label[for="comments-form-email"]').html('E-mail<span class="required"></span>:');
