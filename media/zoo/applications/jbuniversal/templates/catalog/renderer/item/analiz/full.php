@@ -9,6 +9,7 @@
  */
 defined('_JEXEC') or die('Restricted access');
 ?>
+
 <div id="category_list_parameters"></div>
 <div id="full_analiz">
     <h1><?php echo $this->renderPosition('title'); ?></h1>

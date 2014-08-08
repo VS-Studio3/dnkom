@@ -584,12 +584,14 @@ width: 100%;
     margin-bottom: 13px;
     font-family: 'PT Sans', sans-serif;
 }
-.only_text h2{
+.only_text h2,
+.only_text .specialH{
     color: #5b5b5b;
     font-size: 20px;
     font-family: 'PT Sans', sans-serif;
     font-weight: normal;
     margin-bottom: 10px;
+	text-transform: none !important;
 }
 .only_text li{
     color: #646363;
@@ -878,45 +880,59 @@ margin-left: 0px;
 #nivo_slider_2_1 .nivo-controlNav a{
     width: 30px!important;
 }
+#nivo_slider_2_1 p.nivo-caption-inner{
+    padding: 8px 20px;
+}
 .slider .nivo-caption-inner{
     width: 370px !important;
     position: relative !important;
     margin-top: -330px !important;
     margin-left:242px !important;
 }
-.slider .nivo-caption-inner p.slide_title{
+.slider .nivo-caption-inner .slider_title{
     color:#b20f00 !important;
     font-size:22px !important;
     text-transform: uppercase;
     padding-top: 10px !important;
     white-space: nowrap;
 }
-.slider p.slide_title + p{
+.slider .slider_title + p{
     color: #5e5b5b !important;
     font-size:15px !important;
     text-transform: uppercase;
     white-space: nowrap;
-    margin-bottom: 45px !important;
+    margin-bottom: 20px !important;
 }
 .slider .nivo-caption{
     background: none !important;
     height: 0px !important;
 }
-.slider .slide_list{
+.slider ul{
+    margin-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+.slider ul li{
     background-image: url("../images/galochka.png");
     background-repeat: no-repeat;
-    height: 50px;
-    padding-left: 70px;
+    height: 31px;
+    padding-left: 40px;
     margin-bottom: 10px;
-    margin-left: 8px;
+    margin-left: 0px;
+    line-height: 16px;
 }
-.slider .slide_list > p:first-child{
+.slider ul li{
     color: #b20f00 !important;
-    font-size:22px !important;
+    font-size: 19px !important;
+    list-style: none;
 }
-.slider .slide_list > p:first-child + p{
-    color: #5d5a5a !important;
-    font-size:18px !important;
+.slider .slider_title + p + ul + p{
+    color: #2a2a2a !important;
+    font-size:16px !important;
+    text-align: right!important;
+    padding-right: 25px !important;
+    font-style: italic;
+    font-family: 'PT Sans', sans-serif;
 }
 .slider .last_text{
     margin-top: 50px !important;
@@ -933,6 +949,9 @@ margin-left: 0px;
 }
 .slider .a.nivo-prevNav{
     top:-30px !important;
+}
+#otzyvy_i_pretenzii #comments{
+    display: none;
 }
 /**ПОИСК**/
 .search input.inputbox{
@@ -2293,7 +2312,7 @@ h1.title{
 #analiz_categories .rborder{
     margin-left: 10px;
     margin-right: 9px;
-    width: 152px;
+	width: 167px;
 }
 
 #analiz_categories .subcategory .subcategory-items{
@@ -3502,7 +3521,12 @@ padding-left: 0px;
     top: 1px;
     right: 0px;
 }
-
+#analizy_po_razdelam  #analizy_razdely{
+	width: 954px;
+}
+#analizy_po_razdelam.frontpage #right_menu{
+	display: none;
+}
 
 
 
