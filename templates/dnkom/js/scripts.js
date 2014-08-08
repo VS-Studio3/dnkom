@@ -260,7 +260,7 @@ jQuery(function() {
                 type = jQuery(this).val();
                 jQuery('#comments-form p:eq(3) input').val(type);
             });
-
+jQuery('#comments-form-title').parent().parent().css('position', 'absolute');
             jQuery('label[for="comments-form-name"]').html('ФИО<span class="required"></span>:');
             jQuery('label[for="comments-form-email"]').html('E-mail<span class="required"></span>:');
             jQuery('#comments-form-comment').before('<span class="text_of_question">Текст отзыва<span class="required"></span>:</span>');

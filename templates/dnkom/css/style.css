@@ -3636,6 +3636,25 @@ display: inline-block;
 right: 0px;
 bottom: 30px;
 }
-
-
-
+#otzyvy_i_pretenzii #jc #comments-form p span.captcha {
+position: absolute;
+bottom: 0px;
+font-size: 11px;
+left: 111px;
+text-decoration: underline;
+background: none;
+}
+#otzyvy_i_pretenzii #jc #comments-form .bottom_text {
+font-size: 11px;
+line-height: 11px;
+color: #5e5e5e;
+font-family: 'PT Sans', 'sans-serif';
+position: absolute;
+left: 0px;
+bottom: -25px;
+}
+#otzyvy_i_pretenzii #jc #comments-form .required {
+color: #c05050;
+font-size: 12px;
+font-weight: bold;
+}
