@@ -3437,7 +3437,10 @@ padding-left: 0px;
 .hasDatepicker{
     width: 57% !important;
 }
-
+.answer{
+    padding-left: 100px;
+    padding-top: 15px;
+}
 
 
 
