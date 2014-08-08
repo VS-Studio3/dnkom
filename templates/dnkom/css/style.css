@@ -360,7 +360,12 @@ width: 100%;
     display: table;
     text-decoration: underline;
 }
-.submenu_container ul li a:hover span.image-title{
+.submenu_container ul li.active a{
+    color: #171717;
+    text-decoration: none !important;
+}
+.submenu_container ul li a:hover span.image-title,
+.submenu_container ul li.active a span.image-title{
     text-decoration: none;
 }
 .submenu_container ul li a span.image-title{
@@ -2968,20 +2973,22 @@ padding-left: 0px;
     line-height: 16px;
     font-family: 'PT Sans', 'sans-serif';
 }
+.foxform input, .foxform textarea{
+    background-color: #eeeeee !important;
+    box-shadow: none !important;
+}
 #jc #comments-form > p > span > input{
     float: right;
     color: #505050;
-    background-color: #ffffff;
+    background-color: #eeeeee;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(192, 192, 192, 0.7) inset, 0px 0px 7px rgba(192, 192, 192, 0.7);
     border: 1px solid #c0c0c0;
     margin: 0 3px ;
 }
 #jc #comments-form textarea{
     color: #505050;
-    background-color: #ffffff;
+    background-color: #eeeeee;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(192, 192, 192, 0.7) inset, 0px 0px 7px rgba(192, 192, 192, 0.7);
     border: 1px solid #c0c0c0;
     margin: 0 3px ;
 }
@@ -3128,6 +3135,10 @@ padding-left: 0px;
     height: 17px;
     top: 1px;
     right: 0px;
+}
+#list_of_comments .comment_object .answer{
+    padding-left: 100px;
+    padding-top: 15px;
 }
 .commentsPagination{
     text-align: right;
@@ -3437,12 +3448,60 @@ padding-left: 0px;
 .hasDatepicker{
     width: 57% !important;
 }
-.answer{
-    padding-left: 100px;
-    padding-top: 15px;
+
+
+#comments{
+    background: #f6f6f6;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    padding: 12px;
 }
-
-
+#comments .comment_object span{
+    display: inline-block;
+    padding: 15px 0px;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: bold;
+    color: #4d4d4d;
+    margin-right: 10px;
+    font-family: 'PT Sans', 'sans-serif';
+}
+#comments .comment_object .answer{
+    color: #888888;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 0px 0px 5px 0px;
+    font-family: 'PT Sans', 'sans-serif';
+}
+#comments .comment_object .answer span{
+    padding: 0px 0px 5px 0px !important;
+}
+#comments .comment_object{
+    border-bottom: 1px dashed #cecece;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: normal;
+    color: #4d4d4d;
+    font-family: 'PT Sans', 'sans-serif';
+}
+#comments .comment_object .typenegative{
+    background: url("../images/type-.png") 0px 0px no-repeat;
+    position: absolute;
+    width: 106px;
+    height: 17px;
+    top: 1px;
+    right: 0px;
+}
+#comments .comment_object .typepositive{
+    background: url("../images/type+.png") 0px 0px no-repeat;
+    position: absolute;
+    width: 106px;
+    height: 17px;
+    top: 1px;
+    right: 0px;
+}
 
 
 
