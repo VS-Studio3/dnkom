@@ -38,7 +38,7 @@ jQuery(function() {
 
     function setCalculatorsCookie() {
         //Вставляем разметку формы калькулятора
-        jQuery('#right_menu .moduletable').prepend(getCalculatorHTML());
+        jQuery('#right_menu').prepend(getCalculatorHTML());
 
         //Считываем куки калькулятора
         var calculatorCookie = CookieObject.find('calculatorCookie');
