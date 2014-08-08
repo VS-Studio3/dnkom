@@ -950,9 +950,9 @@ margin-left: 0px;
 .slider .a.nivo-prevNav{
     top:-30px !important;
 }
-/*#otzyvy_i_pretenzii #comments{
+#otzyvy_i_pretenzii #comments-form  + script + #comments{
     display: none;
-}*/
+}
 /**ПОИСК**/
 .search input.inputbox{
     width: 622px;
@@ -2981,10 +2981,16 @@ padding-left: 0px;
     margin-left: 15px;
     height: auto;
 }
+#jc #comments-form p .captcha_text{
+	display: inline-block;
+	width: 102px;
+	float: left;
+}
 #jc #comments-form p{
     display: inline-block;
     vertical-align: top;
 	margin-left: 0px !important;
+	position: relative;
 }
 #jc #comments-form p label{
     float: left;
@@ -3017,6 +3023,7 @@ padding-left: 0px;
     border-radius: 5px;
     border: 1px solid #c0c0c0;
     margin: 0 3px ;
+	width: 240px;
 }
 #jc .type_of_comment{
     display: block !important;
@@ -3079,7 +3086,7 @@ padding-left: 0px;
 #jc #comments-form  input{
 	width: 240px;
 }
-#jc #comments-form{
+#chasto-zadavaemye-voprosy #jc #comments-form{
 	border: 1px solid #dedede;
 border-top: 3px solid #c70002;
 border-radius: 5px;
