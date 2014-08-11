@@ -20,5 +20,10 @@
         <name>related2</name>
         <description>related2</description>
     </layout>
+    
+    <layout name="srochnie_analizy_related" type="related">
+        <name>srochnie_analizy_related</name>
+        <description>srochnie_analizy_related</description>
+    </layout>
 
 </metadata>

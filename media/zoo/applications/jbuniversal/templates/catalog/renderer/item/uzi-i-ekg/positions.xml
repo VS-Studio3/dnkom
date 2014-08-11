@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<renderer>
+
+    <positions layout="full">
+        <position name="title">Название</position>
+        <position name="opisanie">Описание</position>
+        <position name="related2">related2</position>
+    </positions>
+
+</renderer>

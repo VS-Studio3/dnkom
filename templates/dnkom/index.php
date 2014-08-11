@@ -23,16 +23,13 @@ if (is_object($pmenu)) {
     $pageclass = $pmenu->params->get('pageclass_sfx');
 }
 
-$user	= JFactory::getUser();
-$isroot	= $user->get('isRoot');
-if($isroot){
+$user = JFactory::getUser();
+$isroot = $user->get('isRoot');
+if ($isroot) {
     setcookie('superuser', 'true');
-}
-else{
+} else {
     setcookie('superuser', 'false');
 }
-
-
 ?>
 <!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
@@ -110,17 +107,20 @@ else{
             <div class="container">
 <?php if (($option == 'com_zoo' && $task == 'category') || ($option == 'com_zoo' && $task == 'filter')): ?>
                     <jdoc:include type="modules" name="sort-mod" style="xhtml"/>
-<?php endif; ?>
+                <?php endif; ?>
                 <div class="special_for_podgotovka">
 
 
                     <jdoc:include type="modules" name="podgotovka-left-menu" style="xhtml"/>
+                    <div class="uzi_left_menu">
+                        <jdoc:include type="modules" name="uzi-left-menu" style="xhtml"/>
+                    </div>
                     <jdoc:include type="component" />
                 </div>
 
 <?php if ($option == 'com_content' && $view == 'article') : ?>
                     <jdoc:include type="modules" name="link-news" style="xhtml"/>
-<?php endif; ?>
+                <?php endif; ?>
 
 
                 <?php if ($this->countModules('left_block_pacient')) : ?>
@@ -130,7 +130,7 @@ else{
                     </div>
 <?php endif; ?>
                 <!--Блок слайдера-->
-<?php if ($this->countModules('slider_module')) : ?>
+                <?php if ($this->countModules('slider_module')) : ?>
                     <div class="slider">
                         <div class="relative">
                             <jdoc:include type="modules" name="slider_module" style="xhtml"/>
@@ -150,7 +150,7 @@ else{
             <!--END-->
         </div>
         <div class="both"></div>
-            <?php if ($this->countModules('slider_module')) : ?>
+<?php if ($this->countModules('slider_module')) : ?>
             <div class="back_news">
                 <div class="container ">
                     <div class="news">
@@ -174,7 +174,7 @@ else{
             <div class="container only_text">
                 <jdoc:include type="modules" name="description_module" style="xhtml"/>
             </div>
-        <?php endif; ?>
+<?php endif; ?>
         <div id="footer" class="footer">
             <jdoc:include type="modules" name="footer" style="xhtml"/>
             <div class="container">

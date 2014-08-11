@@ -136,6 +136,39 @@ jQuery(function() {
             return cookie;
         }
     };
+    
+    /*УЗИ - диагностика*/
+    if (jQuery('body').attr('id') == 'uzi-diagnostika') {
+        jQuery('.jbcategory-link').html('<span class="title">УЗИ</span><span class="lower">УЛЬТРАЗВУКОВЫЕ ИССЛЕДОВАНИЯ</span>');
+        jQuery('.jbcategory-items a:eq(0), .jbcategory-items a:eq(4)').addClass('backRed');
+        jQuery('.category-wrapper').append('<div class="left_banner"><div class="uzi_button"><a href="' + window.BASE_URL + '/zapisatsya-na-uzi.html">ЗАПИСАТЬСЯ НА УЗИ</a></div>' + jQuery('#right_menu').html() + '</div>');
+        jQuery('#right_menu').remove();
+    }
+    /*ЭКГ - диагностика*/
+    if (jQuery('body').attr('id') == 'ekg-diagnostika') {
+        jQuery('#right_menu').prepend('<div class="ekg_button"><a href="' + window.BASE_URL + '/zapisatsya-na-ekg.html">ЗАПИСАТЬСЯ НА ЭКГ</a></div>');
+        jQuery('.related_items').prepend('<h3>Сделать ЭКГ в лабораторных отделениях ДНКОМ вы можете по адресам:</h3>' + 
+                '<div class="moscow">г. Москва</div>');
+    }
+    
+    /*Записаться нап УЗИ(ЭКГ)*/
+    if (jQuery('body').attr('id') == 'zapisatsya-na-uzi'|| jQuery('body').attr('id') == 'zapisatsya-na-ekg') {
+        jQuery('.forma_zakaza select:first option:eq(0), .forma_zakaza select:last option:eq(0)').remove();
+        jQuery('.foxfield input[title="Дата приема"]').mask('99.99.9999');
+        jQuery('.forma_zakaza textarea').val('Введите необходимый тип исследования').prev().remove();
+        
+        var checked = false;
+        jQuery('.forma_zakaza .foxfield:eq(1) span').click(function(){
+            if(checked){
+                checked = false;
+                jQuery('.forma_zakaza select:first option').removeAttr('selected');
+            }
+            else {
+                checked = true;
+                jQuery('.forma_zakaza select:first option:eq(0)').attr('selected', 'selected');
+            }
+        });
+    }
 
     /*Часто задаваемые вопросы*/
     if (jQuery('body').attr('id') == 'chasto-zadavaemye-voprosy') {

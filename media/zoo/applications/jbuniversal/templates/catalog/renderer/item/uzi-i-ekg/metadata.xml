@@ -5,13 +5,8 @@
         <name>Full</name>
         <description>Full</description>
     </layout>
-
-    <layout name="subcategory_item">
-        <name>Subcategory Item</name>
-        <description>Subcategory Item</description>
-    </layout>
     
-    <layout name="related2" type="related">
+     <layout name="related2" type="related">
         <name>related2</name>
         <description>related2</description>
     </layout>

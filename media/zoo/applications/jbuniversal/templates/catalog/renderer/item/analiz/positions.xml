@@ -42,5 +42,13 @@
         <position name="code">Код</position>
         <position name="skidka">Скидка</position>
     </positions>
+    
+    <positions layout="srochnie_analizy_related">
+         <position name="title">Название анализа</position>
+        <position name="price">Цена в руб.</position>
+        <position name="srok">Срок исполнения</position>
+        <position name="proizvoditel">Производитель реактивов</position>
+        <position name="code">Код</position>
+    </positions>
 
 </renderer>

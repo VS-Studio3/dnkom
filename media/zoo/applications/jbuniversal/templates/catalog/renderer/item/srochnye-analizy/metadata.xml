@@ -5,15 +5,20 @@
         <name>Full</name>
         <description>Full</description>
     </layout>
-
-    <layout name="subcategory_item">
-        <name>Subcategory Item</name>
-        <description>Subcategory Item</description>
+    
+    <layout name="related1" type="related">
+        <name>related1</name>
+        <description>related1</description>
     </layout>
     
     <layout name="related2" type="related">
         <name>related2</name>
         <description>related2</description>
+    </layout>
+    
+    <layout name="related3" type="related">
+        <name>related3</name>
+        <description>related3</description>
     </layout>
 
 </metadata>
