@@ -52,7 +52,7 @@ if ($_COOKIE['calculatorCookie']) {
                     var elementsObject = JSON.parse(separatorAnaliz[1])
 
                     analiz.code = elementsObject['5d8c05c2-3ef7-400d-bf7b-24b6c713a7e5']['0'].value;
-                    analiz.proizvoditel = elementsObject['60e031d8-2508-4d1c-b9f8-cd5b825a7afe']['option']['0'];
+                    analiz.proizvoditel = elementsObject['f65d26df-3ce1-49a2-80e4-8e2fa535e236'][0]['file'];
                     analiz.srok = elementsObject['0cfa4f03-0cd0-4c23-96db-18c61ec1109c']['0'].value;
                     analiz.price = elementsObject['c0a63fd1-6651-4710-a6bc-f1e252c7854e']['0'].value;
                     analiz.biomaterials = elementsObject['bf2ac3ce-f1aa-4124-bff6-5813e841db6a']['0'].value;
@@ -66,7 +66,7 @@ if ($_COOKIE['calculatorCookie']) {
                 jQuery('.full_description.list-issledovaniy .inner').append('<div class="item_object">' +
                         '<div>' + analizesDataList[i].code + '</div>' +
                         '<div>' + analizesDataList[i].name + '</div>' +
-                        '<div>' + analizesDataList[i].proizvoditel + '</div>' +
+                        '<div class="img"><img src="' + analizesDataList[i].proizvoditel + '"></div>' +
                         '<div>' + analizesDataList[i].srok + '</div>' +
                         '<div>' + analizesDataList[i].price + '</div>' +
                         '<div><input type="checkbox" price="' + analizesDataList[i].price + '"></div></div>');
@@ -187,6 +187,10 @@ if ($_COOKIE['calculatorCookie']) {
             });
             jQuery('.foxbutton').after('<div class="offcose"><span>*</span> - поля, ' +
                 'обязательные для заполнения</div>');
+        
+            jQuery('.inner').each(function(){
+                jQuery(this).html(jQuery(this).html().replace('&nbsp;',''));
+            });
         }
         else
             ifIsNotCookie();

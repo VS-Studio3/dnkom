@@ -38,7 +38,7 @@ defined('_JEXEC') or die('Restricted access');
                     <?php endif; ?>  
                 </div>
 
-                <div>
+                <div class="proizvoditel_img">
                     <?php if ($this->renderPosition('proizvoditel')): ?>
                         <?php echo $this->renderPosition('proizvoditel'); ?>
                     <?php endif; ?>      
