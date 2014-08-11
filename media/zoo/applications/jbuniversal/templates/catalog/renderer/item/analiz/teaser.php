@@ -26,7 +26,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
         <?php endif; ?>    
     </div>
 
-    <div class="proizvoditel_img">
+    <div class="img">
         <?php if ($this->renderPosition('proizvoditel')): ?>
             <?php echo $this->renderPosition('proizvoditel'); ?>
         <?php endif; ?>      
