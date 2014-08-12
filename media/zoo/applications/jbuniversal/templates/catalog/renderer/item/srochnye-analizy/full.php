@@ -41,16 +41,18 @@ defined('_JEXEC') or die('Restricted access');
 
         <div class="inner">
             <div class="general_blood">Общий анализ крови</div>
+			<div class="bottom">
             <?php if ($this->renderPosition('related2')): ?>
                 <?php echo $this->renderPosition('related2'); ?>
             <?php endif; ?>
-            <div class="bottom"></div>
+            </div>
             
             <div class="general_blood">Биохимия</div>
+			<div class="bottom">
             <?php if ($this->renderPosition('related3')): ?>
                 <?php echo $this->renderPosition('related3'); ?>
             <?php endif; ?>
-            <div class="bottom"></div>
+            </div>
         </div>
     </div>
 

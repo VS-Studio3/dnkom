@@ -3658,3 +3658,414 @@ color: #c05050;
 font-size: 12px;
 font-weight: bold;
 }
+.item_object .img{
+    text-align: center;
+    padding-left: 0px !important;
+}
+.item_object .img img{
+	max-width: 90px;
+	height: auto;
+}
+.item_object div{
+	vertical-align: top;
+}
+.item_object div:first-child{
+	padding-left: 5px;
+}
+#srochnie_analizy .title a{
+    font-size: 24px;
+    font-weight: bold;
+    color: #b20f00;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'PT Sans', 'sans-serif';
+}
+#srochnie_analizy .description{
+    font-family: 'PT Sans', 'sans-serif';
+    font-size: 14px;
+    line-height: 16px;
+    color: #5b5b5b;
+    margin-bottom: 30px;
+}
+#srochnie_analizy .biomaterial_title{
+    font-size: 20px;
+    line-height: 16px;
+    color: #5b5b5b;
+    font-family: 'PT Sans', 'sans-serif';
+    margin-bottom: 20px;
+}
+#srochnie_analizy .otdel{
+    display: inline-block;
+    vertical-align: top;
+    width: 311px;
+    border: 1px solid #dedede;
+    border-top: 3px solid #c70002;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0px 0px 23px 20px;
+    -webkit-box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
+    -moz-box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
+    box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
+}
+#srochnie_analizy .otdel:first-child{
+    margin-left: 0px;
+}
+#srochnie_analizy .otdel h2{
+    font-size: 20px;
+    color: #5b5b5b;
+    line-height: 16px;
+    margin-bottom: 12px;
+    text-decoration: underline;
+}
+#srochnie_analizy .grafik_priema {
+    background-color: #eeeeee;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+#srochnie_analizy .specials {
+    border-bottom: 1px solid #aaaaaa;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+#srochnie_analizy .otdel span {
+    font-size: 16px;
+    display: inline-block;
+    line-height: 16px;
+    color: #5e5e5e;
+    vertical-align: top;
+}
+#srochnie_analizy .otdel .grafic {
+    width: 125px;
+    font-size: 12px;
+}
+#srochnie_analizy .otdel .monday,
+#srochnie_analizy .otdel .sunday{
+    width: 78px;
+    text-align: center;
+}
+#srochnie_analizy .full_description .inner .item_object,
+#srochnie_analizy .full_description .inner .general_blood,
+#srochnie_analizy .full_description .inner .bottom{
+    display: table !important;
+}
+#srochnie_analizy .full_description .inner .general_blood{
+    color: #5e5e5e;
+    font-size: 20px;
+    line-height: 16px;
+    font-family: 'PT Sans', 'sans-serif';
+    background: #eeeeee;
+    width: 98.8%;
+    border: 1px solid #aaaaaa;
+    padding: 10px 0px 10px 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: 10px;
+}
+#srochnie_analizy .full_description .inner .general_blood:first-child{
+    margin-top: 0px;
+}
+#srochnie_analizy .full_description .inner .item_object{
+    padding: 10px 0px 10px 0px;
+}
+#srochnie_analizy .full_description div:first-child + div + div + div + div{
+    text-align: left;
+}
+#srochnie_analizy .full_description .inner .item_object{
+    border-top: 1px solid #aaaaaa;
+}
+#srochnie_analizy .full_description .inner .bottom .item_object:first-child{
+    border-top: none !important;
+}
+#srochnie_analizy .full_description div:first-child + div + div + div + div {
+    padding-left: 18px;
+}
+#srochnie_analizy .full_description div:first-child + div + div + div {
+    width: 84px;
+}
+#srochnie_analizy .full_description div:first-child + div + div {
+    width: 100px;
+}
+#srochnie_analizy .full_description div:first-child + div {
+    width: 347px;
+}
+#srochnie_analizy .full_description .inner {
+    background-color: #FFFFFF;
+    border: none;
+    padding: 0px;
+}
+#srochnie_analizy .full_description .inner .bottom{
+    width: 100.2%;
+    border: 1px solid #aaaaaa;
+    padding-left: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: none;
+}
+#srochnie_analizy .full_description .inner .bottom .item_object:nth-child(odd){
+    background: #f6f6f6;
+}
+#srochnie_analizy .full_description .inner .bottom .item_object:nth-child(even){
+    background: #eeeeee;
+}
+#uzi-diagnostika #for_all_pages .container,
+#zapisatsya-na-uzi #for_all_pages .container{
+    width: 975px;
+}
+.uzi_left_menu{
+    display: inline-block;
+}
+.jbzoo-app-uzi-i-ekg{
+    display: inline-block;
+    vertical-align: top;
+    width: 710px;
+    padding: 0px 10px 0px 37px;
+}
+.uzi_left_menu .title{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    color: #262626;
+    font-family: 'PT Sans', 'sans-serif';
+}
+.uzi_left_menu .lower{
+    font-size: 12px;
+    line-height: 16px;
+    color: #262626;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'PT Sans', 'sans-serif';
+}
+.uzi_left_menu .jbcategory-items a{
+    text-decoration: none;
+    font-family: 'PT Sans', 'sans-serif';
+    font-size: 13px;
+    line-height: 13px;
+    padding: 9px 10px;
+    margin-top: 5px;
+    color: #171717;
+    display: block;
+    border: 1px solid #e5e5e5;
+    background-image: url("../images/back_pogdgotovka.png");
+}
+.uzi_left_menu .jbzoo-category-module .jbzoo-item{
+    padding: 0px;
+}
+.uzi_left_menu .jbcategory-items a:hover {
+    background-image: none;
+    background-color: #b20f00;
+    color: #FFFFFF;
+    border: 1px solid #b20f00;
+}
+.uzi_left_menu .jbzoo-category-module .jbcategory{
+    padding: 5px 0px;
+    margin: 0px;
+}
+.uzi_left_menu .jbcategory{
+    background-color: #eeeeee;
+    border: 1px solid #aaaaaa;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.uzi_left_menu .jbcategory-items{
+    border: 1px solid #aaaaaa;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: -5px;
+    padding: 5px 0px;
+}
+.uzi_left_menu .uzi_button,
+.ekg_button{
+    font-size: 18px;
+    position: relative;
+    font-family: PT Sans, sans-serif;
+    color: #535353;
+    text-decoration: none;
+    text-align: center;
+    height: 100%;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    -webkit-box-shadow: 0px 2px 3px 0px #A3A3A3;
+    -moz-box-shadow: 0px 2px 3px 0px #A3A3A3;
+    box-shadow: 0px 2px 3px 0px #A3A3A3;
+    line-height: 16px;
+    background: url("../images/back_btn_right.png");
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+.uzi_left_menu .uzi_button a,
+.ekg_button a{
+    color: #535353;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0px 10px 20px;
+    position: relative;
+}
+.uzi_left_menu .uzi_button a:before,
+.ekg_button a:before{
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    background: url("../images/price_two.png") 0px 0px no-repeat;
+}
+.uzi_left_menu .uzi_button:hover,
+.ekg_button:hover{
+    cursor: pointer;
+}
+.uzi_left_menu .uzi_button:hover a,
+.ekg_button:hover a{
+    color: #b20f00;
+    cursor: pointer;
+}
+#full_uzi_item .title a{
+    font-size: 20px;
+    font-family: 'PT Sans', 'sans-serif';
+    color: #5b5b5b;
+    line-height: 16px;
+    text-decoration: none;
+}
+#full_uzi_item .description{
+    font-size: 14px;
+    font-family: 'PT Sans', 'sans-serif';
+    color: #5b5b5b;
+    line-height: 16px;
+    margin-bottom: 30px;
+}
+#full_uzi_item .related_items h2{
+    font-size: 20px;
+    font-family: 'PT Sans', 'sans-serif';
+    color: #5b5b5b;
+    line-height: 16px;
+}
+#full_uzi_item fieldset{
+    border: 2px solid #c70002;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0px 10px;
+}
+#full_uzi_item fieldset legend{
+    font-size: 20px;
+    font-family: 'PT Sans', 'sans-serif';
+    color: #262626;
+    line-height: 11px;
+    text-decoration: underline;
+}
+#full_uzi_item fieldset .grafik_priema {
+    background-color: #eeeeee;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px 0px;
+    width: 313px;
+    display: inline-block;
+}
+#full_uzi_item fieldset .grafik_priema .specials {
+    border-bottom: 1px solid #aaaaaa;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+#full_uzi_item fieldset .grafik_priema .specials span{
+    font-size: 14px;
+}
+#full_uzi_item fieldset .grafik_priema  span {
+    font-size: 12px;
+    display: inline-block;
+    line-height: 16px;
+    color: #5e5e5e;
+    vertical-align: top;
+}
+#full_uzi_item fieldset .grafik_priema .grafic {
+    width: 125px;
+    font-size: 12px;
+}
+#full_uzi_item fieldset .grafik_priema .monday,
+#full_uzi_item fieldset .grafik_priema .sunday{
+    width: 78px;
+    text-align: center;
+}
+#full_uzi_item fieldset .telephones{
+    display: inline-block;
+    text-align: right;
+    width: 357px;
+    font-size: 16px;
+    position: relative;
+    font-family: 'PT Sans Caption', 'sans-serif';
+    line-height: 14px;
+    color: #171717;
+}
+#full_uzi_item fieldset .telephones:before{
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 5px;
+    width: 9px;
+    height: 8px;
+    background: url("../images/sprite.png") 0px 0px no-repeat;
+}
+#full_uzi_item fieldset .telephones .red{
+    color: #b20f00;
+}
+#full_uzi_item .otdel .grafik_priema .specials {
+    border-bottom: 1px solid #aaaaaa;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+#full_uzi_item .otdel .grafik_priema .specials span{
+    font-size: 14px;
+}
+#full_uzi_item .otdel .grafik_priema span {
+    font-size: 12px;
+    display: inline-block;
+    line-height: 16px;
+    color: #5e5e5e;
+    vertical-align: top;
+}
+#full_uzi_item .otdel .grafik_priema .grafic {
+    width: 125px;
+    font-size: 12px;
+}
+#full_uzi_item .otdel .grafik_priema .monday,
+#full_uzi_item .otdel .grafik_priema .sunday{
+    width: 78px;
+    text-align: center;
+}
+#full_uzi_item .otdel  .grafik_priema {
+    background-color: #eeeeee;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px 0px;
+    width: 305px;
+    display: inline-block;
+}
+#full_uzi_item .otdel {
+    border: 1px solid #dedede;
+    border-top: 3px solid #c70002;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
+    -moz-box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
+    box-shadow: 0px 0px 3px rgba(209, 209, 209, 0.75);
+    padding: 10px;
+    width: 328px;
+    margin: 0px 10px 25px 10px;
+}
+#full_uzi_item .related_items{
+    margin-left: -10px;
+    margin-right: -20px;
+}
+#podgotovka_k_analizam .uzi_left_menu{
+    display: none;
+}
+#podgotovka_k_analizam .blogpodgotovka_k_analizam{
+    display: none !important;
+}
