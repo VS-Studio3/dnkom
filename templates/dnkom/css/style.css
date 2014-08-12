@@ -2938,7 +2938,8 @@ margin-bottom: 10px;
 #podgotovka_k_analizam .special_for_podgotovka .moduletable .menu li:first-child a{
     margin-top: 0px;
 }
-#podgotovka_k_analizam .special_for_podgotovka .moduletable .menu li a:hover{
+#podgotovka_k_analizam .special_for_podgotovka .moduletable .menu li a:hover,
+#podgotovka_k_analizam .special_for_podgotovka .moduletable .menu li.active a{
     background-image: none;
     background-color: #b20f00;
     color: #FFFFFF;
@@ -3756,7 +3757,7 @@ font-weight: bold;
     line-height: 16px;
     font-family: 'PT Sans', 'sans-serif';
     background: #eeeeee;
-    width: 98.8%;
+    width: 696px;
     border: 1px solid #aaaaaa;
     padding: 10px 0px 10px 10px;
     border-top-left-radius: 5px;
@@ -3796,7 +3797,7 @@ font-weight: bold;
     padding: 0px;
 }
 #srochnie_analizy .full_description .inner .bottom{
-    width: 100.2%;
+    width: 706px;
     border: 1px solid #aaaaaa;
     padding-left: 0px;
     border-bottom-left-radius: 5px;
@@ -3820,6 +3821,7 @@ font-weight: bold;
     display: inline-block;
     vertical-align: top;
     width: 710px;
+    width: 706px\0/;
     padding: 0px 10px 0px 37px;
 }
 .uzi_left_menu .title{
