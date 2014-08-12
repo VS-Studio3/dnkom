@@ -3929,6 +3929,10 @@ font-weight: bold;
     color: #b20f00;
     cursor: pointer;
 }
+.uzi_left_menu .uzi_button:hover a:before,
+.ekg_button:hover a:before{
+    background: url("../images/red_mozg.png") 0px 0px no-repeat;
+}
 #full_uzi_item .title a{
     font-size: 20px;
     font-family: 'PT Sans', 'sans-serif';
